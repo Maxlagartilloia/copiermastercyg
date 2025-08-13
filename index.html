@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiermaster C&G Soluciones Digitales S.A</title>
+    <!-- Incluye el CDN de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Incluye la fuente Inter para un estilo limpio -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <!-- Iconos de Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #5a5a5a; /* Color gris oscuro del logo */
+            background-color: #f7f9fc;
+        }
+        .header-bg {
+            background-image: url('https://i.postimg.cc/PqjG0Fj2/copiermaster.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 0.5s ease-in-out;
+            height: 800px; /* Altura fija para el banner */
+            position: relative;
+        }
+        .bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239e9e9e' fill-opacity='0.12'%3E%3Cpath d='M36 34.5c0 .9-.9 1.5-1.5 1.5s-1.5-.6-1.5-1.5.9-1.5 1.5-1.5 1.5.6 1.5 1.5zM36 4.5c0 .9-.9 1.5-1.5 1.5s-1.5-.6-1.5-1.5.9-1.5 1.5-1.5 1.5.6 1.5 1.5zM22 18.5c0 .9-.9 1.5-1.5 1.5s-1.5-.6-1.5-1.5.9-1.5 1.5-1.5 1.5.6 1.5 1.5z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .testimonial-card {
+            min-width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Barra de Navegación -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo más grande sin texto -->
+            <a href="#" class="flex items-center space-x-3">
+                <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp" alt="Copiermaster C&G Soluciones Digitales S.A Logo" class="h-36">
+            </a>
+            
+            <!-- Botón del menú móvil -->
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-700 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú de escritorio -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#inicio" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Inicio</a>
+                <a href="#servicios" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Servicios</a>
+                <a href="#nosotros" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Nosotros</a>
+                <a href="#contacto" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Contacto</a>
+                <a href="#" class="bg-lime-500 text-white px-6 py-2 rounded-full font-semibold shadow-md hover:bg-lime-600 transition duration-300 transform hover:scale-105">
+                    Soporte
+                </a>
+            </div>
+        </div>
+
+        <!-- Menú móvil (oculto por defecto) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
+            <a href="#inicio" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Inicio</a>
+            <a href="#servicios" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Servicios</a>
+            <a href="#nosotros" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Nosotros</a>
+            <a href="#contacto" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Contacto</a>
+            <a href="#" class="block py-3 px-6 text-white bg-lime-500 text-center font-semibold">Soporte</a>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <header id="inicio" class="header-bg pt-24 flex items-end justify-start px-4 lg:px-12 py-20 lg:py-48 text-left">
+        <div class="container mx-auto max-w-4xl p-12 text-gray-800">
+            <h1 id="hero-title" class="text-4xl lg:text-6xl font-extrabold mb-4 animate-fade-in">
+                16 años en el mercado
+            </h1>
+            <p id="hero-subtitle" class="text-lg lg:text-xl font-medium mb-8">
+                Impulsando tecnología, conectando empresas, transformando el futuro.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#servicios" class="bg-lime-500 text-white text-lg font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-lime-600 transition duration-300 transform hover:scale-105">
+                    Conoce Más
+                </a>
+            </div>
+        </div>
+        <!-- Botones en la parte inferior de la sección -->
+        <div class="absolute bottom-0 left-0 right-0 bg-gray-900 p-4">
+            <div class="container mx-auto flex space-x-2">
+                <button id="button-1" class="text-white px-4 py-2 rounded-lg font-semibold transition duration-300 hover:bg-gray-700">Copiermaster C&G</button>
+                <button id="button-2" class="text-white px-4 py-2 rounded-lg font-semibold transition duration-300 hover:bg-gray-700">MARCAS</button>
+                <button id="button-3" class="text-white px-4 py-2 rounded-lg font-semibold transition duration-300 hover:bg-gray-700">Plus IT</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Soluciones Tecnológicas -->
+    <section id="soluciones" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://placehold.co/600x400/8ac641/ffffff?text=Descubre+nuestras+soluciones+tecnológicas" alt="Soluciones Tecnológicas" class="w-full rounded-2xl shadow-xl">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Descubre nuestras soluciones tecnológicas</h2>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Enfocados en la innovación, ofrecemos un portafolio de servicios que se adapta a las necesidades de tu empresa.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div class="flex items-center space-x-4">
+                            <i data-lucide="printer" class="text-lime-500 h-10 w-10"></i>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Servicio de impresión gestionado</h3>
+                                <p class="text-sm text-gray-500">Optimiza tus costos.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i data-lucide="share-2" class="text-lime-500 h-10 w-10"></i>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Comunicaciones gráficas</h3>
+                                <p class="text-sm text-gray-500">Imágenes que impactan.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i data-lucide="sparkles" class="text-lime-500 h-10 w-10"></i>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Transformación digital</h3>
+                                <p class="text-sm text-gray-500">Prepara tu negocio para el futuro.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i data-lucide="eye" class="text-lime-500 h-10 w-10"></i>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Visual Communication</h3>
+                                <p class="text-sm text-gray-500">Impacta a tu audiencia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Videos -->
+    <section id="videos" class="py-20 bg-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12">Videos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Video 1 -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden">
+                    <iframe class="w-full h-48 md:h-64" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-4 text-left">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Copiermaster C&G Soluciones Digitales S.A es la empresa líder de servicios de impresión en la región amazónica.</h4>
+                        <p class="text-gray-500 text-sm">hace 1 año - 101 reproducciones</p>
+                    </div>
+                </div>
+                <!-- Video 2 -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden">
+                    <iframe class="w-full h-48 md:h-64" src="https://www.youtube.com/embed/l59E-6-zK-g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-4 text-left">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Optimiza tu trabajo con equipos nuevos y de calidad, contrata el mejor servicio de...</h4>
+                        <p class="text-gray-500 text-sm">hace 1 año - 206 reproducciones</p>
+                    </div>
+                </div>
+                <!-- Video 3 -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden">
+                    <iframe class="w-full h-48 md:h-64" src="https://www.youtube.com/embed/jNQXAC9IVRw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-4 text-left">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-1">Tú impresora también puede ser capaz de responder con precisión e intensidad para tu...</h4>
+                        <p class="text-gray-500 text-sm">hace 2 años - 46 reproducciones</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Productos -->
+    <section id="productos" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12">Nuestros Productos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Producto 1 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/300x300/5e2b85/ffffff?text=Regulador+de+Voltaje" alt="Regulador de Voltaje" class="rounded-lg mb-4 w-full h-auto">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Reguladores de voltaje para impresoras</h4>
+                    <p class="text-xl font-bold text-lime-500 mb-2">$85.00</p>
+                    <button class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-900 transition duration-300">
+                        Comprar
+                    </button>
+                </div>
+                <!-- Producto 2 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/300x300/8ac641/ffffff?text=Servicio+Técnico" alt="Servicio Técnico" class="rounded-lg mb-4 w-full h-auto">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Servicio Técnico</h4>
+                    <p class="text-gray-600 text-sm">Mantenimiento, prevención y corrección</p>
+                    <button class="mt-4 bg-lime-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-lime-600 transition duration-300">
+                        Contactar
+                    </button>
+                </div>
+                 <!-- Producto 3 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/300x300/8ac641/ffffff?text=Mantenimiento+Impresora" alt="Mantenimiento" class="rounded-lg mb-4 w-full h-auto">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Mantenimiento o espera a que falle la impresora</h4>
+                    <p class="text-gray-600 text-sm">La diferencia entre empresa y persona</p>
+                    <button class="mt-4 bg-lime-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-lime-600 transition duration-300">
+                        ¡Contáctanos hoy!
+                    </button>
+                </div>
+                <!-- Producto 4 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/300x300/8ac641/ffffff?text=Mantenimiento+Preventivo" alt="Mantenimiento Preventivo" class="rounded-lg mb-4 w-full h-auto">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Servicio de mantenimiento de impresoras</h4>
+                    <p class="text-gray-600 text-sm">Mantenimiento preventivo, correctivo y de emergencia</p>
+                    <button class="mt-4 bg-lime-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-lime-600 transition duration-300">
+                        Contactar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Nosotros -->
+    <section id="nosotros" class="py-20 bg-gray-800 text-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl font-bold mb-4">SOMOS</h2>
+                <p class="text-gray-300 mb-6">
+                    Con más de 47 años en el mercado de foto-copiadoras, nos enorgullece ser el único distribuidor autorizado de Ricoh en Ecuador. Nuestro compromiso con la excelencia se refleja en cada aspecto de nuestro servicio.
+                </p>
+                <div class="grid grid-cols-2 gap-6 text-center">
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-xl">
+                        <span class="text-4xl font-bold text-lime-400">47</span>
+                        <p class="text-gray-400">Años de experiencia</p>
+                    </div>
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-xl">
+                        <span class="text-4xl font-bold text-lime-400">1955</span>
+                        <p class="text-gray-400">Clientes en todo el Ecuador</p>
+                    </div>
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-xl">
+                        <span class="text-4xl font-bold text-lime-400">200</span>
+                        <p class="text-gray-400">Colaboradores</p>
+                    </div>
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-xl">
+                        <span class="text-4xl font-bold text-lime-400">06</span>
+                        <p class="text-gray-400">Sucursales en Ecuador</p>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://placehold.co/600x400/5a5a5a/ffffff?text=Imagen+del+equipo" alt="Imagen del equipo" class="rounded-2xl shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section id="testimonios" class="py-20 bg-gray-100 bg-pattern">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">TESTIMONIOS</h2>
+            <h3 class="text-xl text-gray-600 mb-12">¿Qué dicen nuestros clientes?</h3>
+            
+            <div class="relative max-w-2xl mx-auto overflow-hidden">
+                <!-- Contenedor del slider -->
+                <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
+                    <!-- Testimonio 1 -->
+                    <div class="testimonial-card bg-white p-8 rounded-lg shadow-xl flex-shrink-0">
+                        <p class="text-lg text-gray-700 italic mb-6">"Prácticamente Copiermaster C&G Soluciones Digitales S.A se encarga de todo lo que es impresoras; mantenerlas en buen estado, renovación de las mismas y su mantenimiento. Nos han quitado como departamento de tecnología una carga laboral que era alta."</p>
+                        <div class="flex items-center justify-center space-x-4">
+                            <img src="https://placehold.co/60x60/8ac641/ffffff?text=KS" alt="Karina Soria" class="rounded-full">
+                            <div>
+                                <h4 class="font-bold text-gray-800">Karina Soria</h4>
+                                <p class="text-sm text-gray-500">Gerente de Tecnología - Colegio Americano</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonio 2 -->
+                    <div class="testimonial-card bg-white p-8 rounded-lg shadow-xl flex-shrink-0">
+                        <p class="text-lg text-gray-700 italic mb-6">"Excelente servicio al cliente, siempre dispuestos a ayudar y con soluciones rápidas. Totalmente recomendados para cualquier necesidad de impresión."</p>
+                        <div class="flex items-center justify-center space-x-4">
+                            <img src="https://placehold.co/60x60/8ac641/ffffff?text=JP" alt="Juan Pérez" class="rounded-full">
+                            <div>
+                                <h4 class="font-bold text-gray-800">Juan Pérez</h4>
+                                <p class="text-sm text-gray-500">Director Administrativo - Tech Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de navegación del slider -->
+                <button id="prev-testimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-gray-200 transition duration-300">
+                    <i data-lucide="chevron-left" class="h-6 w-6 text-gray-600"></i>
+                </button>
+                <button id="next-testimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-gray-200 transition duration-300">
+                    <i data-lucide="chevron-right" class="h-6 w-6 text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Blog -->
+    <section id="blog" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">BLOG</h2>
+            <h3 class="text-xl text-gray-600 mb-12">Archivos digitales de actualidad</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Artículo de Blog 1 -->
+                <div class="bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/400x250/8ac641/ffffff?text=Digitalización+Empresarial" alt="El Futuro de la Digitalización" class="rounded-t-lg w-full">
+                    <div class="p-6 text-left">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">El Futuro de la Digitalización Empresarial</h4>
+                        <p class="text-gray-600 text-sm mb-4">
+                            No podemos seguir ignorando la transformación digital en el mundo de los negocios.
+                        </p>
+                        <a href="#" class="text-lime-500 hover:text-lime-600 font-semibold flex items-center">
+                            Leer blog
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Artículo de Blog 2 -->
+                <div class="bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/400x250/8ac641/ffffff?text=Transformación+Digital" alt="Guía Rápida" class="rounded-t-lg w-full">
+                    <div class="p-6 text-left">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Guía rápida para una transformación digital exitosa</h4>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Descubre los pasos clave para implementar la tecnología en tu empresa.
+                        </p>
+                        <a href="#" class="text-lime-500 hover:text-lime-600 font-semibold flex items-center">
+                            Leer blog
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Artículo de Blog 3 -->
+                <div class="bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/400x250/8ac641/ffffff?text=Pantallas+Digitales" alt="Pantallas Digitales" class="rounded-t-lg w-full">
+                    <div class="p-6 text-left">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Pantallas Digitales: La clave para transformar la cultura</h4>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Transforma la comunicación corporativa mediante la comunicación interna.
+                        </p>
+                        <a href="#" class="text-lime-500 hover:text-lime-600 font-semibold flex items-center">
+                            Leer blog
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="py-20 bg-gray-800 text-white bg-pattern">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Contáctanos para más información</h2>
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <!-- Mapa o Imagen de Contacto -->
+                <div class="lg:w-1/2">
+                    <img src="https://placehold.co/600x400/5e2b85/ffffff?text=Alcance+Nacional" alt="Mapa de Ecuador" class="w-full rounded-2xl shadow-xl">
+                </div>
+                <!-- Formulario de Contacto -->
+                <div class="lg:w-1/2 w-full bg-white p-8 rounded-2xl shadow-2xl">
+                    <form action="#" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" id="ruc" name="ruc" placeholder="Ruc o Cédula" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500">
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" id="apellido" name="apellido" placeholder="Apellido" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required>
+                            <input type="email" id="email" name="email" placeholder="Correo Electrónico" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required>
+                        </div>
+                        <div>
+                            <input type="tel" id="celular" name="celular" placeholder="Celular" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required>
+                        </div>
+                        <div>
+                            <textarea id="requerimiento" name="requerimiento" rows="4" placeholder="Requerimiento" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required></textarea>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <input type="checkbox" id="privacidad" name="privacidad" class="form-checkbox h-4 w-4 text-lime-500 rounded focus:ring-lime-500">
+                            <label for="privacidad" class="text-gray-700 text-sm">Acepto las políticas de privacidad</label>
+                        </div>
+                        <button type="submit" class="bg-gray-800 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-gray-900 transition duration-300 w-full">
+                            Solicitar información
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp" alt="Copiermaster C&G Logo" class="h-36 mb-4">
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">MARCAS</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Servicios</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Equipos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Plus IT</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Hardware</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Soluciones</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Legal</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Política de Calidad</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Política de Privacidad</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 mt-10 border-t border-gray-700 pt-8 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2023 Copiermaster C&G Soluciones Digitales S.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lógica para el menú móvil
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Lógica para el slider de testimonios
+        const slider = document.getElementById('testimonial-slider');
+        const prevButton = document.getElementById('prev-testimonial');
+        const nextButton = document.getElementById('next-testimonial');
+        const testimonialCards = slider.querySelectorAll('.testimonial-card');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % testimonialCards.length;
+            updateSlider();
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + testimonialCards.length) % testimonialCards.length;
+            updateSlider();
+        });
+
+        // Inicializar los iconos de Lucide
+        window.addEventListener('load', () => {
+            lucide.createIcons();
+        });
+
+        // Lógica para cambiar la imagen de fondo
+        const header = document.getElementById('inicio');
+        const heroTitle = document.getElementById('hero-title');
+        const heroSubtitle = document.getElementById('hero-subtitle');
+        const button1 = document.getElementById('button-1');
+        const button2 = document.getElementById('button-2');
+        const button3 = document.getElementById('button-3');
+
+        const backgrounds = [
+            'https://i.postimg.cc/PqjG0Fj2/copiermaster.jpg',
+            'https://i.postimg.cc/G2vCLFp4/Image-3-removebg-preview.png',
+            'https://i.postimg.cc/Qx9vB5yv/plusit-aima.jpg'
+        ];
+
+        const content = [
+            {
+                title: '16 años en el mercado',
+                subtitle: 'Impulsando tecnología, conectando empresas, transformando el futuro.',
+                textColor: 'text-white'
+            },
+            {
+                title: 'Acelera la adopción digital de tu negocio',
+                subtitle: 'Somos el único distribuidor autorizado de la Corporación Ricoh en Ecuador, líderes en ofrecer equipos de alta tecnología en venta y alquiler.',
+                textColor: 'text-gray-800'
+            },
+            {
+                title: 'Integrando Tecnologías e Ingeniería',
+                subtitle: 'Creando soluciones tecnológicas que facilitan a nuestros clientes la automatización de procesos.',
+                textColor: 'text-gray-800'
+            }
+        ];
+        
+        button1.addEventListener('click', () => {
+            header.style.backgroundImage = `url('${backgrounds[0]}')`;
+            heroTitle.textContent = content[0].title;
+            heroSubtitle.textContent = content[0].subtitle;
+            heroTitle.classList.remove('text-gray-800');
+            heroTitle.classList.add('text-white');
+            heroSubtitle.classList.remove('text-gray-800');
+            heroSubtitle.classList.add('text-white');
+        });
+
+        button2.addEventListener('click', () => {
+            header.style.backgroundImage = `url('${backgrounds[1]}')`;
+            heroTitle.textContent = content[1].title;
+            heroSubtitle.textContent = content[1].subtitle;
+            heroTitle.classList.remove('text-white');
+            heroTitle.classList.add('text-gray-800');
+            heroSubtitle.classList.remove('text-white');
+            heroSubtitle.classList.add('text-gray-800');
+        });
+
+        button3.addEventListener('click', () => {
+            header.style.backgroundImage = `url('${backgrounds[2]}')`;
+            heroTitle.textContent = content[2].title;
+            heroSubtitle.textContent = content[2].subtitle;
+            heroTitle.classList.remove('text-white');
+            heroTitle.classList.add('text-gray-800');
+            heroSubtitle.classList.remove('text-white');
+            heroSubtitle.classList.add('text-gray-800');
+        });
+    </script>
+</body>
+</html>
