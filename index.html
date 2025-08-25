@@ -302,30 +302,33 @@
     });
   }
 
-  // Render de la marca seleccionada
-  function render(index) {
-    const data = MARCAS[index];
+ function render(index) {
+  const data = MARCAS[index];
 
-    imgMain.style.opacity = 0;
-    titleEl.style.opacity = 0;
-    descEl.style.opacity  = 0;
+  // animación de fade
+  imgMain.style.opacity = 0;
+  titleEl.style.opacity = 0;
+  descEl.style.opacity  = 0;
 
-    setTimeout(() => {
-      imgMain.src = data.image;
-      titleEl.textContent = data.title;
-      descEl.textContent  = data.description;
-      linkEl.href         = data.link;
+  setTimeout(() => {
+    imgMain.src = data.image;
+    titleEl.textContent = data.title;
+    descEl.textContent  = data.description;
+    linkEl.href         = data.link;
 
-      imgMain.onload = () => (imgMain.style.opacity = 1);
-      titleEl.style.opacity = 1;
-      descEl.style.opacity  = 1;
-    }, 150);
+    imgMain.onload = () => (imgMain.style.opacity = 1);
+    titleEl.style.opacity = 1;
+    descEl.style.opacity  = 1;
+  }, 150);
 
-    buttons.forEach((b, i) => {
-      b.classList.toggle("ring-2", i === index);
-      b.classList.toggle("ring-lime-500", i === index);
-    });
-  }
+  // 🔥 Resetear todos los botones y aplicar sólo al actual
+  buttons.forEach((b, i) => {
+    b.classList.remove("ring-2", "ring-lime-500", "scale-105"); // limpia todos
+    if (i === index) {
+      b.classList.add("ring-2", "ring-lime-500", "scale-105"); // aplica al actual
+    }
+  });
+}
 
   // Eventos
   buttons.forEach((btn, i) => {
