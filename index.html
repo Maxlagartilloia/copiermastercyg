@@ -257,93 +257,82 @@
         </div>
     </section>
 <script>
-  // 1) Configura aquí tus marcas
+  // Definición de marcas con equipo (image) y logo (thumb)
   const MARCAS = [
     {
       title: "Ricoh",
-      description: "Tecnología confiable para entornos de alto volumen de impresión.",
-      image: "img/marcas/ricoh-producto.jpg",   // <- misma imagen que quieras arriba
-      thumb:  null,                              // <- si la de miniatura es distinta, ponla; si no, déjalo null
+      description: "Líder en equipos de oficina y soluciones de impresión de producción. Ofrecemos una amplia gama de productos para satisfacer todas sus necesidades.",
+      image: "https://i.postimg.cc/SxkZvH32/33333-removebg-preview.png", // equipo Ricoh
+      thumb: "https://i.postimg.cc/SxkZvH32/33333-removebg-preview.png", // logo Ricoh
       link: "https://www.ricoh.com/"
     },
     {
       title: "Lexmark",
-      description: "Soluciones seguras y eficientes para gestión documental.",
-      image: "img/marcas/lexmark-producto.jpg",
-      thumb:  null,
+      description: "Soluciones de impresión seguras, confiables y fáciles de usar que optimizan el flujo de trabajo empresarial.",
+      image: "https://i.postimg.cc/qvwmVjHm/44-removebg-preview.png", // equipo Lexmark
+      thumb: "https://i.postimg.cc/qvwmVjHm/44-removebg-preview.png", // logo Lexmark
       link: "https://www.lexmark.com/"
     },
     {
       title: "Kyocera",
-      description: "Impresión durable y económica con alto rendimiento.",
-      image: "img/marcas/kyocera-producto.jpg",
-      thumb:  null,
+      description: "Tecnología de impresión eficiente y sostenible que combina bajo coste con alto rendimiento.",
+      image: "https://i.postimg.cc/jjjMsPsR/6666-removebg-preview.png", // equipo Kyocera
+      thumb: "https://i.postimg.cc/jjjMsPsR/6666-removebg-preview.png", // logo Kyocera
       link: "https://www.kyoceradocumentsolutions.com/"
     }
   ];
 
-  // 2) Referencias del DOM
+  // Referencias
   const imgMain   = document.getElementById("marca-image");
   const titleEl   = document.getElementById("marca-title");
   const descEl    = document.getElementById("marca-description");
   const linkEl    = document.getElementById("marca-link");
   const buttons   = Array.from(document.querySelectorAll(".marca-button"));
 
-  // 3) Rellena miniaturas con la misma imagen (o thumb si existe)
+  // Insertar logos en los botones
   function hydrateThumbnails() {
     buttons.forEach((btn, i) => {
       const data = MARCAS[i];
-      const thumbSrc = data.thumb || data.image;
       const img = btn.querySelector("img");
       if (img) {
-        img.src = thumbSrc;
+        img.src = data.thumb;
         img.alt = data.title;
-        img.classList.add("object-cover");
+        img.classList.add("object-contain", "h-10");
       }
     });
   }
 
-  // 4) Render de la marca activa
-  let current = 0;
+  // Render de la marca seleccionada
   function render(index) {
     const data = MARCAS[index];
-    // mini animación de desvanecido
+
     imgMain.style.opacity = 0;
     titleEl.style.opacity = 0;
     descEl.style.opacity  = 0;
 
-    // cambia contenido
     setTimeout(() => {
       imgMain.src = data.image;
       titleEl.textContent = data.title;
       descEl.textContent  = data.description;
       linkEl.href         = data.link;
 
-      // vuelve a mostrar con transición
       imgMain.onload = () => (imgMain.style.opacity = 1);
       titleEl.style.opacity = 1;
       descEl.style.opacity  = 1;
     }, 150);
 
-    // estado activo en botones
     buttons.forEach((b, i) => {
       b.classList.toggle("ring-2", i === index);
       b.classList.toggle("ring-lime-500", i === index);
-      b.classList.toggle("scale-105", i === index);
     });
-
-    current = index;
   }
 
-  // 5) Eventos de los botones
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const idx = parseInt(btn.dataset.index, 10);
-      render(idx);
-    });
+  // Eventos
+  buttons.forEach((btn, i) => {
+    btn.addEventListener("click", () => render(i));
   });
 
-  // 6) Inicializa
+  // Inicialización
   hydrateThumbnails();
   render(0);
 </script>
