@@ -192,7 +192,7 @@
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
             <div class="lg:w-1/2">
-                <img src="https://i.postimg.cc/7Z0Dq3z4/lexmark-impresora.png" alt="Soluciones Tecnológicas" class="w-full">
+                <img src="https://i.postimg.cc/NfSwPKjk/487094689-684597497409854-2985743454668687314-n.webp" alt="Soluciones Tecnológicas" class="w-full">
             </div>
             <div class="lg:w-1/2">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">Descubre nuestras soluciones tecnológicas</h2>
@@ -256,6 +256,97 @@
             </div>
         </div>
     </section>
+<script>
+  // 1) Configura aquí tus marcas
+  const MARCAS = [
+    {
+      title: "Ricoh",
+      description: "Tecnología confiable para entornos de alto volumen de impresión.",
+      image: "img/marcas/ricoh-producto.jpg",   // <- misma imagen que quieras arriba
+      thumb:  null,                              // <- si la de miniatura es distinta, ponla; si no, déjalo null
+      link: "https://www.ricoh.com/"
+    },
+    {
+      title: "Lexmark",
+      description: "Soluciones seguras y eficientes para gestión documental.",
+      image: "img/marcas/lexmark-producto.jpg",
+      thumb:  null,
+      link: "https://www.lexmark.com/"
+    },
+    {
+      title: "Kyocera",
+      description: "Impresión durable y económica con alto rendimiento.",
+      image: "img/marcas/kyocera-producto.jpg",
+      thumb:  null,
+      link: "https://www.kyoceradocumentsolutions.com/"
+    }
+  ];
+
+  // 2) Referencias del DOM
+  const imgMain   = document.getElementById("marca-image");
+  const titleEl   = document.getElementById("marca-title");
+  const descEl    = document.getElementById("marca-description");
+  const linkEl    = document.getElementById("marca-link");
+  const buttons   = Array.from(document.querySelectorAll(".marca-button"));
+
+  // 3) Rellena miniaturas con la misma imagen (o thumb si existe)
+  function hydrateThumbnails() {
+    buttons.forEach((btn, i) => {
+      const data = MARCAS[i];
+      const thumbSrc = data.thumb || data.image;
+      const img = btn.querySelector("img");
+      if (img) {
+        img.src = thumbSrc;
+        img.alt = data.title;
+        img.classList.add("object-cover");
+      }
+    });
+  }
+
+  // 4) Render de la marca activa
+  let current = 0;
+  function render(index) {
+    const data = MARCAS[index];
+    // mini animación de desvanecido
+    imgMain.style.opacity = 0;
+    titleEl.style.opacity = 0;
+    descEl.style.opacity  = 0;
+
+    // cambia contenido
+    setTimeout(() => {
+      imgMain.src = data.image;
+      titleEl.textContent = data.title;
+      descEl.textContent  = data.description;
+      linkEl.href         = data.link;
+
+      // vuelve a mostrar con transición
+      imgMain.onload = () => (imgMain.style.opacity = 1);
+      titleEl.style.opacity = 1;
+      descEl.style.opacity  = 1;
+    }, 150);
+
+    // estado activo en botones
+    buttons.forEach((b, i) => {
+      b.classList.toggle("ring-2", i === index);
+      b.classList.toggle("ring-lime-500", i === index);
+      b.classList.toggle("scale-105", i === index);
+    });
+
+    current = index;
+  }
+
+  // 5) Eventos de los botones
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const idx = parseInt(btn.dataset.index, 10);
+      render(idx);
+    });
+  });
+
+  // 6) Inicializa
+  hydrateThumbnails();
+  render(0);
+</script>
 
     <!-- Results Section -->
     <section class="py-20 bg-gray-50">
