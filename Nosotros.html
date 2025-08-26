@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Copiermaster C&G</title>
+    <!-- Include Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Include Inter font for a clean style -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Tone.js for sound effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #5a5a5a;
+            background-color: #f7f9fc;
+        }
+        .bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239e9e9e' fill-opacity='0.12'%3E%3Cpath d='M36 34.5c0 .9-.9 1.5-1.5 1.5s-1.5-.6-1.5-1.5.9-1.5 1.5-1.5 1.5.6 1.5 1.5zM36 4.5c0 .9-.9 1.5-1.5 1.5s-1.5-.6-1.5-1.5.9-1.5 1.5-1.5 1.5.6 1.5 1.5zM22 18.5c0 .9-.9 1.5-1.5 1.5s-1.5-.6-1.5-1.5.9-1.5 1.5-1.5 1.5.6 1.5 1.5z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .testimonial-card {
+            min-width: 100%;
+        }
+        /* Chat Widget Styles */
+        #chat-widget {
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        #chat-window {
+            height: 70vh;
+            max-height: 500px;
+            width: 90vw;
+            max-width: 400px;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        /* Marcas Slider Styles */
+        .marca-button {
+            opacity: 0.6;
+            transition: all 0.3s ease-in-out;
+        }
+        .marca-button-active {
+            opacity: 1;
+            transform: scale(1.1);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        #marcas-display {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        #marcas-display:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp" alt="Copiermaster C&G Soluciones Digitales S.A Logo" class="h-24 md:h-32">
+            </a>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-700 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Inicio</a>
+                <a href="soluciones.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Soluciones</a>
+                <a href="aima.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">AIMA</a>
+                <a href="nosotros.html" class="text-lime-500 font-semibold transition duration-300">Nosotros</a>
+                <a href="contacto.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Contacto</a>
+                <a href="#" class="bg-lime-500 text-white px-6 py-2 rounded-full font-semibold shadow-md hover:bg-lime-600 transition duration-300 transform hover:scale-105">
+                    Soporte
+                </a>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
+            <a href="index.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Inicio</a>
+            <a href="soluciones.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Soluciones</a>
+            <a href="aima.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">AIMA</a>
+            <a href="nosotros.html" class="block py-3 px-6 text-lime-500">Nosotros</a>
+            <a href="contacto.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Contacto</a>
+            <a href="#" class="block py-3 px-6 text-white bg-lime-500 text-center font-semibold">Soporte</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-48">
+        <!-- About Us Section -->
+        <section id="nosotros" class="py-20 bg-gray-800 text-white" style="background-image: url('https://i.postimg.cc/8CBQ5wBZ/486325855-684608830742054-2479437861917541738-n-1.jpg'); background-size: cover; background-position: center;">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 bg-black bg-opacity-50 p-8 rounded-2xl">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-bold mb-4">SOMOS</h2>
+                    <p class="text-gray-300 mb-6">
+                        Con más de 47 años en el mercado de fotocopiadoras, nos enorgullece ser el único distribuidor autorizado de Ricoh en Ecuador. Nuestro compromiso con la excelencia se refleja en cada aspecto de nuestro servicio: nuestros técnicos están rigurosamente capacitados a través de la plataforma RICOH, nuestras certificaciones ISO y RSE respaldan nuestra calidad, y aseguramos el tiempo de respuesta más rápido en todo el territorio nacional a través de nuestras 6 sucursales. Estamos dedicados a proporcionar un servicio de calidad insuperable.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 text-center">
+                        <div class="bg-gray-700 bg-opacity-50 p-6 rounded-lg shadow-xl">
+                            <span class="text-4xl font-bold text-lime-400">47</span>
+                            <p class="text-gray-400">Años de experiencia</p>
+                        </div>
+                        <div class="bg-gray-700 bg-opacity-50 p-6 rounded-lg shadow-xl">
+                            <span class="text-4xl font-bold text-lime-400">1955</span>
+                            <p class="text-gray-400">Clientes en todo el Ecuador</p>
+                        </div>
+                        <div class="bg-gray-700 bg-opacity-50 p-6 rounded-lg shadow-xl">
+                            <span class="text-4xl font-bold text-lime-400">200</span>
+                            <p class="text-gray-400">Colaboradores</p>
+                        </div>
+                        <div class="bg-gray-700 bg-opacity-50 p-6 rounded-lg shadow-xl">
+                            <span class="text-4xl font-bold text-lime-400">06</span>
+                            <p class="text-gray-400">Sucursales en Ecuador</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://i.postimg.cc/Rhs9yMFd/aab2089a-917e-4be0-870f-93c441797720.png" alt="Nuestro Equipo" class="rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- General Purpose Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://i.postimg.cc/VLTPtfV9/111111.png" alt="Propósito General" class="rounded-2xl shadow-xl">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4 text-lime-600">Propósito General</h2>
+                    <p class="text-lg text-gray-600 mb-4">Somos COPIERMASTER, una empresa 100% ecuatoriana creada en 1977 con el objetivo de proveer soluciones que hagan eficiente el manejo de la información documental empresarial.</p>
+                    <p class="text-lg text-gray-600">Nuestro portafolio de productos y servicios está conformado por marcas reconocidas mundialmente, y contamos con personal altamente capacitado y certificado por los fabricantes para respaldarlas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission, Vision, Work with Us Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-lime-500 transition duration-300">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Misión</h3>
+                        <p class="text-gray-600">Nuestra misión es generar valor a los documentos de nuestros clientes a través de las mejores asesorías, tecnología digital y un excelente servicio técnico de tal manera que nuestros clientes puedan satisfacer completamente sus necesidades en la impresión, reproducción, transmisión, almacenamiento, recuperación y control de documentos.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-lime-500 transition duration-300">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Visión</h3>
+                        <p class="text-gray-600">En el 2026 consolidaremos un reconocimiento sostenido a nivel nacional, generando soluciones que dan valor a los documentos de nuestros clientes, actuando siempre con alta responsabilidad social y valor compartido mediante el uso de la mejor tecnología disponible y un sistema de gestión basado en la calidad y el mejoramiento continuo.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-lime-500 transition duration-300">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Trabaje con nosotros</h3>
+                        <p class="text-gray-600 mb-4">Somos una empresa con gran sentido social y por ello siempre estamos en constante búsqueda del mejor talento humano para nuestra organización. si estás interesado, déjanos tu hoja de vida para poderte contactar.</p>
+                        <a href="#" class="bg-lime-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-lime-600 transition duration-300 inline-flex items-center">
+                            Sube tu hoja de vida <i data-lucide="arrow-right" class="h-5 w-5 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- We Make the Difference Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-gray-800 mb-12">Marcamos la diferencia</h2>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                    <div class="text-center">
+                        <p class="text-5xl font-extrabold text-lime-600">+4500</p>
+                        <p class="text-lg font-semibold text-gray-700">Clientes atendidos</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-5xl font-extrabold text-lime-600">41</p>
+                        <p class="text-lg font-semibold text-gray-700">Años de experiencia</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-5xl font-extrabold text-lime-600">4</p>
+                        <p class="text-lg font-semibold text-gray-700">Sucursales</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-5xl font-extrabold text-lime-600">+1000</p>
+                        <p class="text-lg font-semibold text-gray-700">Contratos</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-5xl font-extrabold text-lime-600">+4800</p>
+                        <p class="text-lg font-semibold text-gray-700">Equipos instalados</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marcas Section -->
+        <section id="marcas" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Nuestras Marcas Aliadas</h2>
+                <p class="text-xl text-gray-600 mb-12">Trabajamos con los líderes de la industria para ofrecerte la mejor tecnología.</p>
+                <div id="marcas-display" class="bg-white p-8 rounded-2xl shadow-xl max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2">
+                        <img id="marca-image" src="" alt="Imagen de producto de la marca" class="max-h-80 mx-auto transition-opacity duration-500 ease-in-out">
+                    </div>
+                    <div class="md:w-1/2 text-left flex flex-col self-stretch">
+                        <h3 id="marca-title" class="text-4xl font-bold text-gray-800 mb-4 transition-opacity duration-500 ease-in-out"></h3>
+                        <p id="marca-description" class="text-gray-600 mb-6 transition-opacity duration-500 ease-in-out flex-grow"></p>
+                        <a id="marca-link" href="#" target="_blank" rel="noopener noreferrer" class="bg-lime-500 text-white text-md font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-lime-600 transition duration-300 transform hover:scale-105 inline-block text-center mt-auto">
+                            Conoce más de la marca
+                        </a>
+                    </div>
+                </div>
+                <div id="marcas-buttons" class="mt-8 flex justify-center items-center flex-wrap gap-4">
+                     <button data-index="0" class="marca-button bg-white p-4 rounded-lg shadow-md hover:shadow-xl">
+                        <img src="https://i.postimg.cc/Y0Vt0pGg/ricoh-logo.png" alt="Ricoh" class="h-10">
+                    </button>
+                     <button data-index="1" class="marca-button bg-white p-4 rounded-lg shadow-md hover:shadow-xl">
+                        <img src="https://i.postimg.cc/tJ0M4pXb/lexmark-logo.png" alt="Lexmark" class="h-10">
+                    </button>
+                     <button data-index="2" class="marca-button bg-white p-4 rounded-lg shadow-md hover:shadow-xl">
+                        <img src="https://i.postimg.cc/W12FkM0K/kyocera-logo.png" alt="Kyocera" class="h-10">
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonios" class="py-20 bg-white bg-pattern">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">TESTIMONIOS</h2>
+                <h3 class="text-xl text-gray-600 mb-12">¿Qué dicen nuestros clientes?</h3>
+                
+                <div class="relative max-w-2xl mx-auto overflow-hidden">
+                    <!-- Slider Container -->
+                    <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-card bg-white p-8 rounded-lg shadow-xl flex-shrink-0">
+                            <p class="text-lg text-gray-700 italic mb-6">"Prácticamente Copiermaster C&G Soluciones Digitales S.A se encarga de todo lo que es impresoras; mantenerlas en buen estado, renovación de las mismas y su mantenimiento. Nos han quitado como departamento de tecnología una carga laboral que era alta."</p>
+                            <div class="flex items-center justify-center space-x-4">
+                                <img src="https://placehold.co/60x60/8ac641/ffffff?text=KS" alt="Karina Soria" class="rounded-full">
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Karina Soria</h4>
+                                    <p class="text-sm text-gray-500">Gerente de Tecnología - Colegio Americano</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-card bg-white p-8 rounded-lg shadow-xl flex-shrink-0">
+                            <p class="text-lg text-gray-700 italic mb-6">"Excelente servicio al cliente, siempre dispuestos a ayudar y con soluciones rápidas. Totalmente recomendados para cualquier necesidad de impresión."</p>
+                            <div class="flex items-center justify-center space-x-4">
+                                <img src="https://placehold.co/60x60/8ac641/ffffff?text=JP" alt="Juan Pérez" class="rounded-full">
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Juan Pérez</h4>
+                                    <p class="text-sm text-gray-500">Director Administrativo - Tech Solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Navigation Buttons -->
+                    <button id="prev-testimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 bg-white rounded-full p-2 shadow-lg hover:bg-gray-200 transition duration-300">
+                        <i data-lucide="chevron-left" class="h-6 w-6 text-gray-600"></i>
+                    </button>
+                    <button id="next-testimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-12 bg-white rounded-full p-2 shadow-lg hover:bg-gray-200 transition duration-300">
+                        <i data-lucide="chevron-right" class="h-6 w-6 text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp" alt="Copiermaster C&G Logo" class="h-36 mb-4">
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">MARCAS</h4>
+                <ul class="space-y-2">
+                    <li><a href="nosotros.html#marcas" class="text-gray-400 hover:text-lime-500 transition duration-300">Nuestras Marcas</a></li>
+                    <li><a href="soluciones.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Equipos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">AIMA</h4>
+                <ul class="space-y-2">
+                    <li><a href="aima.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Inteligencia Artificial</a></li>
+                    <li><a href="soluciones.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Soluciones</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Legal</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Política de Calidad</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Política de Privacidad</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 mt-10 border-t border-gray-700 pt-8 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2024 Copiermaster C&G Soluciones Digitales S.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="fixed bottom-5 right-5 z-50 opacity-0 transform translate-y-4">
+        <!-- Chat Button -->
+        <button id="chat-bubble" class="bg-teal-500 text-white rounded-full shadow-lg w-16 h-16 flex items-center justify-center">
+            <i data-lucide="message-circle" class="h-8 w-8"></i>
+        </button>
+        <!-- Chat Window -->
+        <div id="chat-window" class="hidden absolute bottom-20 right-0 bg-white rounded-2xl shadow-2xl flex flex-col">
+            <!-- Header -->
+            <div class="bg-teal-500 text-white p-4 rounded-t-2xl flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <img src="https://placehold.co/40x40/ffffff/333333?text=P" alt="Patricia" class="rounded-full">
+                    <h3 class="font-bold">Patricia</h3>
+                </div>
+                <button id="close-chat" class="text-white hover:text-gray-200">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+            </div>
+            <!-- Messages -->
+            <div class="flex-1 p-4 space-y-4 bg-gray-100 bg-pattern overflow-y-auto">
+                <div class="flex items-start gap-2">
+                    <img src="https://placehold.co/32x32/ffffff/333333?text=P" alt="Patricia" class="rounded-full">
+                    <div class="bg-white p-3 rounded-lg rounded-tl-none shadow">
+                        <p class="text-sm">¡Hola! ¿Cómo puedo ayudarte? 👋</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Quick Replies -->
+            <div class="p-4 bg-white border-t border-gray-200">
+                <div class="flex flex-col gap-2">
+                    <button class="text-teal-600 border border-teal-500 rounded-full px-4 py-2 text-sm font-semibold hover:bg-teal-50 transition">¡Hola!</button>
+                    <button class="text-teal-600 border border-teal-500 rounded-full px-4 py-2 text-sm font-semibold hover:bg-teal-50 transition">Necesito más información</button>
+                    <button class="text-teal-600 border border-teal-500 rounded-full px-4 py-2 text-sm font-semibold hover:bg-teal-50 transition">¿Hay alguien disponible?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Mobile Menu Logic ---
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- Testimonial Slider Logic ---
+        const testimonialSlider = document.getElementById('testimonial-slider');
+        if (testimonialSlider) {
+            const prevTestimonialButton = document.getElementById('prev-testimonial');
+            const nextTestimonialButton = document.getElementById('next-testimonial');
+            const testimonialCards = testimonialSlider.querySelectorAll('.testimonial-card');
+            let currentTestimonialIndex = 0;
+            let testimonialInterval;
+
+            function updateTestimonialSlider() {
+                if (testimonialCards.length > 0) {
+                  testimonialSlider.style.transform = `translateX(-${currentTestimonialIndex * 100}%)`;
+                }
+            }
+
+            function startTestimonialSlider() {
+                testimonialInterval = setInterval(() => {
+                    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialCards.length;
+                    updateTestimonialSlider();
+                }, 7000); 
+            }
+
+            function resetTestimonialInterval() {
+                clearInterval(testimonialInterval);
+                startTestimonialSlider();
+            }
+
+            if (prevTestimonialButton && nextTestimonialButton) {
+                nextTestimonialButton.addEventListener('click', () => {
+                    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialCards.length;
+                    updateTestimonialSlider();
+                    resetTestimonialInterval();
+                });
+
+                prevTestimonialButton.addEventListener('click', () => {
+                    currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonialCards.length) % testimonialCards.length;
+                    updateTestimonialSlider();
+                    resetTestimonialInterval();
+                });
+            }
+            updateTestimonialSlider();
+            if (testimonialCards.length > 1) {
+                startTestimonialSlider();
+            }
+        }
+        
+        // --- Marcas Slider Logic ---
+        const marcasDisplay = document.getElementById('marcas-display');
+        if (marcasDisplay) {
+            const marcaImage = document.getElementById('marca-image');
+            const marcaTitle = document.getElementById('marca-title');
+            const marcaDescription = document.getElementById('marca-description');
+            const marcaLink = document.getElementById('marca-link');
+            const marcasButtonsContainer = document.getElementById('marcas-buttons');
+            const marcaButtons = marcasButtonsContainer.querySelectorAll('.marca-button');
+            let currentMarcaIndex = 0;
+            let marcaInterval;
+
+            const marcasContent = [
+                {
+                    image: 'https://i.postimg.cc/VLTPtfV9/111111.png',
+                    title: 'Ricoh',
+                    description: 'Líder en equipos de oficina y soluciones de impresión de producción. Ofrecemos una amplia gama de productos para satisfacer todas sus necesidades.',
+                    link: 'https://www.ricoh-americalatina.com/es'
+                },
+                {
+                    image: 'https://i.postimg.cc/rynB6yM6/impresora-lexmark-mx722adhe-duplex-70ppm-impresoras-25b0001-tcws-2.png',
+                    title: 'Lexmark',
+                    description: 'Creamos tecnologías de imagen innovadoras y soluciones que ayudan a los clientes a imprimir, proteger y gestionar la información con facilidad y eficiencia.',
+                    link: 'https://www.lexmark.com/es_xl.html'
+                },
+                {
+                    image: 'https://i.postimg.cc/QxVrV90x/5555.png',
+                    title: 'Kyocera',
+                    description: 'Soluciones documentales rentables y de alta calidad. Sus impresoras y multifuncionales son conocidas por su fiabilidad y componentes de larga duración.',
+                    link: 'https://www.kyoceradocumentsolutions.es/es.html'
+                }
+            ];
+
+            function updateMarcasSection(index) {
+                const content = marcasContent[index];
+                
+                marcaImage.style.opacity = 0;
+                marcaTitle.style.opacity = 0;
+                marcaDescription.style.opacity = 0;
+
+                setTimeout(() => {
+                    marcaImage.src = content.image;
+                    marcaTitle.textContent = content.title;
+                    marcaDescription.textContent = content.description;
+                    marcaLink.href = content.link;
+                    marcaImage.alt = `Imagen de producto de ${content.title}`;
+                    
+                    marcaImage.style.opacity = 1;
+                    marcaTitle.style.opacity = 1;
+                    marcaDescription.style.opacity = 1;
+                }, 400);
+
+                marcaButtons.forEach((button, btnIndex) => {
+                    button.classList.toggle('marca-button-active', btnIndex === index);
+                });
+                currentMarcaIndex = index;
+            }
+
+            function startMarcasSlider() {
+                marcaInterval = setInterval(() => {
+                    const nextIndex = (currentMarcaIndex + 1) % marcasContent.length;
+                    updateMarcasSection(nextIndex);
+                }, 7000);
+            }
+
+            function resetMarcasInterval() {
+                clearInterval(marcaInterval);
+                startMarcasSlider();
+            }
+
+            marcasButtonsContainer.addEventListener('click', (e) => {
+                const button = e.target.closest('.marca-button');
+                if (button) {
+                    const index = parseInt(button.dataset.index, 10);
+                    updateMarcasSection(index);
+                    resetMarcasInterval();
+                }
+            });
+            updateMarcasSection(0);
+            startMarcasSlider();
+        }
+
+        // --- Chat Widget Logic ---
+        const chatWidget = document.getElementById('chat-widget');
+        const chatBubble = document.getElementById('chat-bubble');
+        const chatWindow = document.getElementById('chat-window');
+        const closeChatButton = document.getElementById('close-chat');
+        let chatOpened = false;
+
+        const openChat = () => {
+            chatWindow.classList.remove('hidden');
+            chatBubble.classList.add('hidden');
+            chatOpened = true;
+        };
+
+        const closeChat = () => {
+            chatWindow.classList.add('hidden');
+            chatBubble.classList.remove('hidden');
+            chatOpened = false;
+        };
+
+        chatBubble.addEventListener('click', openChat);
+        closeChatButton.addEventListener('click', closeChat);
+
+        setTimeout(() => {
+            const playSoundAndOpenChat = async () => {
+                try {
+                    await Tone.start();
+                    const synth = new Tone.Synth().toDestination();
+                    synth.triggerAttackRelease("E5", "8n");
+                    
+                    chatWidget.classList.remove('opacity-0', 'translate-y-4');
+                    
+                    setTimeout(openChat, 500);
+
+                } catch (error) {
+                    console.error("Could not play sound or open chat automatically.", error);
+                    chatWidget.classList.remove('opacity-0', 'translate-y-4');
+                }
+            };
+            
+            playSoundAndOpenChat();
+
+        }, 5000);
+
+        // --- Initializations ---
+        lucide.createIcons();
+    });
+    </script>
+</body>
+</html>
