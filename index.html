@@ -95,7 +95,7 @@
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="index.html" class="text-lime-500 font-semibold transition duration-300">Inicio</a>
                 <a href="soluciones.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Soluciones</a>
-                <a href="aima.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">AIMA</a>
+                <a href="Bot&Landing.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">AIMA</a>
                 <a href="nosotros.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Nosotros</a>
                 <a href="contacto.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Contacto</a>
                 <a href="#" class="bg-lime-500 text-white px-6 py-2 rounded-full font-semibold shadow-md hover:bg-lime-600 transition duration-300 transform hover:scale-105">
@@ -292,7 +292,7 @@
   // Insertar logos en los botones
   function hydrateThumbnails() {
     buttons.forEach((btn, i) => {
-      const data = MARCAS[i];
+      const data = Marcas[i];
       const img = btn.querySelector("img");
       if (img) {
         img.src = data.thumb;
@@ -303,7 +303,7 @@
   }
 
  function render(index) {
-  const data = MARCAS[index];
+  const data = Marcas[index];
 
   // animación de fade
   imgMain.style.opacity = 0;
@@ -372,14 +372,14 @@
                 <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp" alt="Copiermaster C&G Logo" class="h-36 mb-4">
             </div>
             <div>
-                <h4 class="text-lg font-bold mb-4">MARCAS</h4>
+                <h4 class="text-lg font-bold mb-4">Marcas</h4>
                 <ul class="space-y-2">
                     <li><a href="nosotros.html#marcas" class="text-gray-400 hover:text-lime-500 transition duration-300">Nuestras Marcas</a></li>
                     <li><a href="soluciones.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Equipos</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-lg font-bold mb-4">AIMA</h4>
+                <h4 class="text-lg font-bold mb-4">Bot&Landing</h4>
                 <ul class="space-y-2">
                     <li><a href="aima.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Inteligencia Artificial</a></li>
                     <li><a href="soluciones.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Soluciones</a></li>
@@ -410,8 +410,8 @@
             <!-- Header -->
             <div class="bg-teal-500 text-white p-4 rounded-t-2xl flex justify-between items-center">
                 <div class="flex items-center gap-3">
-                    <img src="https://placehold.co/40x40/ffffff/333333?text=P" alt="Patricia" class="rounded-full">
-                    <h3 class="font-bold">Patricia</h3>
+                    <img src="https://placehold.co/40x40/ffffff/333333?text=P" alt="Criss" class="rounded-full">
+                    <h3 class="font-bold">Criss</h3>
                 </div>
                 <button id="close-chat" class="text-white hover:text-gray-200">
                     <i data-lucide="x" class="h-6 w-6"></i>
@@ -420,7 +420,7 @@
             <!-- Messages -->
             <div class="flex-1 p-4 space-y-4 bg-gray-100 bg-pattern overflow-y-auto">
                 <div class="flex items-start gap-2">
-                    <img src="https://placehold.co/32x32/ffffff/333333?text=P" alt="Patricia" class="rounded-full">
+                    <img src="https://placehold.co/32x32/ffffff/333333?text=P" alt="Criss" class="rounded-full">
                     <div class="bg-white p-3 rounded-lg rounded-tl-none shadow">
                         <p class="text-sm">¡Hola! ¿Cómo puedo ayudarte? 👋</p>
                     </div>
