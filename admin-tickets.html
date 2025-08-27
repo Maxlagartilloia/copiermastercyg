@@ -195,83 +195,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ]
   }
     
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, sendPasswordResetEmail, signOut } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+  import { getFirestore, collection, onSnapshot, doc, getDoc, updateDoc, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+  // 🔹 Configuración real de tu proyecto
+  const firebaseConfig = {
+    apiKey: "AlzaSyBxDQtHyAn6hhJNSyco_x_KaAtAjw0uEto",
+    authDomain: "tickets-copiermaster-ec.firebaseapp.com",
+    projectId: "tickets-copiermaster-ec",
+    storageBucket: "tickets-copiermaster-ec.appspot.com"
+  };
+
+  const app  = initializeApp(firebaseConfig);
+  const db   = getFirestore(app);
+  const auth = getAuth(app);
+
+  // ... (resto de tu código queda igual)
 </script>
-<script type="text/javascript">
-_linkedin_partner_id = "6936786";
-window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-</script><script type="text/javascript">
-(function(l) {
-if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-window.lintrk.q=[]}
-var s = document.getElementsByTagName("script")[0];
-var b = document.createElement("script");
-b.type = "text/javascript";b.async = true;
-b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-s.parentNode.insertBefore(b, s);})(window.lintrk);
-</script>
-<noscript>
-<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=6936786&fmt=gif" />
-</noscript>
-  </body>
-</html>
-  
-  <!-- Firebase -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, sendPasswordResetEmail, signOut } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-    import { getFirestore, collection, onSnapshot, doc, getDoc, updateDoc, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-    // ---- CONFIG: usa __firebase_config si existe; si no, fallback al proyecto tickets-copiermaster-ec
-    const fallbackConfig = {
-      apiKey: "AlzaSyBxDQtHyAn6hhJNSyco_x_KaAtAjw0uEto",
-      authDomain: "tickets-copiermaster-ec.firebaseapp.com",
-      projectId: "tickets-copiermaster-ec",
-      storageBucket: "tickets-copiermaster-ec.appspot.com"
-      // messagingSenderId y appId opcionales si no usas Messaging/Analytics
-    };
-    const firebaseConfig = (typeof window.__firebase_config !== "undefined")
-      ? JSON.parse(window.__firebase_config)
-      : fallbackConfig;
-
-    const appId = (typeof window.__app_id !== "undefined") ? window.__app_id : "default-app-id";
-
-    const app  = initializeApp(firebaseConfig);
-    const db   = getFirestore(app);
-    const auth = getAuth(app);
-
-    let currentEditingTicketId = null;
-
-    const loginContainer     = document.getElementById('login-container');
-    const adminPanelContainer= document.getElementById('admin-panel-container');
-    const loginForm          = document.getElementById('login-form');
-    const loginError         = document.getElementById('login-error');
-    const logoutButton       = document.getElementById('logout-button');
-    const resetBtn           = document.getElementById('reset-btn');
-    const resetOk            = document.getElementById('reset-ok');
-
-    // Mapea errores a mensajes claros
-    const msgFromCode = (code)=>({
-      "auth/invalid-email":"El correo no es válido.",
-      "auth/user-not-found":"No existe un usuario con ese correo en este proyecto.",
-      "auth/wrong-password":"Contraseña incorrecta.",
-      "auth/too-many-requests":"Demasiados intentos; espera e inténtalo de nuevo.",
-      "auth/operation-not-allowed":"Habilita Email/Password en Firebase → Métodos de acceso.",
-      "auth/unauthorized-domain":"Dominio no autorizado (añádelo en Authentication → Configuración → Dominios autorizados).",
-    }[code] || "No se pudo iniciar sesión. Revisa tus datos e inténtalo nuevamente.");
-
-    // Estado de auth
-    onAuthStateChanged(auth, user => {
-      if (user) {
-        loginContainer.classList.add('hidden');
-        adminPanelContainer.classList.remove('hidden');
-        lucide.createIcons();
-        listenForTickets();
-      } else {
-        loginContainer.classList.remove('hidden');
-        adminPanelContainer.classList.add('hidden');
-      }
-    });
 
     // Login
     loginForm.addEventListener('submit', (e) => {
