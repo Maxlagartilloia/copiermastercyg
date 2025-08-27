@@ -122,41 +122,25 @@
         </div>
     </main>
     
-    <!-- Firebase SDK -->
     <script type="module">
-        // Import functions from the Firebase SDKs
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+  import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // These variables are placeholders and will be provided by the environment.
-        // You need to create a Firebase project and get your own config.
-        const firebaseConfig = typeof __firebase_config !== 'undefined' 
-            ? JSON.parse(__firebase_config)
-            : { apiKey: "YOUR_API_KEY", authDomain: "YOUR_AUTH_DOMAIN", projectId: "YOUR_PROJECT_ID", storageBucket: "YOUR_STORAGE_BUCKET", messagingSenderId: "YOUR_SENDER_ID", appId: "YOUR_APP_ID" };
+  // 🔹 Configuración real de tu proyecto
+  const firebaseConfig = {
+    apiKey: "AlzaSyBxDQtHyAn6hhJNSyco_x_KaAtAjw0uEto",
+    authDomain: "tickets-copiermaster-ec.firebaseapp.com",
+    projectId: "tickets-copiermaster-ec",
+    storageBucket: "tickets-copiermaster-ec.appspot.com"
+  };
 
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+  const app  = initializeApp(firebaseConfig);
+  const db   = getFirestore(app);
+  const auth = getAuth(app);
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
-
-        // Function to authenticate the user
-        async function authenticateUser() {
-            try {
-                if (initialAuthToken) {
-                    await signInWithCustomToken(auth, initialAuthToken);
-                } else {
-                    await signInAnonymously(auth);
-                }
-                console.log("Authentication successful.");
-            } catch (error) {
-                console.error("Firebase authentication failed:", error);
-                displayMessage("No se pudo conectar al sistema. Inténtalo más tarde.", "error");
-            }
-        }
+  // ... (resto de tu código queda igual)
+</script>
 
         // Handle Form Submission
         const ticketForm = document.getElementById('ticket-form');
