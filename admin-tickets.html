@@ -23,11 +23,17 @@
 <body class="bg-slate-100">
 
     <header class="bg-white shadow-md">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center gap-4">
             <h1 class="text-2xl font-bold text-gray-800">Panel de Administración de Tickets</h1>
-            <div class="flex items-center gap-2 text-gray-600">
-                <i data-lucide="shield" class="h-6 w-6 text-lime-500"></i>
-                <span class="font-semibold">Acceso Interno</span>
+            <div class="flex items-center gap-4">
+                 <button id="export-csv-button" class="flex items-center gap-2 bg-lime-500 text-white font-semibold px-4 py-2 rounded-md shadow-md hover:bg-lime-600 transition duration-300">
+                    <i data-lucide="sheet" class="h-5 w-5"></i>
+                    Generar Reporte (CSV)
+                </button>
+                <div class="flex items-center gap-2 text-gray-600">
+                    <i data-lucide="shield" class="h-6 w-6 text-lime-500"></i>
+                    <span class="font-semibold">Acceso Interno</span>
+                </div>
             </div>
         </div>
     </header>
@@ -45,7 +51,7 @@
                         <tr>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID Ticket</th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cliente</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tipo de Solicitud</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Asignado a</th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fecha</th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
@@ -62,15 +68,20 @@
 
     <!-- Modal for Ticket Details -->
     <div id="details-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center p-4">
-        <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col">
             <div class="p-6 border-b flex justify-between items-center">
                 <h2 class="text-2xl font-bold text-gray-800">Detalles del Ticket</h2>
                 <button id="close-modal-button" class="text-gray-500 hover:text-gray-800">
                     <i data-lucide="x" class="h-6 w-6"></i>
                 </button>
             </div>
-            <div id="modal-body" class="p-6 space-y-4">
+            <div id="modal-body" class="p-6 space-y-4 overflow-y-auto">
                 <!-- Modal content will be inserted here -->
+            </div>
+            <div class="p-6 bg-slate-50 border-t mt-auto">
+                 <button id="save-changes-button" class="w-full flex justify-center items-center gap-2 bg-gray-800 text-white font-semibold px-6 py-3 rounded-md shadow-lg hover:bg-gray-900 transition duration-300">
+                    Guardar Cambios
+                </button>
             </div>
         </div>
     </div>
@@ -80,7 +91,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, onSnapshot, doc, updateDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, collection, onSnapshot, doc, getDoc, updateDoc, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         const firebaseConfig = typeof __firebase_config !== 'undefined' 
             ? JSON.parse(__firebase_config)
@@ -92,6 +103,8 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
         const auth = getAuth(app);
+        
+        let currentEditingTicketId = null;
 
         async function authenticateAndFetchTickets() {
             try {
@@ -101,7 +114,7 @@
                     await signInAnonymously(auth);
                 }
                 console.log("Admin authentication successful.");
-                listenForTickets(); // Start listening for tickets after auth
+                listenForTickets();
             } catch (error) {
                 console.error("Firebase authentication failed:", error);
                 document.getElementById('loader').innerHTML = '<p class="text-red-600">Error de autenticación. No se pueden cargar los tickets.</p>';
@@ -118,7 +131,7 @@
                 const ticketsContainer = document.getElementById('tickets-container');
                 const noTicketsMessage = document.getElementById('no-tickets-message');
                 
-                ticketsTableBody.innerHTML = ''; // Clear previous tickets
+                ticketsTableBody.innerHTML = '';
                 loader.classList.add('hidden');
                 ticketsContainer.classList.remove('hidden');
 
@@ -134,7 +147,7 @@
                     const row = createTicketRow(ticket);
                     ticketsTableBody.appendChild(row);
                 });
-                lucide.createIcons(); // Re-render icons after adding new elements
+                lucide.createIcons();
             }, (error) => {
                 console.error("Error listening for tickets:", error);
                 document.getElementById('loader').innerHTML = '<p class="text-red-600">No se pudieron cargar los tickets. Intenta recargar la página.</p>';
@@ -150,13 +163,13 @@
             tr.innerHTML = `
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#${ticket.id.substring(0, 6)}</td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${ticket.nombre}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${ticket.tipoSolicitud}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 font-medium">${ticket.asignadoA || '---'}</td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${ticket.fechaCreacion ? new Date(ticket.fechaCreacion.seconds * 1000).toLocaleString() : 'N/A'}</td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm">
                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${statusColor}">${ticket.estado}</span>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <button data-ticket-id="${ticket.id}" class="view-details-button text-lime-600 hover:text-lime-900">Ver Detalles</button>
+                    <button data-ticket-id="${ticket.id}" class="view-details-button text-lime-600 hover:text-lime-900">Ver / Editar</button>
                 </td>
             `;
             return tr;
@@ -171,13 +184,13 @@
             }
         }
         
-        async function updateTicketStatus(ticketId, newStatus) {
+        async function updateTicket(ticketId, data) {
             const ticketDocRef = doc(db, `/artifacts/${appId}/public/data/tickets`, ticketId);
             try {
-                await updateDoc(ticketDocRef, { estado: newStatus });
-                console.log(`Ticket ${ticketId} status updated to ${newStatus}`);
+                await updateDoc(ticketDocRef, data);
+                console.log(`Ticket ${ticketId} updated successfully.`);
             } catch (error) {
-                console.error("Error updating status: ", error);
+                console.error("Error updating ticket: ", error);
             }
         }
 
@@ -185,42 +198,68 @@
         const modal = document.getElementById('details-modal');
         const modalBody = document.getElementById('modal-body');
         const closeModalButton = document.getElementById('close-modal-button');
+        const saveChangesButton = document.getElementById('save-changes-button');
 
         document.addEventListener('click', async (e) => {
             if (e.target.classList.contains('view-details-button')) {
-                const ticketId = e.target.dataset.ticketId;
-                const ticketDoc = await (await getFirestore(app).collection(`/artifacts/${appId}/public/data/tickets`).doc(ticketId).get()).data();
-                ticketDoc.id = ticketId;
-                showModal(ticketDoc);
+                currentEditingTicketId = e.target.dataset.ticketId;
+                const ticketDocRef = doc(db, `/artifacts/${appId}/public/data/tickets`, currentEditingTicketId);
+                const ticketSnap = await getDoc(ticketDocRef);
+                if (ticketSnap.exists()) {
+                    const ticketData = ticketSnap.data();
+                    ticketData.id = ticketSnap.id;
+                    showModal(ticketData);
+                }
             }
         });
 
         function showModal(ticket) {
             modalBody.innerHTML = `
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
                     <div><strong class="text-gray-500 block">ID Ticket:</strong> #${ticket.id.substring(0, 6)}</div>
                     <div><strong class="text-gray-500 block">Fecha:</strong> ${ticket.fechaCreacion ? new Date(ticket.fechaCreacion.seconds * 1000).toLocaleString() : 'N/A'}</div>
                     <div><strong class="text-gray-500 block">Cliente:</strong> ${ticket.nombre}</div>
                     <div><strong class="text-gray-500 block">Email:</strong> <a href="mailto:${ticket.email}" class="text-lime-600">${ticket.email}</a></div>
                     <div><strong class="text-gray-500 block">Teléfono:</strong> <a href="tel:${ticket.telefono}" class="text-lime-600">${ticket.telefono}</a></div>
                     <div><strong class="text-gray-500 block">Empresa:</strong> ${ticket.empresa || 'N/A'}</div>
-                    <div><strong class="text-gray-500 block">Modelo Equipo:</strong> ${ticket.modeloEquipo || 'N/A'}</div>
-                    <div>
-                        <strong class="text-gray-500 block">Estado Actual:</strong>
-                        <select id="status-selector" data-ticket-id="${ticket.id}" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm rounded-md">
+                </div>
+                <div class="mt-4 pt-4 border-t">
+                    <strong class="text-gray-500 block">Descripción del Problema:</strong>
+                    <p class="mt-1 text-gray-700 whitespace-pre-wrap bg-slate-50 p-3 rounded-md">${ticket.descripcion}</p>
+                </div>
+                <div class="mt-4 pt-4 border-t grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                     <div>
+                        <label for="status-selector" class="text-sm font-medium text-gray-700 block">Estado Actual:</label>
+                        <select id="status-selector" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm rounded-md">
                             <option value="Abierto" ${ticket.estado === 'Abierto' ? 'selected' : ''}>Abierto</option>
                             <option value="En Proceso" ${ticket.estado === 'En Proceso' ? 'selected' : ''}>En Proceso</option>
                             <option value="Cerrado" ${ticket.estado === 'Cerrado' ? 'selected' : ''}>Cerrado</option>
                         </select>
                     </div>
+                    <div>
+                        <label for="asignado-a" class="text-sm font-medium text-gray-700 block">Asignado a:</label>
+                        <input type="text" id="asignado-a" value="${ticket.asignadoA || ''}" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-lime-500 focus:border-lime-500">
+                    </div>
                 </div>
-                <div class="mt-4 pt-4 border-t">
-                    <strong class="text-gray-500 block">Descripción del Problema:</strong>
-                    <p class="mt-1 text-gray-700 whitespace-pre-wrap">${ticket.descripcion}</p>
+                 <div class="mt-4 pt-4 border-t">
+                    <label for="notas-internas" class="text-sm font-medium text-gray-700 block">Notas Internas (visibles solo para administradores):</label>
+                    <textarea id="notas-internas" rows="4" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-lime-500 focus:border-lime-500">${ticket.notasInternas || ''}</textarea>
                 </div>
             `;
             modal.classList.remove('hidden');
         }
+        
+        saveChangesButton.addEventListener('click', () => {
+            if (currentEditingTicketId) {
+                const updatedData = {
+                    estado: document.getElementById('status-selector').value,
+                    asignadoA: document.getElementById('asignado-a').value,
+                    notasInternas: document.getElementById('notas-internas').value
+                };
+                updateTicket(currentEditingTicketId, updatedData);
+                modal.classList.add('hidden');
+            }
+        });
 
         closeModalButton.addEventListener('click', () => modal.classList.add('hidden'));
         modal.addEventListener('click', (e) => {
@@ -229,15 +268,45 @@
             }
         });
         
-        // Handle status change from modal
-        document.addEventListener('change', (e) => {
-            if (e.target.id === 'status-selector') {
-                const ticketId = e.target.dataset.ticketId;
-                const newStatus = e.target.value;
-                updateTicketStatus(ticketId, newStatus);
-            }
-        });
+        // Export to CSV Logic
+        const exportButton = document.getElementById('export-csv-button');
+        exportButton.addEventListener('click', async () => {
+            const ticketsCollectionPath = `/artifacts/${appId}/public/data/tickets`;
+            const ticketsQuery = query(collection(db, ticketsCollectionPath), orderBy("fechaCreacion", "desc"));
+            const snapshot = await getDocs(ticketsQuery);
+            
+            let csvContent = "data:text/csv;charset=utf-8,";
+            const headers = ["ID Ticket", "Fecha Creacion", "Cliente", "Email", "Telefono", "Empresa", "Tipo Solicitud", "Modelo Equipo", "Descripcion", "Estado", "Asignado a", "Notas Internas"];
+            csvContent += headers.join(",") + "\r\n";
 
+            snapshot.forEach(doc => {
+                const t = doc.data();
+                const row = [
+                    `"${doc.id}"`,
+                    `"${t.fechaCreacion ? new Date(t.fechaCreacion.seconds * 1000).toLocaleString('es-EC') : 'N/A'}"`,
+                    `"${t.nombre || ''}"`,
+                    `"${t.email || ''}"`,
+                    `"${t.telefono || ''}"`,
+                    `"${t.empresa || ''}"`,
+                    `"${t.tipoSolicitud || ''}"`,
+                    `"${t.modeloEquipo || ''}"`,
+                    `"${(t.descripcion || '').replace(/"/g, '""')}"`, // Handle quotes in description
+                    `"${t.estado || ''}"`,
+                    `"${t.asignadoA || ''}"`,
+                    `"${(t.notasInternas || '').replace(/"/g, '""')}"`
+                ];
+                csvContent += row.join(",") + "\r\n";
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            const date = new Date().toISOString().slice(0, 10);
+            link.setAttribute("download", `reporte_tickets_${date}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
