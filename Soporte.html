@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte - Copiermaster C&G</title>
+    <!-- Include Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Include Inter font for a clean style -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #4a5568;
+            background-color: #f7fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navigation Bar (Same as contact page for consistency) -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp" alt="Copiermaster C&G Soluciones Digitales S.A Logo" class="h-24 md:h-32" onerror="this.onerror=null;this.src='https://placehold.co/200x80/e2e8f0/4a5568?text=Logo';">
+            </a>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-700 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Inicio</a>
+                <a href="soluciones.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Soluciones</a>
+                <a href="aima.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">AIMA</a>
+                <a href="nosotros.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Nosotros</a>
+                <a href="contacto.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Contacto</a>
+                <a href="soporte.html" class="bg-lime-500 text-white px-6 py-2 rounded-full font-semibold shadow-md hover:bg-lime-600 transition duration-300 transform hover:scale-105">
+                    Soporte
+                </a>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
+             <a href="index.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Inicio</a>
+            <a href="soluciones.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Soluciones</a>
+            <a href="aima.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">AIMA</a>
+            <a href="nosotros.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Nosotros</a>
+            <a href="contacto.html" class="block py-3 px-6 text-gray-700">Contacto</a>
+            <a href="soporte.html" class="block py-3 px-6 text-white bg-lime-500 text-center font-semibold">Soporte</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-48 pb-24">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg border border-gray-200">
+                <div class="text-center mb-8">
+                    <h1 class="text-4xl font-bold text-gray-800">Sistema de Tickets de Soporte</h1>
+                    <p class="text-gray-600 mt-2">Crea una solicitud y nuestro equipo se pondrá en contacto contigo a la brevedad.</p>
+                </div>
+
+                <form id="ticket-form" class="space-y-6">
+                    <!-- Contact Info -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required>
+                        </div>
+                        <div>
+                            <label for="empresa" class="block text-sm font-medium text-gray-700 mb-1">Empresa (Opcional)</label>
+                            <input type="text" id="empresa" name="empresa" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required>
+                        </div>
+                        <div>
+                            <label for="telefono" class="block text-sm font-medium text-gray-700 mb-1">Teléfono de Contacto</label>
+                            <input type="tel" id="telefono" name="telefono" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required>
+                        </div>
+                    </div>
+
+                    <hr/>
+
+                    <!-- Ticket Details -->
+                    <div class="space-y-6">
+                         <div>
+                            <label for="tipo-solicitud" class="block text-sm font-medium text-gray-700 mb-1">Tipo de Solicitud</label>
+                            <select id="tipo-solicitud" name="tipo-solicitud" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required>
+                                <option value="" disabled selected>Seleccione una opción...</option>
+                                <option value="Servicio Técnico Equipos">Servicio Técnico Equipos</option>
+                                <option value="Soporte Técnico General">Soporte Técnico General</option>
+                                <option value="Suministros y Repuestos">Suministros y Repuestos</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="modelo-equipo" class="block text-sm font-medium text-gray-700 mb-1">Modelo del Equipo (Si aplica)</label>
+                            <input type="text" id="modelo-equipo" name="modelo-equipo" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500">
+                        </div>
+                        <div>
+                            <label for="descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción Detallada</label>
+                            <textarea id="descripcion" name="descripcion" rows="5" placeholder="Por favor, describe tu problema o solicitud con el mayor detalle posible..." class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="text-center pt-4">
+                         <button type="submit" id="submit-button" class="w-full md:w-auto flex justify-center items-center gap-2 bg-gray-800 text-white font-semibold px-8 py-4 rounded-md shadow-lg hover:bg-gray-900 transition duration-300 disabled:bg-gray-400">
+                            <span id="button-text">Crear Ticket</span>
+                            <div id="button-loader" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Success/Error Message Area -->
+                <div id="form-message" class="mt-6 text-center"></div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import functions from the Firebase SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // These variables are placeholders and will be provided by the environment.
+        // You need to create a Firebase project and get your own config.
+        const firebaseConfig = typeof __firebase_config !== 'undefined' 
+            ? JSON.parse(__firebase_config)
+            : { apiKey: "YOUR_API_KEY", authDomain: "YOUR_AUTH_DOMAIN", projectId: "YOUR_PROJECT_ID", storageBucket: "YOUR_STORAGE_BUCKET", messagingSenderId: "YOUR_SENDER_ID", appId: "YOUR_APP_ID" };
+
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        // Function to authenticate the user
+        async function authenticateUser() {
+            try {
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+                console.log("Authentication successful.");
+            } catch (error) {
+                console.error("Firebase authentication failed:", error);
+                displayMessage("No se pudo conectar al sistema. Inténtalo más tarde.", "error");
+            }
+        }
+
+        // Handle Form Submission
+        const ticketForm = document.getElementById('ticket-form');
+        const submitButton = document.getElementById('submit-button');
+        const buttonText = document.getElementById('button-text');
+        const buttonLoader = document.getElementById('button-loader');
+        const formMessage = document.getElementById('form-message');
+
+        ticketForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent default browser submission
+
+            // Show loader and disable button
+            setLoading(true);
+            
+            // Get form data
+            const formData = new FormData(ticketForm);
+            const ticketData = {
+                nombre: formData.get('nombre'),
+                empresa: formData.get('empresa'),
+                email: formData.get('email'),
+                telefono: formData.get('telefono'),
+                tipoSolicitud: formData.get('tipo-solicitud'),
+                modeloEquipo: formData.get('modelo-equipo'),
+                descripcion: formData.get('descripcion'),
+                estado: 'Abierto', // Initial status
+                fechaCreacion: serverTimestamp() // Firestore server timestamp
+            };
+
+            try {
+                // The collection path MUST follow the security rules for public data.
+                const ticketsCollectionPath = `/artifacts/${appId}/public/data/tickets`;
+                const docRef = await addDoc(collection(db, ticketsCollectionPath), ticketData);
+                
+                console.log("Ticket created with ID: ", docRef.id);
+                displayMessage(`¡Ticket #${docRef.id.substring(0, 6)} creado con éxito! Nuestro equipo se pondrá en contacto contigo pronto.`, "success");
+                ticketForm.reset();
+
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                displayMessage("Hubo un error al enviar tu solicitud. Por favor, inténtalo de nuevo.", "error");
+            } finally {
+                // Hide loader and enable button
+                setLoading(false);
+            }
+        });
+
+        function setLoading(isLoading) {
+            submitButton.disabled = isLoading;
+            if (isLoading) {
+                buttonText.classList.add('hidden');
+                buttonLoader.classList.remove('hidden');
+            } else {
+                buttonText.classList.remove('hidden');
+                buttonLoader.classList.add('hidden');
+            }
+        }
+
+        function displayMessage(message, type) {
+            formMessage.innerHTML = `<p class="${type === 'success' ? 'text-green-600' : 'text-red-600'}">${message}</p>`;
+            setTimeout(() => {
+                formMessage.innerHTML = '';
+            }, 6000); // Message disappears after 6 seconds
+        }
+        
+        // Initialize everything on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            authenticateUser();
+        });
+    </script>
+</body>
+</html>
