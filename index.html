@@ -95,7 +95,7 @@
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="index.html" class="text-lime-500 font-semibold transition duration-300">Inicio</a>
                 <a href="soluciones.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Soluciones</a>
-                <a href="Bot&Landing.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Bot & Landing page</a>
+                <a href="Bot&Landing.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">AIMA</a>
                 <a href="nosotros.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Nosotros</a>
                 <a href="contacto.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Contacto</a>
                 <a href="#" class="bg-lime-500 text-white px-6 py-2 rounded-full font-semibold shadow-md hover:bg-lime-600 transition duration-300 transform hover:scale-105">
@@ -108,8 +108,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
             <a href="index.html" class="block py-3 px-6 text-lime-500">Inicio</a>
             <a href="soluciones.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Soluciones</a>
-            <!-- CORRECCIÓN: El enlace aquí era 'aima.html', lo he cambiado a 'Bot&Landing.html' para que coincida con el menú de escritorio y el archivo que estamos creando. -->
-            <a href="Bot&Landing.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Bot & Landing page</a>
+            <a href="aima.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">AIMA</a>
             <a href="nosotros.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Nosotros</a>
             <a href="contacto.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Contacto</a>
             <a href="#" class="block py-3 px-6 text-white bg-lime-500 text-center font-semibold">Soporte</a>
@@ -144,7 +143,7 @@
             <div class="container mx-auto flex justify-center md:justify-start space-x-2">
                 <button data-index="0" class="hero-button text-white px-4 py-2 rounded-lg font-semibold transition duration-300 hover:bg-gray-700">Copiermaster C&G</button>
                 <button data-index="1" class="hero-button text-white px-4 py-2 rounded-lg font-semibold transition duration-300 hover:bg-gray-700">MARCAS</button>
-                <button data-index="2" class="hero-button text-white px-4 py-2 rounded-lg font-semibold transition duration-300 hover:bg-gray-700">Bot & Landing page</button>
+                <button data-index="2" class="hero-button text-white px-4 py-2 rounded-lg font-semibold transition duration-300 hover:bg-gray-700">AIMA</button>
             </div>
         </div>
     </header>
@@ -284,16 +283,16 @@
   ];
 
   // Referencias
-  const imgMain    = document.getElementById("marca-image");
-  const titleEl    = document.getElementById("marca-title");
-  const descEl     = document.getElementById("marca-description");
-  const linkEl     = document.getElementById("marca-link");
-  const buttons    = Array.from(document.querySelectorAll(".marca-button"));
+  const imgMain   = document.getElementById("marca-image");
+  const titleEl   = document.getElementById("marca-title");
+  const descEl    = document.getElementById("marca-description");
+  const linkEl    = document.getElementById("marca-link");
+  const buttons   = Array.from(document.querySelectorAll(".marca-button"));
 
   // Insertar logos en los botones
   function hydrateThumbnails() {
     buttons.forEach((btn, i) => {
-      const data = MARCAS[i];
+      const data = Marcas[i];
       const img = btn.querySelector("img");
       if (img) {
         img.src = data.thumb;
@@ -304,7 +303,7 @@
   }
 
  function render(index) {
-  const data = MARCAS[index];
+  const data = Marcas[index];
 
   // animación de fade
   imgMain.style.opacity = 0;
@@ -382,7 +381,7 @@
             <div>
                 <h4 class="text-lg font-bold mb-4">Bot&Landing</h4>
                 <ul class="space-y-2">
-                    <li><a href="Bot&Landing.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Inteligencia Artificial</a></li>
+                    <li><a href="aima.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Inteligencia Artificial</a></li>
                     <li><a href="soluciones.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Soluciones</a></li>
                 </ul>
             </div>
@@ -444,13 +443,13 @@
         var player;
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('hero-video-player', {
-                videoId: 'v-aNxx8hJWI', // <-- VIDEO CORREGIDO
+                videoId: 'PwFWg96_Omk',
                 playerVars: {
                     'autoplay': 1,
                     'controls': 0,
                     'mute': 1,
                     'loop': 0, // We handle loop manually
-                    'playlist': 'v-aNxx8hJWI', // <-- VIDEO CORREGIDO
+                    'playlist': 'PwFWg96_Omk', // Required for looping
                     'start': 0,
                     'end': 110 // End at 1:50
                 },
@@ -505,7 +504,7 @@
                     subtitle: 'Somos el único distribuidor autorizado de la Corporación Ricoh en Ecuador.'
                 },
                 {
-                    title: 'Bot & Landing page: Inteligencia Artificial para tu Negocio',
+                    title: 'AIMA: Inteligencia Artificial para tu Negocio',
                     subtitle: 'Creando soluciones tecnológicas que facilitan a nuestros clientes la automatización de procesos.'
                 }
             ];
