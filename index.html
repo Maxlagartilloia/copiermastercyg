@@ -30,20 +30,16 @@
         /* Hero Video */
         #hero-video-container {
             position: absolute;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
             z-index: 0;
         }
         #hero-video-player {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 120%;
-            height: 120%;
-            transform: translate(-50%, -50%) scale(1.5);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .hero-button-active {
@@ -51,7 +47,6 @@
             color: white;
         }
 
-        /* Botón Parpadeante */
         .cta-landing {
             display: inline-block;
             margin-top: 1.5rem;
@@ -72,7 +67,6 @@
             100% { opacity: 1; transform: translateY(-3px); }
         }
 
-        /* Marcas */
         .marca-button {
             opacity: 0.6;
             transition: all 0.3s ease-in-out;
@@ -104,7 +98,6 @@
                  class="h-24 md:h-32" alt="">
         </a>
 
-        <!-- Mobile -->
         <button id="menu-button" class="md:hidden text-gray-700">
             <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-width="2"
@@ -112,7 +105,6 @@
             </svg>
         </button>
 
-        <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8 items-center">
             <a href="index.html" class="text-lime-500 font-semibold">Inicio</a>
             <a href="soluciones.html" class="hover:text-lime-500 font-semibold">Soluciones</a>
@@ -125,7 +117,6 @@
         </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
         <a href="index.html" class="block py-3 px-6 text-lime-500">Inicio</a>
         <a href="soluciones.html" class="block py-3 px-6">Soluciones</a>
@@ -139,7 +130,6 @@
 <!-- HERO -->
 <header class="relative text-white overflow-hidden min-h-[90vh] flex flex-col justify-end">
 
-    <!-- Video -->
     <div id="hero-video-container">
         <div id="hero-video-player"></div>
     </div>
@@ -157,7 +147,6 @@
                Conoce Más
             </a>
 
-            <!-- BOTÓN PARPADEANTE -->
             <div class="text-center md:text-left">
                 <a href="https://botandlanding.crisslombeida.com/"
                    class="cta-landing blink-cta">
@@ -168,7 +157,6 @@
         </div>
     </div>
 
-    <!-- Hero Buttons -->
     <div id="hero-buttons" class="relative bg-black bg-opacity-30 p-4 text-center">
         <button data-index="0" class="hero-button px-4 py-2 rounded-lg">Copiermaster C&G</button>
         <button data-index="1" class="hero-button px-4 py-2 rounded-lg">MARCAS</button>
@@ -176,88 +164,163 @@
     </div>
 </header>
 
-<!-- OUTSOURCING -->
-<section class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-800 mb-4 border-b-4 border-lime-500 inline-block pb-2">
-                Nuestras Soluciones de Outsourcing de Impresión
+<!-- SECCIÓN CORPORATIVA (NUEVA COMPLETA) -->
+<section class="py-24 bg-white">
+    <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        <div>
+            <h2 class="text-4xl font-extrabold text-gray-800 mb-6 border-l-8 border-lime-500 pl-4">
+                ¿Quiénes Somos?
             </h2>
-            <p class="text-lg text-gray-600 mt-4">Diseñamos un ecosistema de impresión a la medida.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">
+                La empresa inicia sus operaciones en el año 2012 con la razón social 
+                <b>Cristian Lombeida</b> y nombre comercial <b>COPIERMASTER C&G</b>.  
+                Debido al constante crecimiento, en 2020 se constituye 
+                <b>COPIERMASTER C&G SOLUCIONES DIGITALES S.A.</b>.  
+                Hoy somos una empresa ecuatoriana líder dentro de la industria tecnológica 4.0 
+                y servicios complementarios.
+            </p>
+
+            <div class="space-y-6 mt-10">
+
+                <div>
+                    <h3 class="text-2xl font-bold text-lime-600 mb-2">Visión</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Ser líderes nacionales en soluciones digitales e impresión sostenible,
+                        brindando innovación, eficiencia y servicio confiable que impulse 
+                        la transformación tecnológica empresarial.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-lime-600 mb-2">Misión</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Nos comprometemos a ofrecer tecnología de vanguardia, servicio técnico
+                        especializado y atención personalizada, garantizando eficiencia,
+                        sostenibilidad y reducción de costos operativos para instituciones públicas
+                        y privadas en todo el Ecuador.
+                    </p>
+                </div>
+
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-10 rounded-3xl shadow-xl border border-gray-200">
 
-            <div class="bg-gray-50 p-8 rounded-2xl shadow-lg flex space-x-4">
-                <i data-lucide="printer" class="h-8 w-8 text-lime-500"></i>
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Gestión de Flota</h3>
-                    <p class="text-gray-600">Equipos, consumibles, soporte todo incluido.</p>
-                </div>
-            </div>
+            <h3 class="text-3xl font-bold text-gray-800 mb-6">Nuestros Valores</h3>
 
-            <div class="bg-gray-50 p-8 rounded-2xl shadow-lg flex space-x-4">
-                <i data-lucide="file-scan" class="h-8 w-8 text-lime-500"></i>
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Digitalización</h3>
-                    <p class="text-gray-600">Transforme sus archivos en activos digitales.</p>
-                </div>
-            </div>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                <li class="flex items-center gap-3">
+                    <i data-lucide="heart-handshake" class="text-lime-500 h-6 w-6"></i>
+                    <span class="font-semibold text-gray-700">Compromiso Social</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <i data-lucide="sparkles" class="text-lime-500 h-6 w-6"></i>
+                    <span class="font-semibold text-gray-700">Innovación</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <i data-lucide="shield-check" class="text-lime-500 h-6 w-6"></i>
+                    <span class="font-semibold text-gray-700">Integridad</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <i data-lucide="users" class="text-lime-500 h-6 w-6"></i>
+                    <span class="font-semibold text-gray-700">Orientación al Cliente</span>
+                </li>
+            </ul>
 
-            <div class="bg-gray-50 p-8 rounded-2xl shadow-lg flex space-x-4">
-                <i data-lucide="lock" class="h-8 w-8 text-lime-500"></i>
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Impresión Segura</h3>
-                    <p class="text-gray-600">Protección con autenticación y control de acceso.</p>
-                </div>
-            </div>
+            <h3 class="text-3xl font-bold text-gray-800 mb-6">Sectores Atendidos</h3>
 
-            <div class="bg-gray-50 p-8 rounded-2xl shadow-lg flex space-x-4">
-                <i data-lucide="leaf" class="h-8 w-8 text-lime-500"></i>
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Sostenibilidad</h3>
-                    <p class="text-gray-600">Equipos eficientes y políticas inteligentes.</p>
+            <ul class="grid grid-cols-2 gap-4 text-gray-700 mb-10">
+                <li>📘 Educación</li>
+                <li>🏥 Salud</li>
+                <li>🏭 Industrial</li>
+                <li>🏛 Gobierno</li>
+            </ul>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center mt-10">
+
+                <div class="bg-white p-4 rounded-xl shadow-md border-t-4 border-lime-500">
+                    <p class="text-3xl font-extrabold text-lime-600">13</p>
+                    <p class="text-sm font-semibold text-gray-600">Años<br>de Experiencia</p>
                 </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md border-t-4 border-lime-500">
+                    <p class="text-3xl font-extrabold text-lime-600">+20</p>
+                    <p class="text-sm font-semibold text-gray-600">Colaboradores</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md border-t-4 border-lime-500">
+                    <p class="text-3xl font-extrabold text-lime-600">+1000</p>
+                    <p class="text-sm font-semibold text-gray-600">Equipos Instalados</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md border-t-4 border-lime-500 col-span-2 md:col-span-1">
+                    <p class="text-3xl font-extrabold text-lime-600">5</p>
+                    <p class="text-sm font-semibold text-gray-600">Sucursales</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md border-t-4 border-lime-500 col-span-2">
+                    <p class="text-3xl font-extrabold text-lime-600">100%</p>
+                    <p class="text-sm font-semibold text-gray-600">Cobertura Nacional</p>
+                </div>
+
             </div>
 
         </div>
     </div>
 </section>
 
-<!-- NUEVA SECCIÓN -->
-<section class="py-20 bg-white">
-    <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+<!-- SERVICIOS (SECCIÓN ACTUALIZADA) -->
+<section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6 text-center">
 
-        <div class="lg:w-1/2">
-            <img src="https://i.postimg.cc/NfSwPKjk/487094689-684597497409854-2985743454668687314-n.webp" class="w-full" alt="">
-        </div>
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-4">
+            Nuestros Servicios
+        </h2>
+        <p class="text-lg text-gray-600 mb-14">
+            Soluciones integrales para impulsar la transformación tecnológica de tu empresa.
+        </p>
 
-        <div class="lg:w-1/2">
-            <h2 class="text-4xl font-bold text-gray-800 mb-4">Descubre nuestras soluciones tecnológicas</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-            <div class="space-y-6">
-                <div class="flex space-x-4">
-                    <i data-lucide="printer" class="text-lime-500 h-8 w-8"></i>
-                    <h3 class="text-xl font-semibold">Servicio de impresión gestionado</h3>
-                </div>
-
-                <div class="flex space-x-4">
-                    <i data-lucide="share-2" class="text-lime-500 h-8 w-8"></i>
-                    <h3 class="text-xl font-semibold">Comunicaciones gráficas</h3>
-                </div>
-
-                <div class="flex space-x-4">
-                    <i data-lucide="sparkles" class="text-lime-500 h-8 w-8"></i>
-                    <h3 class="text-xl font-semibold">Transformación Digital</h3>
-                </div>
-
-                <div class="flex space-x-4">
-                    <i data-lucide="eye" class="text-lime-500 h-8 w-8"></i>
-                    <h3 class="text-xl font-semibold">Visual Comunication</h3>
-                </div>
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500">
+                <i data-lucide="printer" class="h-12 w-12 text-lime-500 mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Outsourcing de Impresión</h3>
+                <p class="text-gray-600">Gestión total de equipos, consumibles y soporte.</p>
             </div>
-        </div>
 
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500">
+                <i data-lucide="file-stack" class="h-12 w-12 text-lime-500 mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Gestión Documental</h3>
+                <p class="text-gray-600">Flujos digitales eficientes para tu organización.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500">
+                <i data-lucide="scan" class="h-12 w-12 text-lime-500 mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Escáneres Profesionales</h3>
+                <p class="text-gray-600">Digitalización masiva para instituciones públicas y privadas.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500">
+                <i data-lucide="briefcase" class="h-12 w-12 text-lime-500 mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Proveeduría Integral</h3>
+                <p class="text-gray-600">Todos los insumos que tu oficina necesita.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500">
+                <i data-lucide="wrench" class="h-12 w-12 text-lime-500 mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Servicio Técnico Certificado</h3>
+                <p class="text-gray-600">Mantenimiento, soporte y asistencia profesional.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500">
+                <i data-lucide="cpu" class="h-12 w-12 text-lime-500 mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Software Empresarial</h3>
+                <p class="text-gray-600">Incluye soluciones como NetSupport.</p>
+            </div>
+
+        </div>
     </div>
 </section>
 
