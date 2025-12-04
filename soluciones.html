@@ -3,318 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soluciones - Copiermaster C&G</title>
-    <!-- Include Tailwind CSS CDN -->
+    <title>Soluciones - Copiermaster C&G Soluciones Digitales S.A.</title>
+
+    <!-- Favicon oficial -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp">
+    <link rel="apple-touch-icon"
+        href="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp">
+    <meta name="theme-color" content="#84cc16">
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Include Inter font for a clean style -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+    <!-- Inter -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Tone.js for sound effects -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            color: #5a5a5a;
-            background-color: #f7f9fc;
+            background-color: #f7f9fb;
         }
-        /* Chat Widget Styles */
-        #chat-widget {
-            transition: opacity 0.5s, transform 0.5s;
-        }
-        #chat-window {
-            height: 70vh;
-            max-height: 500px;
-            width: 90vw;
-            max-width: 400px;
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
+        nav a { font-weight: 600; }
+        .nav-link-active { color: #84cc16 !important; }
     </style>
 </head>
+
 <body class="bg-gray-100">
 
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow-md fixed w-full z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-3">
-                <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp" alt="Copiermaster C&G Soluciones Digitales S.A Logo" class="h-24 md:h-32">
-            </a>
-            <div class="md:hidden">
-                <button id="menu-button" class="text-gray-700 focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
-                    </svg>
-                </button>
-            </div>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="index.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Inicio</a>
-                <a href="soluciones.html" class="text-lime-500 font-semibold transition duration-300">Soluciones</a>
-                <a href="aima.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">AIMA</a>
-                <a href="nosotros.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Nosotros</a>
-                <a href="contacto.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Contacto</a>
-                <a href="#" class="bg-lime-500 text-white px-6 py-2 rounded-full font-semibold shadow-md hover:bg-lime-600 transition duration-300 transform hover:scale-105">
-                    Soporte
-                </a>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
-            <a href="index.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Inicio</a>
-            <a href="soluciones.html" class="block py-3 px-6 text-lime-500">Soluciones</a>
-            <a href="aima.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">AIMA</a>
-            <a href="nosotros.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Nosotros</a>
-            <a href="contacto.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Contacto</a>
-            <a href="#" class="block py-3 px-6 text-white bg-lime-500 text-center font-semibold">Soporte</a>
-        </div>
-    </nav>
+<!-- ==========================================================
+     NAVBAR (100% IGUAL AL DE INDEX)
+=========================================================== -->
+<nav class="bg-white shadow-md fixed w-full z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
 
-    <!-- Main Content -->
-    <main class="pt-48">
-        <!-- Technological Solutions Section -->
-        <section id="soluciones" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col lg:flex-row items-center gap-12">
-                    <div class="lg:w-1/2">
-                        <img src="https://i.postimg.cc/Rhs9yMFd/aab2089a-917e-4be0-870f-93c441797720.png" alt="Soluciones Tecnológicas" class="w-full rounded-2xl shadow-xl">
-                    </div>
-                    <div class="lg:w-1/2">
-                        <h2 class="text-4xl font-bold text-gray-800 mb-4">Descubre nuestras soluciones tecnológicas</h2>
-                        <p class="text-gray-600 text-lg mb-8">
-                            Enfocados en la innovación, ofrecemos un portafolio de servicios que se adapta a las necesidades de tu empresa.
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                            <div class="flex items-center space-x-4">
-                                <i data-lucide="printer" class="text-lime-500 h-10 w-10"></i>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-800">Servicio de impresión gestionado</h3>
-                                    <p class="text-sm text-gray-500">Optimiza tus costos.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <i data-lucide="share-2" class="text-lime-500 h-10 w-10"></i>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-800">Comunicaciones gráficas</h3>
-                                    <p class="text-sm text-gray-500">Imágenes que impactan.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <i data-lucide="sparkles" class="text-lime-500 h-10 w-10"></i>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-800">Transformación digital</h3>
-                                    <p class="text-sm text-gray-500">Prepara tu negocio para el futuro.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <i data-lucide="eye" class="text-lime-500 h-10 w-10"></i>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-800">Visual Communication</h3>
-                                    <p class="text-sm text-gray-500">Impacta a tu audiencia.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- LOGO -->
+        <a href="index.html" class="flex items-center">
+            <img src="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp"
+                 class="h-24 md:h-32" alt="Logo Copiermaster">
+        </a>
 
-        <!-- Outsourcing Solutions Section -->
-        <section id="outsourcing" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-bold text-gray-800 mb-4 border-l-4 border-lime-500 pl-4">Nuestras Soluciones de Outsourcing de Impresión</h2>
-                    <p class="text-lg text-gray-600 mb-12">Diseñamos un ecosistema de impresión a la medida de tus objetivos.</p>
-                    
-                    <div class="space-y-8">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-lime-100 p-3 rounded-full">
-                                <i data-lucide="check-circle-2" class="h-6 w-6 text-lime-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Servicios Integrales y a Medida</h3>
-                                <p class="text-gray-600">Ofrecemos soluciones flexibles de alquiler, arrendamiento, digitalización y administración de impresión, adaptadas a las necesidades y al presupuesto de tu empresa.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="bg-lime-100 p-3 rounded-full">
-                                <i data-lucide="check-circle-2" class="h-6 w-6 text-lime-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Gestión Proactiva de Consumibles y Soporte Técnico</h3>
-                                <p class="text-gray-600">Nos anticipamos a tus necesidades. Garantizamos el abastecimiento oportuno de consumibles y un mantenimiento técnico eficiente, incluyendo el reemplazo rápido de equipos si es necesario.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="bg-lime-100 p-3 rounded-full">
-                                <i data-lucide="check-circle-2" class="h-6 w-6 text-lime-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Monitoreo Remoto y Control Detallado</h3>
-                                <p class="text-gray-600">Implementamos plataformas de administración centralizada que te ofrecen analítica de uso y control de impresión por usuario, dándote visibilidad total y ayudándote a tomar decisiones informadas.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="bg-lime-100 p-3 rounded-full">
-                                <i data-lucide="check-circle-2" class="h-6 w-6 text-lime-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Calidad y Rapidez en Proyectos Personalizados</h3>
-                                <p class="text-gray-600">Nuestra tecnología de impresión digital es ideal para manejar tiradas cortas y proyectos únicos con agilidad, respondiendo a las demandas crecientes del mercado actual.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12 text-center text-white">
-                    <h2 class="text-4xl font-bold mb-4">¿Listo para transformar tus costos en ganancias?</h2>
-                    <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
-                        El primer paso es gratis y sin compromiso. Realizaremos un análisis completo de tu situación actual y te mostraremos con números exactos cuánto puedes ahorrar.
-                    </p>
-                    <a href="contacto.html" class="bg-lime-500 text-white text-lg font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-lime-600 transition duration-300 transform hover:scale-105 inline-block">
-                        ¡Quiero mi Auditoría GRATIS Ahora!
-                    </a>
-                    <p class="text-sm text-gray-400 mt-4">Oferta por tiempo limitado.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-                <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp" alt="Copiermaster C&G Logo" class="h-36 mb-4">
-            </div>
-            <div>
-                <h4 class="text-lg font-bold mb-4">MARCAS</h4>
-                <ul class="space-y-2">
-                    <li><a href="nosotros.html#marcas" class="text-gray-400 hover:text-lime-500 transition duration-300">Nuestras Marcas</a></li>
-                    <li><a href="soluciones.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Equipos</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-bold mb-4">AIMA</h4>
-                <ul class="space-y-2">
-                    <li><a href="aima.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Inteligencia Artificial</a></li>
-                    <li><a href="soluciones.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Soluciones</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-bold mb-4">Legal</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Política de Calidad</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Política de Privacidad</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Términos y Condiciones</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="container mx-auto px-6 mt-10 border-t border-gray-700 pt-8 text-center">
-            <p class="text-gray-500 text-sm">&copy; 2024 Copiermaster C&G Soluciones Digitales S.A. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- Chat Widget -->
-    <div id="chat-widget" class="fixed bottom-5 right-5 z-50 opacity-0 transform translate-y-4">
-        <!-- Chat Button -->
-        <button id="chat-bubble" class="bg-teal-500 text-white rounded-full shadow-lg w-16 h-16 flex items-center justify-center">
-            <i data-lucide="message-circle" class="h-8 w-8"></i>
+        <!-- BOTÓN MOBILE -->
+        <button id="menu-button" class="md:hidden text-gray-800">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
         </button>
-        <!-- Chat Window -->
-        <div id="chat-window" class="hidden absolute bottom-20 right-0 bg-white rounded-2xl shadow-2xl flex flex-col">
-            <!-- Header -->
-            <div class="bg-teal-500 text-white p-4 rounded-t-2xl flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                    <img src="https://placehold.co/40x40/ffffff/333333?text=P" alt="Patricia" class="rounded-full">
-                    <h3 class="font-bold">Patricia</h3>
-                </div>
-                <button id="close-chat" class="text-white hover:text-gray-200">
-                    <i data-lucide="x" class="h-6 w-6"></i>
-                </button>
-            </div>
-            <!-- Messages -->
-            <div class="flex-1 p-4 space-y-4 bg-gray-100 bg-pattern overflow-y-auto">
-                <div class="flex items-start gap-2">
-                    <img src="https://placehold.co/32x32/ffffff/333333?text=P" alt="Patricia" class="rounded-full">
-                    <div class="bg-white p-3 rounded-lg rounded-tl-none shadow">
-                        <p class="text-sm">¡Hola! ¿Cómo puedo ayudarte? 👋</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Quick Replies -->
-            <div class="p-4 bg-white border-t border-gray-200">
-                <div class="flex flex-col gap-2">
-                    <button class="text-teal-600 border border-teal-500 rounded-full px-4 py-2 text-sm font-semibold hover:bg-teal-50 transition">¡Hola!</button>
-                    <button class="text-teal-600 border border-teal-500 rounded-full px-4 py-2 text-sm font-semibold hover:bg-teal-50 transition">Necesito más información</button>
-                    <button class="text-teal-600 border border-teal-500 rounded-full px-4 py-2 text-sm font-semibold hover:bg-teal-50 transition">¿Hay alguien disponible?</button>
-                </div>
-            </div>
+
+        <!-- MENÚ DESKTOP -->
+        <div class="hidden md:flex space-x-8 items-center font-semibold">
+            <a href="index.html" class="hover:text-lime-500">Inicio</a>
+            <a href="soluciones.html" class="nav-link-active">Soluciones</a>
+            <a href="impulso-digital.html" class="hover:text-lime-500">Impulso Digital</a>
+            <a href="nosotros.html" class="hover:text-lime-500">Nosotros</a>
+            <a href="contacto.html" class="hover:text-lime-500">Contacto</a>
+            <a href="soporte.html"
+               class="bg-lime-500 text-white px-6 py-2 rounded-full shadow hover:bg-lime-600">
+               Soporte
+            </a>
         </div>
     </div>
 
+    <!-- MENÚ MOBILE -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
+        <a href="index.html" class="block py-3 px-6">Inicio</a>
+        <a href="soluciones.html" class="block py-3 px-6 nav-link-active">Soluciones</a>
+        <a href="impulso-digital.html" class="block py-3 px-6">Impulso Digital</a>
+        <a href="nosotros.html" class="block py-3 px-6">Nosotros</a>
+        <a href="contacto.html" class="block py-3 px-6">Contacto</a>
+        <a href="soporte.html" class="block py-3 px-6 bg-lime-500 text-white text-center">Soporte</a>
+    </div>
+</nav>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // --- Mobile Menu Logic ---
-        const menuButton = document.getElementById('menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
 
-        // --- Chat Widget Logic ---
-        const chatWidget = document.getElementById('chat-widget');
-        const chatBubble = document.getElementById('chat-bubble');
-        const chatWindow = document.getElementById('chat-window');
-        const closeChatButton = document.getElementById('close-chat');
-        let chatOpened = false;
+<!-- ==========================================================
+     CONTENIDO PRINCIPAL
+=========================================================== -->
+<main class="pt-48">
 
-        const openChat = () => {
-            chatWindow.classList.remove('hidden');
-            chatBubble.classList.add('hidden');
-            chatOpened = true;
-        };
+    <!-- ======================================================
+         SECCIÓN – SOLUCIONES TECNOLÓGICAS
+    ======================================================= -->
+    <section id="soluciones" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
 
-        const closeChat = () => {
-            chatWindow.classList.add('hidden');
-            chatBubble.classList.remove('hidden');
-            chatOpened = false;
-        };
+                <div class="lg:w-1/2">
+                    <img src="https://i.postimg.cc/Rhs9yMFd/aab2089a-917e-4be0-870f-93c441797720.png"
+                         class="w-full rounded-2xl shadow-xl" alt="Soluciones Tecnológicas">
+                </div>
 
-        chatBubble.addEventListener('click', openChat);
-        closeChatButton.addEventListener('click', closeChat);
+                <div class="lg:w-1/2">
 
-        setTimeout(() => {
-            const playSoundAndOpenChat = async () => {
-                try {
-                    await Tone.start();
-                    const synth = new Tone.Synth().toDestination();
-                    synth.triggerAttackRelease("E5", "8n");
-                    
-                    chatWidget.classList.remove('opacity-0', 'translate-y-4');
-                    
-                    setTimeout(openChat, 500);
+                    <h2 class="text-4xl font-extrabold text-gray-800 mb-4">
+                        Soluciones corporativas para empresas modernas
+                    </h2>
 
-                } catch (error) {
-                    console.error("Could not play sound or open chat automatically.", error);
-                    chatWidget.classList.remove('opacity-0', 'translate-y-4');
-                }
-            };
-            
-            playSoundAndOpenChat();
+                    <p class="text-gray-600 text-lg mb-8">
+                        En Copiermaster C&G diseñamos un ecosistema completo de soluciones tecnológicas:
+                        impresión, digitalización, optimización y automatización para instituciones públicas y privadas.
+                    </p>
 
-        }, 5000);
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
 
-        // --- Initializations ---
-        lucide.createIcons();
-    });
-    </script>
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="printer" class="text-lime-500 h-10 w-10"></i>
+                            <div>
+                                <h3 class="font-bold">Outsourcing de Impresión</h3>
+                                <p class="text-sm text-gray-500">Optimiza tus costos operativos.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="file-text" class="text-lime-500 h-10 w-10"></i>
+                            <div>
+                                <h3 class="font-bold">Gestión Documental</h3>
+                                <p class="text-sm text-gray-500">Automatización & digitalización.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="scan" class="text-lime-500 h-10 w-10"></i>
+                            <div>
+                                <h3 class="font-bold">Escáneres Profesionales</h3>
+                                <p class="text-sm text-gray-500">Digitalización masiva.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="wrench" class="text-lime-500 h-10 w-10"></i>
+                            <div>
+                                <h3 class="font-bold">Mantenimiento Técnico</h3>
+                                <p class="text-sm text-gray-500">Soporte certificado.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================================
+         SECCIÓN – OUTSOURCING COMPLETO
+    ======================================================= -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+
+            <h2 class="text-4xl font-extrabold text-gray-800 mb-4 border-l-8 border-lime-500 pl-4">
+                Ecosistemas de Outsourcing de Impresión
+            </h2>
+
+            <p class="text-lg text-gray-600 mb-12">
+                Implementamos soluciones llave en mano con equipos Ricoh, Lexmark y Kyocera,
+                monitoreo remoto, abastecimiento automático y soporte certificado.
+            </p>
+
+            <div class="space-y-10">
+
+                <div class="flex items-start gap-4">
+                    <div class="bg-lime-100 p-3 rounded-full">
+                        <i data-lucide="check-circle-2" class="h-6 w-6 text-lime-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Servicio integral a medida</h3>
+                        <p class="text-gray-600">
+                            Desde impresoras pequeñas hasta flotas corporativas,
+                            diseñamos la solución ideal para tu institución.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="bg-lime-100 p-3 rounded-full">
+                        <i data-lucide="check-circle-2" class="h-6 w-6 text-lime-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Soporte técnico certificado</h3>
+                        <p class="text-gray-600">
+                            Mantenimiento preventivo, correctivo y reemplazo inmediato si se requiere.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="bg-lime-100 p-3 rounded-full">
+                        <i data-lucide="check-circle-2" class="h-6 w-6 text-lime-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Monitoreo remoto 24/7</h3>
+                        <p class="text-gray-600">
+                            Analítica por usuario, alarmas de consumibles, reportes y control total.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ======================================================
+         CTA
+    ======================================================= -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="bg-gray-800 p-12 rounded-2xl text-center text-white shadow-xl">
+
+                <h2 class="text-4xl font-extrabold mb-4">
+                    ¿Listo para reducir costos y mejorar tu productividad?
+                </h2>
+
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+                    Solicita una auditoría gratuita y te mostramos con datos reales
+                    cuánto puedes ahorrar implementando un ecosistema profesional.
+                </p>
+
+                <a href="contacto.html"
+                   class="bg-lime-500 px-10 py-4 rounded-full text-lg font-bold shadow-lg hover:bg-lime-600">
+                   ¡Quiero mi auditoría GRATIS!
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+<!-- ==========================================================
+     FOOTER
+=========================================================== -->
+<footer class="bg-gray-900 text-white py-12">
+
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+        <div>
+            <img src="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp" class="h-36 mb-4">
+        </div>
+
+        <div>
+            <h4 class="text-lg font-bold mb-4">Marcas</h4>
+            <ul class="space-y-2">
+                <li><a href="nosotros.html#marcas" class="hover:text-lime-500">Nuestras Marcas</a></li>
+                <li><a href="soluciones.html" class="hover:text-lime-500">Equipos</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="text-lg font-bold mb-4">Impulso Digital</h4>
+            <ul class="space-y-2">
+                <li><a href="impulso-digital.html" class="hover:text-lime-500">Servicios</a></li>
+                <li><a href="impulso-digital.html" class="hover:text-lime-500">Landing Pages</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="text-lg font-bold mb-4">Legal</h4>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:text-lime-500">Política de Calidad</a></li>
+                <li><a href="#" class="hover:text-lime-500">Privacidad</a></li>
+                <li><a href="#" class="hover:text-lime-500">Términos</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="container mx-auto px-6 mt-10 border-t border-gray-700 pt-8 text-center">
+        <p class="text-gray-500 text-sm">&copy; 2025 Copiermaster C&G Soluciones Digitales S.A.</p>
+    </div>
+
+</footer>
+
+
+<!-- ==========================================================
+     SCRIPTS
+=========================================================== -->
+<script>
+document.getElementById('menu-button').onclick = () =>
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+
+lucide.createIcons();
+</script>
+
 </body>
 </html>
