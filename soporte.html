@@ -5,356 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HelpDesk - Soporte Técnico | Copiermaster C&G</title>
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Inter Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32"
-      href="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp">
-    <link rel="apple-touch-icon"
-      href="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp">
-    <meta name="theme-color" content="#84cc16">
+    <link rel="icon" type="image/png"
+          href="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp">
 
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #4b5563;
-        }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
 
 <body class="bg-gray-100">
 
-<!-- ==========================================================
-     NAVBAR CORPORATIVO
-=========================================================== -->
+<!-- NAVBAR -->
 <nav class="bg-white shadow-md fixed w-full z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        
-        <!-- LOGO -->
-        <a href="index.html" class="flex items-center">
+        <a href="index.html">
             <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp"
                  class="h-24 md:h-32">
         </a>
 
-        <!-- MENU MOBILE BUTTON -->
         <button id="menu-button" class="md:hidden text-gray-800">
-            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-width="2"
-                      d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
+            <i data-lucide="menu" class="h-8 w-8"></i>
         </button>
 
-        <!-- MENU DESKTOP -->
         <div class="hidden md:flex space-x-8 items-center font-semibold">
             <a href="index.html" class="hover:text-lime-500">Inicio</a>
             <a href="soluciones.html" class="hover:text-lime-500">Soluciones</a>
-
-            <!-- IMPULSO DIGITAL (Abre sitio externo) -->
-            <a href="https://cltechsolutions.crisslombeida.com"
-               target="_blank"
-               class="hover:text-lime-500">
-               Impulso Digital
-            </a>
-
+            <a href="https://cltechsolutions.crisslombeida.com" target="_blank" class="hover:text-lime-500">Impulso Digital</a>
             <a href="nosotros.html" class="hover:text-lime-500">Nosotros</a>
             <a href="contacto.html" class="hover:text-lime-500">Contacto</a>
-
-            <a href="soporte.html"
-               class="bg-lime-500 text-white px-6 py-2 rounded-full shadow hover:bg-lime-600">
-               Soporte
-            </a>
+            <a href="soporte.html" class="bg-lime-500 text-white px-6 py-2 rounded-full shadow hover:bg-lime-600">Soporte</a>
         </div>
     </div>
 
-    <!-- MENU MOBILE -->
     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
         <a href="index.html" class="block py-3 px-6">Inicio</a>
         <a href="soluciones.html" class="block py-3 px-6">Soluciones</a>
-        <a href="https://cltechsolutions.crisslombeida.com"
-           target="_blank"
-           class="block py-3 px-6">Impulso Digital</a>
+        <a href="https://cltechsolutions.crisslombeida.com" target="_blank" class="block py-3 px-6">Impulso Digital</a>
         <a href="nosotros.html" class="block py-3 px-6">Nosotros</a>
         <a href="contacto.html" class="block py-3 px-6">Contacto</a>
         <a href="soporte.html" class="block py-3 px-6 bg-lime-500 text-white text-center font-semibold">Soporte</a>
     </div>
 </nav>
 
-
-<!-- ==========================================================
-     HEADER DEL HELP DESK
-=========================================================== -->
+<!-- HEADER -->
 <header class="pt-48 pb-12 bg-gray-50 text-center">
-    <h1 class="text-5xl font-extrabold text-gray-800">
-        Centro de Soporte Técnico
-    </h1>
+    <h1 class="text-5xl font-extrabold text-gray-800">Centro de Soporte Técnico</h1>
+
     <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
-        Reporte sus novedades técnicas y genere un ticket para seguimiento. Nuestro equipo lo atenderá con prioridad.
+        Seleccione la opción para generar un ticket de soporte. Nuestro equipo lo atenderá con prioridad.
     </p>
 
-    <!-- TARJETA DE INFO -->
     <div class="max-w-3xl mx-auto mt-10 p-6 bg-white rounded-2xl shadow-lg border-l-4 border-lime-500">
         <h3 class="text-xl font-bold text-gray-800">Correo oficial del área técnica</h3>
-        <p class="text-gray-600 mt-2">
-            <strong>serviciotecnico@copiermastercyg.com.ec</strong>
-        </p>
+        <p class="text-gray-600 mt-2"><strong>serviciotecnico@copiermastercyg.com.ec</strong></p>
+    </div>
+
+    <!-- BOTÓN PARA GENERAR TICKET -->
+    <div class="mt-10">
+        <a href="ticket.html"
+           class="inline-flex items-center gap-3 bg-lime-600 hover:bg-lime-700 text-white px-10 py-4 rounded-full text-lg font-bold shadow-lg transition">
+            Generar Ticket de Soporte
+            <i data-lucide="ticket" class="h-6 w-6"></i>
+        </a>
     </div>
 </header>
-<!-- ==========================================================
-     FORMULARIO DE TICKET / HELP DESK
-=========================================================== -->
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-        
-        <div class="max-w-3xl mx-auto bg-gray-50 p-10 rounded-2xl shadow-xl border border-gray-200">
 
-            <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">
-                Crear un Ticket de Soporte
-            </h2>
-
-            <p class="text-center text-gray-600 mb-8">
-                Complete el siguiente formulario. Su caso será registrado y enviado al área técnica.
-            </p>
-
-            <!-- FORMULARIO COMPATIBLE CON NETLIFY -->
-            <form name="helpdesk"
-                  method="POST"
-                  data-netlify="true"
-                  enctype="multipart/form-data"
-                  class="space-y-6">
-
-                <!-- Campo oculto obligatorio -->
-                <input type="hidden" name="form-name" value="helpdesk">
-
-                <!-- 🟢 Número de ticket AUTO-GENERADO -->
-                <input type="hidden" id="ticketID" name="ticketID">
-
-                <!-- NOMBRE -->
-                <div>
-                    <label class="block text-sm font-semibold mb-1">Nombres y Apellidos</label>
-                    <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                            <i data-lucide="user" class="h-5 w-5 text-gray-400"></i>
-                        </span>
-                        <input type="text" name="nombre" required
-                               placeholder="Su nombre completo"
-                               class="w-full pl-10 p-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-lime-500">
-                    </div>
-                </div>
-
-                <!-- EMPRESA -->
-                <div>
-                    <label class="block text-sm font-semibold mb-1">Empresa</label>
-                    <input type="text" name="empresa"
-                           placeholder="Nombre de la empresa"
-                           class="w-full p-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-lime-500">
-                </div>
-
-                <!-- EMAIL -->
-                <div>
-                    <label class="block text-sm font-semibold mb-1">Email</label>
-                    <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                            <i data-lucide="mail" class="h-5 w-5 text-gray-400"></i>
-                        </span>
-                        <input type="email" name="email" required
-                               placeholder="Correo electrónico"
-                               class="w-full pl-10 p-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-lime-500">
-                    </div>
-                </div>
-
-                <!-- TELEFONO -->
-                <div>
-                    <label class="block text-sm font-semibold mb-1">Teléfono / WhatsApp</label>
-                    <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                            <i data-lucide="phone" class="h-5 w-5 text-gray-400"></i>
-                        </span>
-                        <input type="tel" name="telefono" required
-                               placeholder="(+593) 9 XXXX XXXX"
-                               class="w-full pl-10 p-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-lime-500">
-                    </div>
-                </div>
-
-                <!-- CIUDAD -->
-                <div>
-                    <label class="block text-sm font-semibold mb-1">Ciudad</label>
-                    <select name="ciudad"
-                            class="w-full p-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-lime-500">
-                        <option>Quito</option>
-                        <option>Guayaquil</option>
-                        <option>Cuenca</option>
-                        <option>Ambato</option>
-                        <option>Otras</option>
-                    </select>
-                </div>
-
-                <!-- TIPO DE EQUIPO -->
-                <div>
-                    <label class="block text-sm font-semibold mb-1">Tipo de Equipo</label>
-                    <select name="equipo"
-                            class="w-full p-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-lime-500">
-                        <option>Multifuncional</option>
-                        <option>Impresora</option>
-                        <option>Plotter</option>
-                        <option>Scanner</option>
-                        <option>Otro</option>
-                    </select>
-                </div>
-
-                <!-- Nº DE SERIE -->
-                <div>
-                    <label class="block text-sm font-semibold mb-1">Número de serie del equipo</label>
-                    <input type="text" name="serie"
-                           placeholder="Ingrese el número de serie"
-                           class="w-full p-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-lime-500">
-                </div>
-
-                <!-- PRIORIDAD -->
-                <div>
-                    <label class="block text-sm font-semibold mb-1">Prioridad del caso</label>
-                    <select name="prioridad"
-                            class="w-full p-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-lime-500">
-                        <option>Normal</option>
-                        <option>Alta</option>
-                        <option>Crítica</option>
-                    </select>
-                </div>
-
-                <!-- DESCRIPCIÓN -->
-                <div>
-                    <label class="block text-sm font-semibold mb-1">Descripción del problema</label>
-                    <textarea name="descripcion" required rows="5"
-                              placeholder="Explique brevemente la novedad"
-                              class="w-full p-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-lime-500"></textarea>
-                </div>
-
-                <!-- SUBIR ARCHIVOS -->
-                <div>
-                    <label class="block text-sm font-semibold mb-1">
-                        Adjuntar fotos, PDF o videos (opcional)
-                    </label>
-
-                    <input type="file" name="adjunto" multiple
-                           class="w-full p-3 rounded-md border border-gray-300 bg-white focus:ring-2 focus:ring-lime-500">
-                    
-                    <p class="text-xs text-gray-500 mt-2">
-                        Formatos permitidos: JPG, PNG, PDF, MP4 – Máx. 10MB cada archivo.
-                    </p>
-                </div>
-
-                <!-- ACEPTACIÓN -->
-                <div class="flex items-center">
-                    <input type="checkbox" name="acepta" required
-                           class="h-4 w-4 text-lime-500">
-                    <label class="ml-2 text-sm">
-                        Acepto el uso de mis datos para gestionar el soporte técnico.
-                    </label>
-                </div>
-
-                <!-- BOTÓN -->
-                <button type="submit"
-                        class="w-full bg-lime-600 hover:bg-lime-700 text-white font-semibold py-3 rounded-md shadow-lg flex items-center justify-center gap-2">
-                    Enviar Ticket
-                    <i data-lucide="send" class="h-5 w-5"></i>
-                </button>
-
-            </form>
-        </div>
-    </div>
-</section>
-
-<!-- Script para generar Ticket Automático -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const ticketField = document.getElementById("ticketID");
-    if (ticketField) {
-        const ticket = "TCK-" + Date.now();
-        ticketField.value = ticket;
-    }
-});
-</script>
-<!-- ==========================================================
-     FOOTER CORPORATIVO
-=========================================================== -->
-<footer class="bg-gray-900 text-white py-12">
-    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-
-        <!-- Logo -->
-        <div>
-            <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp"
-                 alt="Copiermaster C&G Logo"
-                 class="h-36 mb-4">
-        </div>
-
-        <!-- Marcas -->
-        <div>
-            <h4 class="text-lg font-bold mb-4">MARCAS</h4>
-            <ul class="space-y-2">
-                <li><a href="nosotros.html#marcas" class="text-gray-400 hover:text-lime-500 transition">Nuestras Marcas</a></li>
-                <li><a href="soluciones.html" class="text-gray-400 hover:text-lime-500 transition">Equipos</a></li>
-            </ul>
-        </div>
-
-        <!-- Impulso Digital -->
-        <div>
-            <h4 class="text-lg font-bold mb-4">IMPULSO DIGITAL</h4>
-            <ul class="space-y-2">
-                <li><a href="https://cltechsolutions.crisslombeida.com" target="_blank" class="text-gray-400 hover:text-lime-500 transition">Páginas Web</a></li>
-                <li><a href="https://cltechsolutions.crisslombeida.com" target="_blank" class="text-gray-400 hover:text-lime-500 transition">Bots & Automatización</a></li>
-            </ul>
-        </div>
-
-        <!-- Legal -->
-        <div>
-            <h4 class="text-lg font-bold mb-4">LEGAL</h4>
-            <ul class="space-y-2">
-                <li><a href="#" class="text-gray-400 hover:text-lime-500 transition">Política de Calidad</a></li>
-                <li><a href="#" class="text-gray-400 hover:text-lime-500 transition">Política de Privacidad</a></li>
-                <li><a href="#" class="text-gray-400 hover:text-lime-500 transition">Términos y Condiciones</a></li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div class="container mx-auto px-6 mt-10 border-t border-gray-700 pt-8 text-center">
-        <p class="text-gray-500 text-sm">
-            &copy; 2024 Copiermaster C&G Soluciones Digitales S.A. Todos los derechos reservados.
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-12 mt-20">
+    <div class="container mx-auto px-6 text-center">
+        <p class="text-gray-400 text-sm">
+            &copy; 2024 Copiermaster C&G Soluciones Digitales S.A. · Todos los derechos reservados.
         </p>
     </div>
 </footer>
 
-
-<!-- ==========================================================
-     SCRIPTS (MENU + ICONOS)
-=========================================================== -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
-    /* --- Mobile Menu --- */
-    const menuButton = document.getElementById("menu-button");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    if (menuButton) {
-        menuButton.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
-        });
-
-        document.querySelectorAll("#mobile-menu a").forEach(link => {
-            link.addEventListener("click", () => {
-                mobileMenu.classList.add("hidden");
-            });
-        });
-    }
-
-    /* --- Lucide Icons --- */
+    document.getElementById("menu-button").addEventListener("click", () => {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
     lucide.createIcons();
 });
 </script>
