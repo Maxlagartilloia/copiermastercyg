@@ -4,288 +4,302 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Copiermaster C&G</title>
-    <!-- Include Tailwind CSS CDN -->
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp">
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp">
+    <meta name="theme-color" content="#84cc16">
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Include Inter font for a clean style -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+    <!-- Inter font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            color: #4a5568; /* Equivalent to text-gray-700 */
-            background-color: #f7fafc; /* Equivalent to bg-gray-100 */
+            background-color: #f7fafc;
+            color: #4a5568;
         }
-        /* Custom style for select dropdown arrow */
+
         select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
             appearance: none;
-            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>');
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='gray' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 0.75rem center;
-            background-size: 1.25em;
             padding-right: 2.5rem;
         }
     </style>
 </head>
+
 <body class="bg-gray-100">
 
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow-md fixed w-full z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-3">
-                <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp" alt="Copiermaster C&G Soluciones Digitales S.A Logo" class="h-24 md:h-32" onerror="this.onerror=null;this.src='https://placehold.co/200x80/e2e8f0/4a5568?text=Logo';">
-            </a>
-            <div class="md:hidden">
-                <button id="menu-button" class="text-gray-700 focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
-                    </svg>
-                </button>
+<!-- ==========================================================
+     NAVBAR (COHERENTE CON TODO EL SISTEMA)
+=========================================================== -->
+<nav class="bg-white shadow-md fixed w-full z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+        <a href="index.html" class="flex items-center">
+            <img src="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp"
+                 alt="Copiermaster C&G Logo" class="h-20 md:h-28">
+        </a>
+
+        <button id="menu-button" class="md:hidden text-gray-700">
+            <i data-lucide="menu" class="h-8 w-8"></i>
+        </button>
+
+        <div class="hidden md:flex space-x-8 items-center font-semibold">
+            <a href="index.html" class="hover:text-lime-500">Inicio</a>
+            <a href="soluciones.html" class="hover:text-lime-500">Soluciones</a>
+            <a href="impulso-digital.html" class="hover:text-lime-500">Impulso Digital</a>
+            <a href="nosotros.html" class="hover:text-lime-500">Nosotros</a>
+            <a href="contacto.html" class="text-lime-500">Contacto</a>
+            <a href="soporte.html" class="bg-lime-500 text-white px-6 py-2 rounded-full shadow hover:bg-lime-600">Soporte</a>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
+        <a href="index.html" class="block py-3 px-6">Inicio</a>
+        <a href="soluciones.html" class="block py-3 px-6">Soluciones</a>
+        <a href="impulso-digital.html" class="block py-3 px-6">Impulso Digital</a>
+        <a href="nosotros.html" class="block py-3 px-6">Nosotros</a>
+        <a href="contacto.html" class="block py-3 px-6 text-lime-500">Contacto</a>
+        <a href="soporte.html" class="block py-3 px-6 text-white bg-lime-500 text-center">Soporte</a>
+    </div>
+</nav>
+
+<!-- ==========================================================
+     CONTACTO
+=========================================================== -->
+<main class="pt-48">
+<section class="py-20">
+    <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
+
+        <!-- INFO -->
+        <div class="space-y-10">
+            <div>
+                <h2 class="text-4xl font-bold text-gray-800">Estamos aquí para</h2>
+                <h1 class="text-4xl font-bold text-lime-500">Impulsar su productividad</h1>
+                <p class="mt-3 text-lg text-gray-600">a través de tecnología, servicio y eficiencia.</p>
             </div>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="index.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Inicio</a>
-                <a href="soluciones.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Soluciones</a>
-                <a href="aima.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">AIMA</a>
-                <a href="nosotros.html" class="text-gray-700 hover:text-lime-500 font-semibold transition duration-300">Nosotros</a>
-                <a href="contacto.html" class="text-lime-500 font-semibold transition duration-300">Contacto</a>
-                <a href="soporte.html" class="bg-lime-500 text-white px-6 py-2 rounded-full font-semibold shadow-md hover:bg-lime-600 transition duration-300 transform hover:scale-105">
-                    Soporte
+
+            <div>
+                <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-lime-500 pb-2 inline-block">
+                    Sucursales a nivel nacional
+                </h3>
+
+                <div class="text-sm mt-6 space-y-6">
+
+                    <div>
+                        <h4 class="font-semibold text-lg">Quito</h4>
+                        <p><b>Comercial:</b> ventas.quito@copiermastercyg.com.ec</p>
+                        <p><b>Soporte:</b> soporte.quito@copiermastercyg.com.ec</p>
+                        <p><b>Dirección:</b> Amazonas N36-12 y Corea</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg">Guayaquil</h4>
+                        <p><b>Comercial:</b> ventas.guayaquil@copiermastercyg.com.ec</p>
+                        <p><b>Soporte:</b> soporte.guayaquil@copiermastercyg.com.ec</p>
+                        <p><b>Dirección:</b> Edificio World Trade Center</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg">Cuenca</h4>
+                        <p><b>Comercial:</b> ventas.cuenca@copiermastercyg.com.ec</p>
+                        <p><b>Soporte:</b> soporte.cuenca@copiermastercyg.com.ec</p>
+                        <p><b>Dirección:</b> Av. Remigio Crespo</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg">Ambato</h4>
+                        <p><b>Comercial:</b> ventas.ambato@copiermastercyg.com.ec</p>
+                        <p><b>Soporte:</b> soporte.ambato@copiermastercyg.com.ec</p>
+                        <p><b>Dirección:</b> Av. Atahualpa</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FORMULARIO -->
+        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+
+            <form class="space-y-6">
+
+                <div>
+                    <label class="font-medium text-sm">Nombre completo</label>
+                    <div class="relative">
+                        <i data-lucide="user" class="absolute left-3 top-3 text-gray-400"></i>
+                        <input type="text" class="w-full pl-10 p-3 border rounded-md focus:ring-2 focus:ring-lime-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="font-medium text-sm">Empresa</label>
+                    <input type="text" class="w-full p-3 border rounded-md focus:ring-2 focus:ring-lime-500">
+                </div>
+
+                <div>
+                    <label class="font-medium text-sm">Correo electrónico</label>
+                    <div class="relative">
+                        <i data-lucide="mail" class="absolute left-3 top-3 text-gray-400"></i>
+                        <input type="email" class="w-full pl-10 p-3 border rounded-md focus:ring-2 focus:ring-lime-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="font-medium text-sm">Teléfono / WhatsApp</label>
+                    <div class="relative">
+                        <i data-lucide="phone" class="absolute left-3 top-3 text-gray-400"></i>
+                        <input type="text" class="w-full pl-10 p-3 border rounded-md focus:ring-2 focus:ring-lime-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="font-medium text-sm">Ciudad</label>
+                    <select class="w-full p-3 border rounded-md focus:ring-2 focus:ring-lime-500">
+                        <option>Quito</option>
+                        <option>Guayaquil</option>
+                        <option>Cuenca</option>
+                        <option>Ambato</option>
+                        <option>Otra</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="font-medium text-sm">Asunto</label>
+                    <select class="w-full p-3 border rounded-md focus:ring-2 focus:ring-lime-500">
+                        <option>Solicitud - diagnóstico sin costo</option>
+                        <option>Información de productos</option>
+                        <option>Soporte técnico</option>
+                        <option>Otro</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="font-medium text-sm">Mensaje</label>
+                    <textarea rows="4"
+                              class="w-full p-3 border rounded-md focus:ring-2 focus:ring-lime-500"></textarea>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" class="h-4 w-4 text-lime-500 rounded">
+                    <span class="text-sm">Acepto la política de privacidad</span>
+                </div>
+
+                <button class="w-full bg-gray-800 text-white px-6 py-3 rounded-md shadow hover:bg-gray-900 flex items-center justify-center gap-2">
+                    Enviar <i data-lucide="send"></i>
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================
+     SERVICIOS RÁPIDOS
+=========================================================== -->
+<section class="py-16 bg-gray-200">
+    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+        <div class="relative rounded-lg overflow-hidden h-64 bg-center bg-cover"
+             style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952');">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div class="relative z-10 h-full flex flex-col items-center justify-center text-white">
+                <h3 class="text-2xl font-bold mb-4">Servicio Técnico</h3>
+                <a href="soporte.html" class="bg-gray-700 px-6 py-3 rounded-md hover:bg-gray-800 flex items-center gap-2">
+                    Solicitar <i data-lucide="external-link"></i>
                 </a>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
-            <a href="index.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Inicio</a>
-            <a href="soluciones.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Soluciones</a>
-            <a href="aima.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">AIMA</a>
-            <a href="nosotros.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Nosotros</a>
-            <a href="contacto.html" class="block py-3 px-6 text-lime-500">Contacto</a>
-            <a href="soporte.html" class="block py-3 px-6 text-white bg-lime-500 text-center font-semibold">Soporte</a>
-        </div>
-    </nav>
 
-    <!-- Main Content -->
-    <main class="pt-48">
-        <!-- Contact Section -->
-        <section id="contacto" class="py-16">
-            <div class="container mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-16 items-start">
-                    <!-- Left Column: Contact Info -->
-                    <div class="space-y-8">
-                        <div>
-                            <h2 class="text-4xl font-bold text-gray-800">Le invitamos a</h2>
-                            <h1 class="text-4xl font-bold text-lime-500">Generar valor a sus documentos</h1>
-                            <p class="mt-2 text-lg text-gray-600">con nosotros</p>
-                        </div>
-                        
-                        <div class="space-y-10">
-                            <h3 class="text-2xl font-bold text-gray-800 border-b-2 border-lime-500 pb-2 inline-block">Nuestras Sucursales</h3>
-                            
-                            <!-- Branch Info -->
-                            <div class="space-y-6 text-sm text-gray-600">
-                                <div>
-                                    <h4 class="font-bold text-lg text-gray-700 mb-2">Quito:</h4>
-                                    <p><strong class="font-semibold">Atención Comercial:</strong> (02) 255 5555</p>
-                                    <p><strong class="font-semibold">Email:</strong> ventas.quito@copiermastercyg.com.ec</p>
-                                    <p><strong class="font-semibold">Dirección:</strong> Av. Amazonas N36-12 y Corea, Edificio Vivaldi, Quito</p>
-                                    <p><strong class="font-semibold">Soporte y Servicio:</strong> soporte.quito@copiermastercyg.com.ec</p>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg text-gray-700 mb-2">Guayaquil:</h4>
-                                    <p><strong class="font-semibold">Atención Comercial:</strong> (04) 268 8888</p>
-                                    <p><strong class="font-semibold">Email:</strong> ventas.guayaquil@copiermastercyg.com.ec</p>
-                                     <p><strong class="font-semibold">Dirección:</strong> Av. Francisco de Orellana, Edificio World Trade Center, Guayaquil</p>
-                                    <p><strong class="font-semibold">Soporte y Servicio:</strong> 098 765 4321</p>
-                                </div>
-                                 <div>
-                                    <h4 class="font-bold text-lg text-gray-700 mb-2">Cuenca:</h4>
-                                    <p><strong class="font-semibold">Atención Comercial:</strong> (07) 288 1111</p>
-                                    <p><strong class="font-semibold">Email:</strong> ventas.cuenca@copiermastercyg.com.ec</p>
-                                    <p><strong class="font-semibold">Dirección:</strong> Av. Remigio Crespo y Solano, Cuenca</p>
-                                    <p><strong class="font-semibold">Soporte y Servicio:</strong> 099 123 4567</p>
-                                </div>
-                                 <div>
-                                    <h4 class="font-bold text-lg text-gray-700 mb-2">Ambato:</h4>
-                                    <p><strong class="font-semibold">Atención Comercial:</strong> (03) 242 2222</p>
-                                    <p><strong class="font-semibold">Email:</strong> ventas.ambato@copiermastercyg.com.ec</p>
-                                    <p><strong class="font-semibold">Dirección:</strong> Av. Atahualpa y Victor Hugo, Ambato</p>
-                                     <p><strong class="font-semibold">Soporte y Servicio:</strong> 097 654 3210</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column: Contact Form -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
-                        <form action="mailto:info@copiermastercyg.com.ec" method="POST" enctype="text/plain" class="space-y-6">
-                            <!-- Nombre -->
-                            <div>
-                                <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                                <div class="relative">
-                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                                        <i data-lucide="user" class="h-5 w-5 text-gray-400"></i>
-                                    </span>
-                                    <input type="text" id="nombre" name="nombre" placeholder="Usuario" class="w-full pl-10 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required>
-                                </div>
-                            </div>
-                            <!-- Empresa -->
-                            <div>
-                                <label for="empresa" class="block text-sm font-medium text-gray-700 mb-1">Empresa</label>
-                                <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500">
-                            </div>
-                            <!-- Email -->
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                                <div class="relative">
-                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                                        <i data-lucide="mail" class="h-5 w-5 text-gray-400"></i>
-                                    </span>
-                                    <input type="email" id="email" name="email" placeholder="Email" class="w-full pl-10 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required>
-                                </div>
-                            </div>
-                            <!-- Telefono / Whatsapp -->
-                            <div>
-                                <label for="telefono" class="block text-sm font-medium text-gray-700 mb-1">Teléfono / Whatsapp</label>
-                                <div class="relative">
-                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                                        <i data-lucide="phone" class="h-5 w-5 text-gray-400"></i>
-                                    </span>
-                                    <input type="tel" id="telefono" name="telefono" placeholder="(+593) 9 XXXX XXXX" class="w-full pl-10 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required>
-                                </div>
-                            </div>
-                            <!-- Ciudad -->
-                            <div>
-                                <label for="ciudad" class="block text-sm font-medium text-gray-700 mb-1">Ciudad</label>
-                                <select id="ciudad" name="ciudad" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500">
-                                    <option>Quito</option>
-                                    <option>Guayaquil</option>
-                                    <option>Cuenca</option>
-                                    <option>Ambato</option>
-                                    <option>Otra</option>
-                                </select>
-                            </div>
-                            <!-- Asunto -->
-                             <div>
-                                <label for="asunto" class="block text-sm font-medium text-gray-700 mb-1">Seleccione el asunto</label>
-                                <select id="asunto" name="asunto" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500">
-                                    <option>Solicitud - diagnóstico sin costo</option>
-                                    <option>Información de productos</option>
-                                    <option>Soporte técnico</option>
-                                    <option>Otro</option>
-                                </select>
-                            </div>
-                            <!-- Mensaje -->
-                            <div>
-                                <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">Mensaje breve</label>
-                                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Su mensaje aquí" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500" required></textarea>
-                            </div>
-                            <!-- Aceptacion -->
-                            <div class="flex items-center">
-                                <input type="checkbox" id="privacidad" name="privacidad" class="h-4 w-4 text-lime-500 border-gray-300 rounded focus:ring-lime-500">
-                                <label for="privacidad" class="ml-2 block text-sm text-gray-900">Enviando este mensaje acepta la <a href="#" class="font-medium text-lime-500 hover:underline">política de tratamiento de datos personales</a></label>
-                            </div>
-                            <!-- Boton Enviar -->
-                            <button type="submit" class="w-full flex justify-center items-center gap-2 bg-gray-800 text-white font-semibold px-6 py-3 rounded-md shadow-lg hover:bg-gray-900 transition duration-300">
-                                Enviar
-                                <i data-lucide="arrow-right" class="h-5 w-5"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="servicios" class="py-16 bg-gray-200">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
-                    <!-- Service 1 -->
-                    <div class="relative rounded-lg overflow-hidden h-64 flex flex-col justify-center items-center text-center p-6 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop');">
-                        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-                        <div class="relative z-10">
-                            <h3 class="text-2xl font-bold mb-4">Servicio técnico equipos</h3>
-                            <a href="soporte.html" class="inline-flex items-center gap-2 bg-slate-700 text-white font-semibold px-6 py-3 rounded-md shadow-lg hover:bg-slate-800 transition duration-300">
-                                Solicitar aquí <i data-lucide="external-link" class="h-5 w-5"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Service 2 -->
-                    <div class="relative rounded-lg overflow-hidden h-64 flex flex-col justify-center items-center text-center p-6 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1573496773905-f5b17e76b254?q=80&w=2070&auto=format&fit=crop');">
-                        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-                        <div class="relative z-10">
-                            <h3 class="text-2xl font-bold mb-4">Soporte técnico</h3>
-                            <a href="soporte.html" class="inline-flex items-center gap-2 bg-slate-700 text-white font-semibold px-6 py-3 rounded-md shadow-lg hover:bg-slate-800 transition duration-300">
-                                Solicitar aquí <i data-lucide="external-link" class="h-5 w-5"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Service 3 -->
-                    <div class="relative rounded-lg overflow-hidden h-64 flex flex-col justify-center items-center text-center p-6 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1605224435889-1434881f1633?q=80&w=2070&auto=format&fit=crop');">
-                        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-                        <div class="relative z-10">
-                            <h3 class="text-2xl font-bold mb-4">Suministros y repuestos</h3>
-                            <a href="soporte.html" class="inline-flex items-center gap-2 bg-slate-700 text-white font-semibold px-6 py-3 rounded-md shadow-lg hover:bg-slate-800 transition duration-300">
-                                Solicitar aquí <i data-lucide="external-link" class="h-5 w-5"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-                <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp" alt="Copiermaster C&G Logo" class="h-36 mb-4" onerror="this.onerror=null;this.src='https://placehold.co/200x144/e2e8f0/4a5568?text=Logo';">
-            </div>
-            <div>
-                <h4 class="text-lg font-bold mb-4">MARCAS</h4>
-                <ul class="space-y-2">
-                    <li><a href="nosotros.html#marcas" class="text-gray-400 hover:text-lime-500 transition duration-300">Nuestras Marcas</a></li>
-                    <li><a href="soluciones.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Equipos</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-bold mb-4">AIMA</h4>
-                <ul class="space-y-2">
-                    <li><a href="aima.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Inteligencia Artificial</a></li>
-                    <li><a href="soluciones.html" class="text-gray-400 hover:text-lime-500 transition duration-300">Soluciones</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-bold mb-4">Legal</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Política de Calidad</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Política de Privacidad</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">Términos y Condiciones</a></li>
-                </ul>
+        <div class="relative rounded-lg overflow-hidden h-64 bg-center bg-cover"
+             style="background-image: url('https://images.unsplash.com/photo-1573496773905-f5b17e76b254');">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div class="relative z-10 h-full flex flex-col items-center justify-center text-white">
+                <h3 class="text-2xl font-bold mb-4">Soporte Técnico</h3>
+                <a href="soporte.html" class="bg-gray-700 px-6 py-3 rounded-md hover:bg-gray-800 flex items-center gap-2">
+                    Solicitar <i data-lucide="external-link"></i>
+                </a>
             </div>
         </div>
-        <div class="container mx-auto px-6 mt-10 border-t border-gray-700 pt-8 text-center">
-            <p class="text-gray-500 text-sm">&copy; 2024 Copiermaster C&G Soluciones Digitales S.A. Todos los derechos reservados.</p>
+
+        <div class="relative rounded-lg overflow-hidden h-64 bg-center bg-cover"
+             style="background-image: url('https://images.unsplash.com/photo-1605224435889-1434881f1633');">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div class="relative z-10 h-full flex flex-col items-center justify-center text-white">
+                <h3 class="text-2xl font-bold mb-4">Repuestos & Suministros</h3>
+                <a href="soporte.html" class="bg-gray-700 px-6 py-3 rounded-md hover:bg-gray-800 flex items-center gap-2">
+                    Solicitar <i data-lucide="external-link"></i>
+                </a>
+            </div>
         </div>
-    </footer>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // --- Mobile Menu Logic ---
-        const menuButton = document.getElementById('menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+    </div>
+</section>
 
-        // --- Initializations ---
-        lucide.createIcons();
-    });
-    </script>
+</main>
+
+<!-- ==========================================================
+     FOOTER
+=========================================================== -->
+<footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+        <div>
+            <img src="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp"
+                 class="h-36 mb-4">
+        </div>
+
+        <div>
+            <h4 class="font-bold mb-4">Marcas</h4>
+            <ul>
+                <li><a href="nosotros.html#marcas" class="hover:text-lime-500">Nuestras Marcas</a></li>
+                <li><a href="soluciones.html" class="hover:text-lime-500">Equipos</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="font-bold mb-4">Impulso Digital</h4>
+            <ul>
+                <li><a href="impulso-digital.html" class="hover:text-lime-500">Landing Pages</a></li>
+                <li><a href="contacto.html" class="hover:text-lime-500">Cotizar</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="font-bold mb-4">Legal</h4>
+            <ul>
+                <li><a href="#" class="hover:text-lime-500">Política de Calidad</a></li>
+                <li><a href="#" class="hover:text-lime-500">Privacidad</a></li>
+                <li><a href="#" class="hover:text-lime-500">Términos</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="container mx-auto px-6 mt-10 border-t border-gray-700 pt-8 text-center">
+        <p class="text-gray-500 text-sm">&copy; 2025 Copiermaster C&G Soluciones Digitales S.A.</p>
+    </div>
+</footer>
+
+<!-- ==========================================================
+     SCRIPTS
+=========================================================== -->
+<script>
+document.getElementById("menu-button").onclick = () =>
+    document.getElementById("mobile-menu").classList.toggle("hidden");
+
+lucide.createIcons();
+</script>
+
 </body>
 </html>
