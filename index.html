@@ -86,32 +86,38 @@
 
 <body class="bg-gray-100">
 
-<!-- NAVBAR -->
-<nav class="bg-white shadow-md fixed w-full z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
 
-        <!-- LOGO -->
+<!-- ==========================================================
+     NAVBAR ACTUALIZADO CON TUS CORRECCIONES
+=========================================================== -->
+<nav class="bg-white shadow-md fixed w-full z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center pr-4">
+
+        <!-- LOGO MÁS GRANDE & RESPONSIVE -->
         <a href="index.html" class="flex items-center">
             <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp"
-                 class="h-20 md:h-28" alt="Logo Copiermaster">
+                 class="h-24 md:h-32 lg:h-36 object-contain mt-2" alt="Logo Copiermaster">
         </a>
 
         <!-- BOTÓN MOBILE -->
         <button id="menu-button" class="md:hidden text-gray-800">
             <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-width="2"
-                      d="M4 6h16M4 12h16M4 18h16"/>
+                <path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
         </button>
 
         <!-- MENÚ DESKTOP -->
-        <div class="hidden md:flex space-x-8 items-center font-semibold">
-            <a href="index.html" class="text-lime-500">Inicio</a>
+        <div class="hidden md:flex space-x-10 items-center font-semibold">
+
+            <!-- TODOS IGUALADOS (gris, solo hover verde) -->
+            <a href="index.html" class="hover:text-lime-500">Inicio</a>
             <a href="soluciones.html" class="hover:text-lime-500">Soluciones</a>
             <a href="paginasweb.html" class="hover:text-lime-500">Impulso Digital</a>
             <a href="nosotros.html" class="hover:text-lime-500">Nosotros</a>
             <a href="contacto.html" class="hover:text-lime-500">Contacto</a>
-            <a href="#" class="bg-lime-500 text-white px-6 py-2 rounded-full shadow hover:bg-lime-600">
+
+            <!-- SOPORTE MÁS SEPARADO -->
+            <a href="#" class="bg-lime-500 text-white px-8 py-2 rounded-full shadow hover:bg-lime-600">
                 Soporte
             </a>
         </div>
@@ -119,16 +125,19 @@
 
     <!-- MENÚ MOBILE -->
     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
-        <a href="index.html" class="block py-3 px-6 text-lime-500">Inicio</a>
-        <a href="soluciones.html" class="block py-3 px-6">Soluciones</a>
-        <a href="paginasweb.html" class="block py-3 px-6">Impulso Digital</a>
-        <a href="nosotros.html" class="block py-3 px-6">Nosotros</a>
-        <a href="contacto.html" class="block py-3 px-6">Contacto</a>
+        <a href="index.html" class="block py-3 px-6 hover:text-lime-500">Inicio</a>
+        <a href="soluciones.html" class="block py-3 px-6 hover:text-lime-500">Soluciones</a>
+        <a href="paginasweb.html" class="block py-3 px-6 hover:text-lime-500">Impulso Digital</a>
+        <a href="nosotros.html" class="block py-3 px-6 hover:text-lime-500">Nosotros</a>
+        <a href="contacto.html" class="block py-3 px-6 hover:text-lime-500">Contacto</a>
         <a class="block py-3 px-6 bg-lime-500 text-white text-center font-semibold">Soporte</a>
     </div>
 </nav>
 
-<!-- HERO -->
+
+<!-- ==========================================================
+     HERO CON VIDEO FULLSCREEN
+=========================================================== -->
 <header class="relative min-h-[90vh] text-white flex flex-col justify-end">
 
     <!-- Video -->
@@ -136,10 +145,8 @@
         <div id="hero-video-player"></div>
     </div>
 
-    <!-- Capa oscura -->
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
 
-    <!-- Texto -->
     <div class="relative z-10 container mx-auto px-6 pb-20 flex items-end">
         <div class="max-w-3xl">
             <h1 id="hero-title" class="text-5xl font-extrabold mb-4"></h1>
@@ -158,21 +165,15 @@
             </div>
         </div>
     </div>
-
-    <!-- Botones del slider -->
-    <div id="hero-buttons" class="relative bg-black bg-opacity-30 p-4 text-center">
-        <button data-index="0" class="hero-button px-4 py-2 rounded-lg">Copiermaster C&G</button>
-        <button data-index="1" class="hero-button px-4 py-2 rounded-lg">Marcas</button>
-        <button data-index="2" class="hero-button px-4 py-2 rounded-lg">Impulso Digital</button>
-    </div>
 </header>
 
 
-<!-- SECCIÓN EMPRESA -->
+<!-- ==========================================================
+     QUIÉNES SOMOS
+=========================================================== -->
 <section class="py-24 bg-white" id="empresa">
     <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-        <!-- COLUMNA IZQUIERDA -->
         <div>
             <h2 class="text-4xl font-extrabold text-gray-800 mb-6 border-l-8 border-lime-500 pl-4">
                 ¿Quiénes Somos?
@@ -188,13 +189,11 @@
             </p>
 
             <div class="space-y-8">
-
                 <div>
                     <h3 class="text-2xl font-bold text-lime-600 mb-2">Visión</h3>
                     <p class="text-gray-700">
                         Ser líderes nacionales en soluciones digitales e impresión sostenible,
-                        brindando innovación, eficiencia y servicio confiable que impulse 
-                        la transformación tecnológica empresarial.
+                        brindando innovación y eficiencia para transformar empresas.
                     </p>
                 </div>
 
@@ -202,39 +201,24 @@
                     <h3 class="text-2xl font-bold text-lime-600 mb-2">Misión</h3>
                     <p class="text-gray-700">
                         Ofrecer tecnología de vanguardia, servicio técnico especializado 
-                        y atención personalizada, garantizando eficiencia, sostenibilidad 
-                        y reducción de costos operativos para instituciones públicas 
-                        y privadas en todo el Ecuador.
+                        y atención personalizada para instituciones públicas y privadas.
                     </p>
                 </div>
-                        </div>
+            </div>
+        </div>
 
-        <!-- COLUMNA DERECHA – VALORES, SECTORES, INDICADORES -->
+        <!-- Valores / Sectores / Indicadores -->
         <div class="bg-gray-50 p-10 rounded-3xl shadow-xl border border-gray-200">
 
-            <!-- Valores -->
             <h3 class="text-3xl font-bold text-gray-800 mb-6">Nuestros Valores</h3>
 
             <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-                <li class="flex items-center gap-3">
-                    <i data-lucide="heart-handshake" class="h-6 w-6 text-lime-500"></i>
-                    Compromiso Social
-                </li>
-                <li class="flex items-center gap-3">
-                    <i data-lucide="sparkles" class="h-6 w-6 text-lime-500"></i>
-                    Innovación
-                </li>
-                <li class="flex items-center gap-3">
-                    <i data-lucide="shield-check" class="h-6 w-6 text-lime-500"></i>
-                    Integridad
-                </li>
-                <li class="flex items-center gap-3">
-                    <i data-lucide="users" class="h-6 w-6 text-lime-500"></i>
-                    Orientación al Cliente
-                </li>
+                <li class="flex items-center gap-3"><i data-lucide="heart-handshake" class="h-6 w-6 text-lime-500"></i> Compromiso Social</li>
+                <li class="flex items-center gap-3"><i data-lucide="sparkles" class="h-6 w-6 text-lime-500"></i> Innovación</li>
+                <li class="flex items-center gap-3"><i data-lucide="shield-check" class="h-6 w-6 text-lime-500"></i> Integridad</li>
+                <li class="flex items-center gap-3"><i data-lucide="users" class="h-6 w-6 text-lime-500"></i> Orientación al Cliente</li>
             </ul>
 
-            <!-- Sectores -->
             <h3 class="text-3xl font-bold text-gray-800 mb-6">Sectores Atendidos</h3>
 
             <ul class="grid grid-cols-2 gap-4 text-gray-700 mb-10">
@@ -244,7 +228,6 @@
                 <li>🏛 Gobierno</li>
             </ul>
 
-            <!-- Indicadores -->
             <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
 
                 <div class="bg-white p-4 rounded-xl shadow-md border-t-4 border-lime-500">
@@ -271,6 +254,7 @@
                     <p class="text-3xl font-extrabold text-lime-600">100%</p>
                     <p class="text-sm font-semibold text-gray-600">Cobertura Nacional</p>
                 </div>
+
             </div>
         </div>
     </div>
@@ -278,57 +262,47 @@
 
 
 <!-- ==========================================================
-     SECCIÓN DE SERVICIOS EMPRESARIALES
+     SERVICIOS
 =========================================================== -->
 <section class="py-24 bg-gray-50" id="servicios">
     <div class="container mx-auto px-6 text-center">
 
-        <h2 class="text-4xl font-extrabold text-gray-800 mb-4">
-            Nuestros Servicios
-        </h2>
-        <p class="text-lg text-gray-600 mb-14">
-            Soluciones integrales para impulsar la transformación tecnológica de tu empresa.
-        </p>
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-4">Nuestros Servicios</h2>
+        <p class="text-lg text-gray-600 mb-14">Soluciones integrales para impulsar la transformación tecnológica de tu empresa.</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-            <!-- Servicio 1 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500">
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500 text-center">
                 <i data-lucide="printer" class="h-12 w-12 text-lime-500 mb-4"></i>
                 <h3 class="font-bold text-xl mb-2">Outsourcing de Impresión</h3>
                 <p class="text-gray-600">Gestión total de equipos, consumibles y soporte técnico.</p>
             </div>
 
-            <!-- Servicio 2 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500">
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500 text-center">
                 <i data-lucide="file-stack" class="h-12 w-12 text-lime-500 mb-4"></i>
                 <h3 class="font-bold text-xl mb-2">Gestión Documental</h3>
                 <p class="text-gray-600">Automatizamos procesos con flujos digitales eficientes.</p>
             </div>
 
-            <!-- Servicio 3 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500">
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500 text-center">
                 <i data-lucide="scan" class="h-12 w-12 text-lime-500 mb-4"></i>
                 <h3 class="font-bold text-xl mb-2">Escáneres Profesionales</h3>
                 <p class="text-gray-600">Digitalización masiva y preservación documental.</p>
             </div>
 
-            <!-- Servicio 4 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500">
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500 text-center">
                 <i data-lucide="briefcase" class="h-12 w-12 text-lime-500 mb-4"></i>
                 <h3 class="font-bold text-xl mb-2">Proveeduría Integral</h3>
                 <p class="text-gray-600">Insumos y suministros completos para oficinas.</p>
             </div>
 
-            <!-- Servicio 5 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500">
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500 text-center">
                 <i data-lucide="wrench" class="h-12 w-12 text-lime-500 mb-4"></i>
                 <h3 class="font-bold text-xl mb-2">Servicio Técnico Certificado</h3>
                 <p class="text-gray-600">Mantenimiento, soporte y asistencia profesional.</p>
             </div>
 
-            <!-- Servicio 6 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500">
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-lime-500 text-center">
                 <i data-lucide="cpu" class="h-12 w-12 text-lime-500 mb-4"></i>
                 <h3 class="font-bold text-xl mb-2">Software Empresarial</h3>
                 <p class="text-gray-600">Incluye soluciones como NetSupport School.</p>
@@ -340,7 +314,7 @@
 
 
 <!-- ==========================================================
-     MARCAS ALIADAS – SLIDER AUTOMÁTICO
+     MARCAS ALIADAS
 =========================================================== -->
 <section id="marcas" class="py-20 bg-gray-100">
     <div class="container mx-auto px-6 text-center">
@@ -348,7 +322,6 @@
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Nuestras Marcas Aliadas</h2>
         <p class="text-xl text-gray-600 mb-10">Tecnología líder para tu empresa</p>
 
-        <!-- Display -->
         <div id="marcas-display"
              class="bg-white p-10 rounded-2xl shadow-xl max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8">
 
@@ -368,9 +341,29 @@
 
         </div>
 
+        <!-- BOTONES SIN CUADROS AZULES -->
+        <div id="marcas-buttons" class="mt-8 flex justify-center gap-4 flex-wrap">
+
+            <button data-index="0" class="marca-button bg-white p-4 rounded-lg shadow-md">
+                <img src="https://i.postimg.cc/VLTPtfV9/111111.png" class="h-10">
+            </button>
+
+            <button data-index="1" class="marca-button bg-white p-4 rounded-lg shadow-md">
+                <img src="https://i.postimg.cc/rynB6yM6/impresora-lexmark-mx722adhe-duplex-70ppm-impresoras-25b0001-tcws-2.png" class="h-10">
+            </button>
+
+            <button data-index="2" class="marca-button bg-white p-4 rounded-lg shadow-md">
+                <img src="https://i.postimg.cc/QxVrV90x/5555.png" class="h-10">
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
 
 <!-- ==========================================================
-     RESULTADOS CORPORATIVOS
+     RESULTADOS
 =========================================================== -->
 <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-6 text-center">
@@ -402,19 +395,19 @@
         </div>
     </div>
 </section>
+
+
 <!-- ==========================================================
-     FOOTER CORPORATIVO
+     FOOTER
 =========================================================== -->
 <footer class="bg-gray-900 text-white py-12">
     <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
 
-        <!-- Logo -->
         <div>
             <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp"
                  class="h-36 mb-4">
         </div>
 
-        <!-- Marcas -->
         <div>
             <h4 class="text-lg font-bold mb-4">Marcas</h4>
             <ul class="space-y-2">
@@ -423,7 +416,6 @@
             </ul>
         </div>
 
-        <!-- Servicios Digitales -->
         <div>
             <h4 class="text-lg font-bold mb-4">Servicios Digitales</h4>
             <ul class="space-y-2">
@@ -432,7 +424,6 @@
             </ul>
         </div>
 
-        <!-- Legal -->
         <div>
             <h4 class="text-lg font-bold mb-4">Legal</h4>
             <ul class="space-y-2">
@@ -451,7 +442,7 @@
 
 
 <!-- ==========================================================
-     CHAT FLOTANTE
+     CHAT
 =========================================================== -->
 <div id="chat-widget"
      class="fixed bottom-5 right-5 z-50 opacity-0 transform translate-y-4">
@@ -464,18 +455,14 @@
     <div id="chat-window"
          class="hidden absolute bottom-20 right-0 bg-white rounded-2xl shadow-2xl flex flex-col w-80">
 
-        <!-- Encabezado del chat -->
         <div class="bg-teal-500 text-white p-4 rounded-t-2xl flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <img src="https://placehold.co/40x40/ffffff/333333?text=C" class="rounded-full">
                 <h3 class="font-bold">Criss</h3>
             </div>
-            <button id="close-chat" class="text-white">
-                <i data-lucide="x"></i>
-            </button>
+            <button id="close-chat" class="text-white"><i data-lucide="x"></i></button>
         </div>
 
-        <!-- Mensajes -->
         <div class="flex-1 p-4 space-y-4 bg-gray-100 overflow-y-auto">
             <div class="flex items-start gap-2">
                 <img src="https://placehold.co/32x32/ffffff/333333?text=B" class="rounded-full">
@@ -485,18 +472,11 @@
             </div>
         </div>
 
-        <!-- Botones rápidos -->
         <div class="p-4 bg-white border-t">
             <div class="flex flex-col gap-2">
-                <button class="text-teal-600 border border-teal-500 rounded-full px-4 py-2 text-sm">
-                    ¡Hola!
-                </button>
-                <button class="text-teal-600 border border-teal-500 rounded-full px-4 py-2 text-sm">
-                    Necesito más información
-                </button>
-                <button class="text-teal-600 border border-teal-500 rounded-full px-4 py-2 text-sm">
-                    ¿Hay alguien disponible?
-                </button>
+                <button class="text-teal-600 border border-teal-500 rounded-full px-4 py-2 text-sm">¡Hola!</button>
+                <button class="text-teal-600 border border-teal-500 rounded-full px-4 py-2 text-sm">Necesito más información</button>
+                <button class="text-teal-600 border border-teal-500 rounded-full px-4 py-2 text-sm">¿Hay alguien disponible?</button>
             </div>
         </div>
 
@@ -505,31 +485,24 @@
 
 
 <!-- ==========================================================
-     SCRIPTS — FUNCIONALIDAD GENERAL
+     SCRIPTS
 =========================================================== -->
 <script>
-    /* HERO — VIDEO FULLSCREEN */
+    /* VIDEO FULLSCREEN */
     var player;
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('hero-video-player', {
             videoId: 'PwFWg96_Omk',
-            playerVars: {
-                autoplay: 1,
-                controls: 0,
-                mute: 1,
-                loop: 1,
-                playlist: 'PwFWg96_Omk',
-                start: 0
-            },
+            playerVars: { autoplay: 1, controls: 0, mute: 1, loop: 1, playlist: 'PwFWg96_Omk', start: 0 },
             events: { onReady: e => e.target.playVideo() }
         });
     }
 
-    /* MENÚ MOBILE */
-    document.getElementById('menu-button').onclick = () =>
-        document.getElementById('mobile-menu').classList.toggle('hidden');
+    /* MOBILE MENU */
+    document.getElementById('menu-button').onclick =
+        () => document.getElementById('mobile-menu').classList.toggle('hidden');
 
-    /* HERO – SLIDER */
+    /* HERO SLIDER */
     const heroTitle = document.getElementById('hero-title');
     const heroSubtitle = document.getElementById('hero-subtitle');
     const heroButtons = document.querySelectorAll('.hero-button');
@@ -551,9 +524,6 @@
             heroSubtitle.textContent = heroContent[heroIndex].subtitle;
             heroTitle.style.opacity = 1;
             heroSubtitle.style.opacity = 1;
-
-            heroButtons.forEach(b => b.classList.remove('hero-button-active'));
-            heroButtons[heroIndex].classList.add('hero-button-active');
         }, 300);
     }
 
@@ -563,17 +533,12 @@
         updateHero();
     }, 6000);
 
-    heroButtons.forEach((btn, i) => {
-        btn.onclick = () => { heroIndex = i; updateHero(); };
-    });
 
-
-    /* SLIDER DE MARCAS */
+    /* MARCAS SLIDER */
     const marcaImage = document.getElementById('marca-image');
     const marcaTitle = document.getElementById('marca-title');
     const marcaDesc  = document.getElementById('marca-description');
     const marcaLink  = document.getElementById('marca-link');
-    const marcaButtons = document.querySelectorAll('.marca-button');
 
     const marcas = [
         {
@@ -612,9 +577,6 @@
             marcaImage.style.opacity = 1;
             marcaTitle.style.opacity = 1;
             marcaDesc.style.opacity  = 1;
-
-            marcaButtons.forEach(b => b.classList.remove('marca-button-active'));
-            marcaButtons[marcaIndex].classList.add('marca-button-active');
         }, 300);
     }
 
@@ -624,26 +586,15 @@
         updateMarca();
     }, 6500);
 
-    marcaButtons.forEach((btn, i) => {
-        btn.onclick = () => { marcaIndex = i; updateMarca(); };
-    });
 
-
-    /* CHAT FLOTANTE */
+    /* CHAT */
     const chatWidget = document.getElementById('chat-widget');
     const chatBubble = document.getElementById('chat-bubble');
     const chatWindow = document.getElementById('chat-window');
-    const closeChat = document.getElementById('close-chat');
+    const closeChat  = document.getElementById('close-chat');
 
-    chatBubble.onclick = () => {
-        chatWindow.classList.remove('hidden');
-        chatBubble.classList.add('hidden');
-    };
-
-    closeChat.onclick = () => {
-        chatWindow.classList.add('hidden');
-        chatBubble.classList.remove('hidden');
-    };
+    chatBubble.onclick = () => { chatWindow.classList.remove('hidden'); chatBubble.classList.add('hidden'); };
+    closeChat.onclick = () => { chatWindow.classList.add('hidden'); chatBubble.classList.remove('hidden'); };
 
     setTimeout(async () => {
         try {
