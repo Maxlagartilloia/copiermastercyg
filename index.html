@@ -24,29 +24,36 @@
         body { font-family: 'Inter', sans-serif; }
 
         /* HERO VIDEO */
-        #hero-video-container {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-        #hero-video-player {
-            position: absolute;
-            top: 50%; left: 50%;
-            width: 130%; height: 130%;
-            transform: translate(-50%, -50%) scale(1.3);
-        }
+    <!-- HERO -->
+<header class="relative min-h-[90vh] text-white flex flex-col justify-end">
 
-        .hero-button-active {
-            background-color: #84cc16;
-            color: white;
-        }
-    </style>
-</head>
+    <!-- IMAGEN PRINCIPAL -->
+    <div class="absolute inset-0 z-0">
+        <img src="hero-principal.webp"
+             alt="Copiermaster C&G"
+             class="w-full h-full object-cover">
+    </div>
 
-<body class="bg-gray-100">
+    <!-- OVERLAY NEGRO -->
+    <div class="absolute inset-0 bg-black opacity-60"></div>
 
+    <!-- HERO TEXT -->
+    <div class="relative z-10 container mx-auto px-6 pb-20 max-w-2xl">
+        <h1 class="text-5xl font-extrabold mb-4">
+            Soluciones Digitales que Transforman
+        </h1>
+
+        <p class="text-lg text-gray-300 mb-6">
+            13 años impulsando la innovación en instituciones públicas y privadas.
+        </p>
+
+        <a href="soluciones.html"
+           class="bg-lime-600 hover:bg-lime-700 px-10 py-4 rounded-full font-semibold shadow text-white text-lg">
+            Conoce Más
+        </a>
+    </div>
+
+</header>
 <!-- NAVBAR -->
 <nav class="bg-white shadow-md fixed w-full z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
