@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Ticket | Soporte Técnico - Copiermaster C&G</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- HEADER SIMPLE -->
+<header class="pt-28 pb-10 bg-gray-900 text-center text-white">
+    <h1 class="text-4xl font-extrabold">Crear un Ticket de Soporte</h1>
+    <p class="text-gray-300 mt-3">Complete el formulario con la información necesaria para atender su requerimiento.</p>
+</header>
+
+<section class="py-16">
+    <div class="container mx-auto px-6 max-w-3xl">
+
+        <div class="bg-white p-10 rounded-2xl shadow-xl border border-gray-200">
+
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Datos del Usuario</h2>
+
+            <!-- FORMULARIO NETLIFY -->
+            <form name="ticket"
+                  method="POST"
+                  data-netlify="true"
+                  enctype="multipart/form-data"
+                  action="/gracias.html"
+                  class="space-y-6">
+
+                <input type="hidden" name="form-name" value="ticket">
+
+                <!-- ID AUTOMÁTICO -->
+                <input type="hidden" id="ticketID" name="ticketID">
+
+                <!-- NOMBRE USUARIO -->
+                <div>
+                    <label class="font-semibold">Nombre del usuario *</label>
+                    <input type="text" name="nombre" required
+                           class="w-full mt-2 p-3 border rounded-md focus:ring-2 focus:ring-lime-600">
+                </div>
+
+                <!-- ENTIDAD -->
+                <div>
+                    <label class="font-semibold">Entidad *</label>
+                    <input type="text" name="entidad" required
+                           class="w-full mt-2 p-3 border rounded-md focus:ring-2 focus:ring-lime-600">
+                </div>
+
+                <!-- DEPARTAMENTO -->
+                <div>
+                    <label class="font-semibold">Departamento *</label>
+                    <input type="text" name="departamento" required
+                           class="w-full mt-2 p-3 border rounded-md focus:ring-2 focus:ring-lime-600">
+                </div>
+
+                <!-- MARCA Y MODELO -->
+                <div>
+                    <label class="font-semibold">Marca y modelo del equipo *</label>
+                    <input type="text" name="modelo" required
+                           placeholder="Ejemplo: Ricoh IM 430F"
+                           class="w-full mt-2 p-3 border rounded-md focus:ring-2 focus:ring-lime-600">
+                </div>
+
+                <!-- REQUERIMIENTO -->
+                <div>
+                    <label class="font-semibold block">Requerimiento *</label>
+
+                    <select name="requerimiento" required
+                            class="w-full mt-2 p-3 border rounded-md focus:ring-2 focus:ring-lime-600">
+                        <option value="">Seleccione una opción</option>
+                        <option>Configuración e instalación</option>
+                        <option>Entrega de suministros (tóner/papel)</option>
+                        <option>Servicio técnico / daño del equipo</option>
+                    </select>
+                </div>
+
+                <!-- DESCRIPCIÓN -->
+                <div>
+                    <label class="font-semibold">Describa el problema *</label>
+                    <textarea name="detalle" rows="4" required
+                              placeholder="Explique el daño o situación del equipo"
+                              class="w-full mt-2 p-3 border rounded-md focus:ring-2 focus:ring-lime-600"></textarea>
+                </div>
+
+                <!-- ADJUNTO -->
+                <div>
+                    <label class="font-semibold">Adjuntar imagen o PDF (opcional)</label>
+                    <input type="file" name="archivo"
+                           class="w-full mt-2 p-3 border rounded-md bg-white">
+                    <p class="text-xs text-gray-500">Formatos permitidos: JPG, PNG, PDF – Máx. 10MB</p>
+                </div>
+
+                <!-- BOTÓN -->
+                <button type="submit"
+                        class="w-full bg-lime-600 hover:bg-lime-700 text-white font-semibold py-3 rounded-lg shadow-lg text-lg flex items-center justify-center gap-2">
+                    Enviar Ticket
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const id = "TCK-" + Date.now();
+    document.getElementById("ticketID").value = id;
+    lucide.createIcons();
+});
+</script>
+
+</body>
+</html>
