@@ -14,7 +14,7 @@
     <!-- Inter font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 
-    <!-- Icons -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- YouTube API -->
@@ -25,9 +25,11 @@
 
         /* HERO VIDEO */
         #hero-video-container {
-            position: absolute; top: 0; left: 0;
+            position: absolute;
+            top: 0; left: 0;
             width: 100%; height: 100%;
-            overflow: hidden; z-index: 0;
+            overflow: hidden;
+            z-index: 0;
         }
         #hero-video-player {
             position: absolute;
@@ -35,8 +37,9 @@
             width: 130%; height: 130%;
             transform: translate(-50%, -50%) scale(1.3);
         }
+
         .hero-button-active {
-            background-color: #84cc16; 
+            background-color: #84cc16;
             color: white;
         }
     </style>
@@ -103,7 +106,7 @@
     <div class="absolute inset-0 bg-black opacity-60"></div>
 
     <!-- HERO TEXT -->
-    <div class="relative z-10 container mx-auto px-6 pb-20 max-w-3xl">
+    <div class="relative z-10 container mx-auto px-6 pb-20 max-w-2xl">
         <h1 id="hero-title" class="text-5xl font-extrabold mb-4"></h1>
         <p id="hero-subtitle" class="text-lg text-gray-300 mb-6"></p>
 
@@ -120,6 +123,76 @@
         <button data-index="2" class="hero-button px-4 py-2 rounded-lg">Impulso Digital</button>
     </div>
 </header>
+
+<!-- SCRIPTS DEL NAV + HERO -->
+<script>
+/* MENU MÓVIL */
+document.getElementById("menu-button").addEventListener("click", () => {
+    document.getElementById("mobile-menu").classList.toggle("hidden");
+});
+
+/* HERO DATA */
+let heroData = [
+    {
+        title: "Soluciones Digitales que Transforman",
+        subtitle: "13 años impulsando la innovación en instituciones públicas y privadas",
+        video: "TcU4UuCjGL8" /* REEMPLAZA CON TU VIDEO */
+    },
+    {
+        title: "Optimización Documental Inteligente",
+        subtitle: "Impresión sostenible, ahorro garantizado y soporte certificado",
+        video: "TcU4UuCjGL8"
+    },
+    {
+        title: "Impulso Digital para tu Negocio",
+        subtitle: "Landing pages, bots IA y automatización profesional",
+        video: "TcU4UuCjGL8"
+    }
+];
+
+let player;
+let heroIndex = 0;
+
+/* YOUTUBE PLAYER */
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player("hero-video-player", {
+        videoId: heroData[0].video,
+        playerVars: {
+            autoplay: 1,
+            mute: 1,
+            controls: 0,
+            loop: 1,
+            playlist: heroData[0].video
+        }
+    });
+}
+
+/* ACTUALIZAR TEXTO */
+function updateHero(index) {
+    document.getElementById("hero-title").textContent = heroData[index].title;
+    document.getElementById("hero-subtitle").textContent = heroData[index].subtitle;
+
+    document.querySelectorAll(".hero-button").forEach(btn => {
+        btn.classList.remove("hero-button-active");
+    });
+
+    document.querySelector(`button[data-index="${index}"]`)
+        .classList.add("hero-button-active");
+}
+
+/* CLIC EN BOTONES */
+document.querySelectorAll(".hero-button").forEach(btn => {
+    btn.addEventListener("click", () => {
+        updateHero(btn.dataset.index);
+    });
+});
+
+/* INICIALIZACIÓN */
+document.addEventListener("DOMContentLoaded", () => {
+    updateHero(0);
+    lucide.createIcons();
+});
+</script>
 <!-- ==========================================================
      BLOQUE 2 — SECCIÓN CORPORATIVA COPIERMASTER C&G
 =========================================================== -->
@@ -133,17 +206,18 @@
             </h2>
 
             <p class="text-gray-700 leading-relaxed mb-6">
-                La empresa inicia sus operaciones en el año <b>2012</b> con la razón social 
-                <b>Cristian Lombeida</b> y nombre comercial <b>COPIERMASTER C&G</b>.
-                Debido al crecimiento sostenido, en el año <b>2020</b> se constituye formalmente como 
-                <b>COPIERMASTER C&G SOLUCIONES DIGITALES S.A.</b>
+                La empresa inicia sus operaciones en el año <strong>2012</strong> con la razón social 
+                <strong>Cristian Lombeida</strong> y el nombre comercial <strong>COPIERMASTER C&G</strong>.
+                Gracias al crecimiento sostenido y al compromiso con nuestros clientes, en el año 
+                <strong>2020</strong> se constituye formalmente como
+                <strong>COPIERMASTER C&G SOLUCIONES DIGITALES S.A.</strong>
             </p>
 
             <p class="text-gray-700 leading-relaxed mb-6">
                 Hoy somos una empresa ecuatoriana sólida que desarrolla sus actividades dentro 
                 de la industria tecnológica 4.0, ofreciendo soluciones digitales, ecosistemas 
                 integrales de impresión, soporte técnico certificado y servicios complementarios 
-                para instituciones públicas y privadas en todo el Ecuador.
+                para instituciones públicas y privadas a nivel nacional.
             </p>
 
             <!-- MISIÓN -->
@@ -319,15 +393,16 @@
                 <h3 class="font-bold text-xl mb-2">Software Empresarial</h3>
                 <p class="text-gray-600">
                     Soluciones de control, monitoreo, educación y productividad, incluyendo 
-                    plataformas como <b>NetSupport</b> y herramientas digitales avanzadas.
+                    plataformas como <strong>NetSupport</strong> y herramientas digitales avanzadas.
                 </p>
             </div>
 
         </div>
     </div>
 </section>
+
 <!-- ==========================================================
-     BLOQUE 4 — RESULTADOS Y BENEFICIOS CORPORATIVOS
+     BLOQUE 3B — RESULTADOS Y BENEFICIOS CORPORATIVOS
 =========================================================== -->
 <section id="resultados" class="py-24 bg-white">
     <div class="container mx-auto px-6 text-center">
@@ -347,7 +422,7 @@
                 <p class="text-5xl font-extrabold text-lime-600 mb-2">30%</p>
                 <p class="text-lg font-semibold text-gray-700">Reducción de Costos</p>
                 <p class="text-gray-500 text-sm mt-2">
-                    Gracias a la optimización del parque de impresión y control por usuario.
+                    Optimización del parque de impresión y control por usuario.
                 </p>
             </div>
 
@@ -356,7 +431,7 @@
                 <p class="text-5xl font-extrabold text-lime-600 mb-2">99%</p>
                 <p class="text-lg font-semibold text-gray-700">Uptime Garantizado</p>
                 <p class="text-gray-500 text-sm mt-2">
-                    Máxima disponibilidad mediante monitoreo remoto y soporte certificado.
+                    Disponibilidad máxima mediante monitoreo remoto y soporte certificado.
                 </p>
             </div>
 
@@ -365,7 +440,7 @@
                 <p class="text-5xl font-extrabold text-lime-600 mb-2">40%</p>
                 <p class="text-lg font-semibold text-gray-700">+ Productividad TI</p>
                 <p class="text-gray-500 text-sm mt-2">
-                    Eliminamos carga operativa al departamento tecnológico de tu organización.
+                    Eliminamos carga operativa del departamento tecnológico.
                 </p>
             </div>
 
@@ -374,15 +449,16 @@
                 <p class="text-5xl font-extrabold text-lime-600 mb-2">100%</p>
                 <p class="text-lg font-semibold text-gray-700">Clientes Satisfechos</p>
                 <p class="text-gray-500 text-sm mt-2">
-                    Instituciones públicas, privadas y educativas confirman nuestros resultados.
+                    Organizaciones públicas, privadas y educativas confirman nuestros resultados.
                 </p>
             </div>
 
         </div>
     </div>
 </section>
+
 <!-- ==========================================================
-     BLOQUE 5 — MARCAS ALIADAS (SLIDER CORPORATIVO)
+     BLOQUE 3C — MARCAS ALIADAS (SLIDER CORPORATIVO)
 =========================================================== -->
 <section id="marcas" class="py-24 bg-gray-100">
     <div class="container mx-auto px-6 text-center">
@@ -440,7 +516,7 @@
     </div>
 </section>
 
-<!-- LOGIC -->
+<!-- JS DEL SLIDER MARCAS -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -526,285 +602,189 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-16">
             Durante más de <strong>13 años</strong> hemos brindado soluciones de impresión,
-            digitalización y tecnología 4.0 a instituciones públicas y privadas de alto nivel
-            en todo el Ecuador.
+            digitalización y tecnología 4.0 a instituciones públicas y privadas en todo el Ecuador.
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
 
-            <!-- Educación -->
-            <div class="p-8 bg-gray-100 rounded-3xl hover:shadow-xl transition text-center">
-                <div class="flex justify-center mb-4">
-                    <i data-lucide="graduation-cap" class="h-12 w-12 text-lime-600"></i>
-                </div>
+            <div class="p-8 bg-gray-100 rounded-3xl hover:shadow-xl transition">
+                <i data-lucide="graduation-cap" class="h-12 w-12 text-lime-600 mx-auto mb-4"></i>
                 <h3 class="text-xl font-bold text-gray-800 mb-2">Educación</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Soluciones para instituciones educativas
-                    que requieren alta capacidad operativa
-                    y optimización de recursos.
-                </p>
+                <p class="text-gray-600 text-sm">Soluciones para instituciones con altos volúmenes y necesidades de continuidad.</p>
             </div>
 
-            <!-- Salud -->
-            <div class="p-8 bg-gray-100 rounded-3xl hover:shadow-xl transition text-center">
-                <div class="flex justify-center mb-4">
-                    <i data-lucide="activity" class="h-12 w-12 text-lime-600"></i>
-                </div>
+            <div class="p-8 bg-gray-100 rounded-3xl hover:shadow-xl transition">
+                <i data-lucide="activity" class="h-12 w-12 text-lime-600 mx-auto mb-4"></i>
                 <h3 class="text-xl font-bold text-gray-800 mb-2">Salud</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Equipos confiables para hospitales, clínicas
-                    y laboratorios donde la disponibilidad es crítica.
-                </p>
+                <p class="text-gray-600 text-sm">Tecnología confiable para hospitales, clínicas y laboratorios.</p>
             </div>
 
-            <!-- Industria -->
-            <div class="p-8 bg-gray-100 rounded-3xl hover:shadow-xl transition text-center">
-                <div class="flex justify-center mb-4">
-                    <i data-lucide="factory" class="h-12 w-12 text-lime-600"></i>
-                </div>
+            <div class="p-8 bg-gray-100 rounded-3xl hover:shadow-xl transition">
+                <i data-lucide="factory" class="h-12 w-12 text-lime-600 mx-auto mb-4"></i>
                 <h3 class="text-xl font-bold text-gray-800 mb-2">Industrial</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Soluciones robustas para plantas,
-                    producción, logística y operaciones continuas.
-                </p>
+                <p class="text-gray-600 text-sm">Equipos robustos para plantas, producción y logística.</p>
             </div>
 
-            <!-- Gobierno -->
-            <div class="p-8 bg-gray-100 rounded-3xl hover:shadow-xl transition text-center">
-                <div class="flex justify-center mb-4">
-                    <i data-lucide="shield-check" class="h-12 w-12 text-lime-600"></i>
-                </div>
+            <div class="p-8 bg-gray-100 rounded-3xl hover:shadow-xl transition">
+                <i data-lucide="shield-check" class="h-12 w-12 text-lime-600 mx-auto mb-4"></i>
                 <h3 class="text-xl font-bold text-gray-800 mb-2">Gobierno</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Experiencia en instituciones públicas con
-                    altos volúmenes documentales y control operativo.
-                </p>
+                <p class="text-gray-600 text-sm">Experiencia en instituciones públicas con altos requerimientos operativos.</p>
             </div>
 
         </div>
 
-        <!-- Estadísticas corporativas -->
         <div class="mt-20 grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
-
             <div>
                 <p class="text-4xl font-extrabold text-lime-600">13+</p>
-                <p class="text-sm text-gray-700 font-semibold">Años de experiencia</p>
+                <p class="text-sm text-gray-700">Años de experiencia</p>
             </div>
-
             <div>
                 <p class="text-4xl font-extrabold text-lime-600">20+</p>
-                <p class="text-sm text-gray-700 font-semibold">Colaboradores</p>
+                <p class="text-sm text-gray-700">Colaboradores</p>
             </div>
-
             <div>
                 <p class="text-4xl font-extrabold text-lime-600">1000+</p>
-                <p class="text-sm text-gray-700 font-semibold">Equipos instalados</p>
+                <p class="text-sm text-gray-700">Equipos instalados</p>
             </div>
-
             <div>
                 <p class="text-4xl font-extrabold text-lime-600">5</p>
-                <p class="text-sm text-gray-700 font-semibold">Sucursales</p>
+                <p class="text-sm text-gray-700">Sucursales</p>
             </div>
-
             <div>
                 <p class="text-4xl font-extrabold text-lime-600">100%</p>
-                <p class="text-sm text-gray-700 font-semibold">Cobertura nacional</p>
+                <p class="text-sm text-gray-700">Cobertura nacional</p>
             </div>
-
         </div>
 
     </div>
 </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    lucide.createIcons();
-});
-</script>
-<!-- TESTIMONIOS -->
-<section id="testimonios" class="py-20 bg-white">
+<!-- ==========================================================
+     BLOQUE 7 — TESTIMONIOS
+=========================================================== -->
+<section id="testimonios" class="py-20 bg-gray-50">
     <div class="container mx-auto px-6 text-center">
+
         <h2 class="text-4xl font-bold text-gray-800 mb-4">Testimonios</h2>
-        <p class="text-lg text-gray-600 mb-12">
-            Instituciones públicas y privadas que confían en nosotros
-        </p>
+        <p class="text-lg text-gray-600 mb-12">Instituciones que confían en nosotros</p>
 
         <div class="relative max-w-3xl mx-auto overflow-hidden">
             <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
 
-                <!-- Testimonio 1 -->
                 <div class="testimonial-card bg-white p-10 rounded-2xl shadow-lg flex-shrink-0 w-full">
                     <p class="text-lg text-gray-700 italic mb-6">
-                        “Gracias a Copiermaster C&G logramos reducir nuestros costos de impresión y mejorar la disponibilidad de equipos en todas las áreas. El soporte técnico es impecable.”
+                        “Gracias a Copiermaster C&G logramos reducir nuestros costos y mejorar nuestra infraestructura documental.”
                     </p>
                     <div class="flex items-center justify-center gap-4">
-                        <img src="https://placehold.co/70x70/0ea5e9/ffffff?text=GA" class="rounded-full">
+                        <img src="https://placehold.co/70x70/facc15/ffffff?text=MT" class="rounded-full">
                         <div class="text-left">
-                            <h4 class="font-bold text-gray-800">Germán Alvarado</h4>
-                            <p class="text-sm text-gray-500">Director Administrativo – Ministerio del Trabajo</p>
+                            <h4 class="font-bold text-gray-800">Ministerio de Trabajo</h4>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimonio 2 -->
                 <div class="testimonial-card bg-white p-10 rounded-2xl shadow-lg flex-shrink-0 w-full">
                     <p class="text-lg text-gray-700 italic mb-6">
-                        “El outsourcing de impresión con Copiermaster ha sido clave para garantizar continuidad operativa en nuestro hospital. Responden rápido y con profesionalismo.”
+                        “El soporte técnico es rápido, profesional y sus equipos garantizan continuidad operativa.”
                     </p>
                     <div class="flex items-center justify-center gap-4">
-                        <img src="https://placehold.co/70x70/84cc16/ffffff?text=MC" class="rounded-full">
+                        <img src="https://placehold.co/70x70/84cc16/ffffff?text=HG" class="rounded-full">
                         <div class="text-left">
-                            <h4 class="font-bold text-gray-800">Dra. Mariana Castillo</h4>
-                            <p class="text-sm text-gray-500">Coordinadora de Sistemas – Hospital General IESS</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonio 3 -->
-                <div class="testimonial-card bg-white p-10 rounded-2xl shadow-lg flex-shrink-0 w-full">
-                    <p class="text-lg text-gray-700 italic mb-6">
-                        “Externalizar la impresión con Copiermaster nos permitió enfocarnos en la parte académica. Los equipos funcionan excelente y el soporte es inmediato.”
-                    </p>
-                    <div class="flex items-center justify-center gap-4">
-                        <img src="https://placehold.co/70x70/facc15/ffffff?text=LS" class="rounded-full">
-                        <div class="text-left">
-                            <h4 class="font-bold text-gray-800">Leonardo Sánchez</h4>
-                            <p class="text-sm text-gray-500">Rector – Unidad Educativa Privada</p>
+                            <h4 class="font-bold text-gray-800">Hospital General</h4>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Botones -->
-            <button id="prev-testimonial" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-10 bg-white rounded-full p-3 shadow-md hover:bg-gray-100">
+            <button id="prev-testimonial" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-md hover:bg-gray-100">
                 <i data-lucide="chevron-left" class="h-6 w-6 text-gray-600"></i>
             </button>
-            <button id="next-testimonial" class="absolute right-0 top/2 -translate-y-1/2 translate-x-10 bg-white rounded-full p-3 shadow-md hover:bg-gray-100">
+
+            <button id="next-testimonial" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-md hover:bg-gray-100">
                 <i data-lucide="chevron-right" class="h-6 w-6 text-gray-600"></i>
             </button>
         </div>
+
     </div>
 </section>
 
-<style>
-.testimonial-card {
-  min-width: 100%;
-}
-</style>
+<!-- ==========================================================
+     CTA FINAL
+=========================================================== -->
+<section class="py-20 bg-gray-900 text-white">
+    <div class="container mx-auto px-6 text-center max-w-3xl">
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const slider = document.getElementById("testimonial-slider");
-    const cards = slider.querySelectorAll(".testimonial-card");
-    const prev = document.getElementById("prev-testimonial");
-    const next = document.getElementById("next-testimonial");
-    let index = 0;
+        <h2 class="text-4xl font-extrabold mb-6">Transforme su infraestructura documental</h2>
 
-    function updateSlider() {
-        slider.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    next.addEventListener("click", () => {
-        index = (index + 1) % cards.length;
-        updateSlider();
-    });
-
-    prev.addEventListener("click", () => {
-        index = (index - 1 + cards.length) % cards.length;
-        updateSlider();
-    });
-
-    setInterval(() => {
-        index = (index + 1) % cards.length;
-        updateSlider();
-    }, 7000);
-});
-</script>
-<!-- CTA FINAL CORPORATIVA -->
-<section class="py-20 bg-gray-900">
-    <div class="container mx-auto px-6 text-center text-white">
-        
-        <h2 class="text-4xl font-extrabold mb-4">
-            Transforme su infraestructura de impresión y procesos documentales
-        </h2>
-
-        <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
-            Analizamos su situación actual, identificamos oportunidades de ahorro y construimos 
-            una solución sostenible, eficiente y alineada a las normas del sector público y privado.
+        <p class="text-gray-300 mb-8">
+            Le mostramos exactamente cuánto puede ahorrar mejorando su ecosistema de impresión.
         </p>
 
-        <a href="contacto.html" 
-           class="bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold text-lg px-10 py-4 rounded-full shadow-xl transition transform hover:scale-105 inline-block">
+        <a href="contacto.html"
+           class="bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold px-10 py-4 rounded-full shadow-xl inline-block">
             Solicitar Auditoría Gratuita
         </a>
 
-        <p class="text-sm text-gray-500 mt-4">
-            Servicio disponible en todo el Ecuador · Respuesta garantizada en menos de 24 horas
-        </p>
-
     </div>
 </section>
-<!-- FOOTER CORPORATIVO -->
+
+<!-- ==========================================================
+     FOOTER FINAL
+=========================================================== -->
 <footer class="bg-gray-900 text-white py-16">
     <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
 
-        <!-- LOGO + DESCRIPCIÓN -->
         <div>
-            <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp" 
-                 alt="Copiermaster C&G Logo" 
+            <img src="https://i.postimg.cc/6qRNQd57/468963711-3994290450845859-6671631898219414239-n-removebg-preview.webp"
                  class="h-32 mb-4">
-
             <p class="text-gray-400 text-sm leading-relaxed">
-                COPIERMASTER C&G Soluciones Digitales S.A.<br>
-                13 años acompañando la transformación tecnológica del Ecuador a través
-                de soluciones de impresión sostenible, digitalización, gestión documental
-                y servicios técnicos especializados.
+                COPIERMASTER C&G — 13 años transformando el Ecuador con soluciones digitales,
+                impresión sostenible y soporte técnico certificado.
             </p>
         </div>
 
-        <!-- SECCIÓN: SOLUCIONES -->
         <div>
             <h4 class="text-lg font-bold mb-4">Soluciones</h4>
             <ul class="space-y-3 text-gray-400">
-                <li><a href="soluciones.html#outsourcing" class="hover:text-lime-500 transition">Outsourcing de Impresión</a></li>
-                <li><a href="soluciones.html#gestion" class="hover:text-lime-500 transition">Gestión Documental</a></li>
-                <li><a href="soluciones.html#escaners" class="hover:text-lime-500 transition">Escáneres Profesionales</a></li>
-                <li><a href="soluciones.html#proveduria" class="hover:text-lime-500 transition">Proveeduría Integral</a></li>
-                <li><a href="soluciones.html#servicio-tecnico" class="hover:text-lime-500 transition">Servicio Técnico Certificado</a></li>
-                <li><a href="soluciones.html#software" class="hover:text-lime-500 transition">Software Empresarial</a></li>
+                <li><a href="soluciones.html#outsourcing" class="hover:text-lime-500">Outsourcing</a></li>
+                <li><a href="soluciones.html#gestion" class="hover:text-lime-500">Gestión Documental</a></li>
+                <li><a href="soluciones.html#escaners" class="hover:text-lime-500">Escáneres</a></li>
             </ul>
         </div>
 
-        <!-- SECCIÓN: CORPORATIVO -->
         <div>
             <h4 class="text-lg font-bold mb-4">Corporativo</h4>
             <ul class="space-y-3 text-gray-400">
-                <li><a href="nosotros.html" class="hover:text-lime-500 transition">Quiénes Somos</a></li>
-                <li><a href="nosotros.html#mision" class="hover:text-lime-500 transition">Misión</a></li>
-                <li><a href="nosotros.html#vision" class="hover:text-lime-500 transition">Visión</a></li>
-                <li><a href="nosotros.html#valores" class="hover:text-lime-500 transition">Valores</a></li>
-                <li><a href="nosotros.html#marcas" class="hover:text-lime-500 transition">Marcas Aliadas</a></li>
-                <li><a href="contacto.html" class="hover:text-lime-500 transition">Contacto</a></li>
+                <li><a href="nosotros.html" class="hover:text-lime-500">Quiénes Somos</a></li>
+                <li><a href="nosotros.html#mision" class="hover:text-lime-500">Misión</a></li>
+                <li><a href="nosotros.html#vision" class="hover:text-lime-500">Visión</a></li>
             </ul>
         </div>
 
-        <!-- SECCIÓN: SERVICIOS ADICIONALES -->
         <div>
             <h4 class="text-lg font-bold mb-4">Servicios Adicionales</h4>
             <ul class="space-y-3 text-gray-400">
-                <li><a href="https://cltechsolutions.crisslombeida.com" target="_blank" class="hover:text-lime-500 transition">Impulso Digital (Landing & Bots)</a></li>
-                <li><a href="soporte.html" class="hover:text-lime-500 transition">Help Desk - Soporte Técnico</a></li>
-                <li><a href="#" class="hover:text-lime-500 transition">Política de Privacidad</a></li>
-                <li><a href="#" class="hover:text-lime-500 transition">Términos y Condiciones</a></li>
+                <li><a href="https://cltechsolutions.crisslombeida.com" class="hover:text-lime-500">Impulso Digital</a></li>
+                <li><a href="soporte.html" class="hover:text-lime-500">Help Desk</a></li>
             </ul>
         </div>
+
     </div>
 
-    <!-- COPYRIGHT -->
     <div class="container mx-auto px-6 text-center border-t border-gray-700 pt-8 mt-10">
         <p class="text-gray-500 text-sm">
             &copy; 2024 Copiermaster C&G Soluciones Digitales S.A. — Todos los derechos reservados.
         </p>
     </div>
 </footer>
+
+<!-- FINAL SCRIPTS -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    lucide.createIcons();
+});
+</script>
+
+</body>
+</html>
