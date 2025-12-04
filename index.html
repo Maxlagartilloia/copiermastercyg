@@ -21,18 +21,13 @@
     <script src="https://www.youtube.com/iframe_api"></script>
 
     <style>
-        /* ------------------------------------------
-           ESTILOS BASE
-        ------------------------------------------- */
         body {
             font-family: 'Inter', sans-serif;
             color: #555;
             background-color: #f7f9fb;
         }
 
-        /* ------------------------------------------
-           HERO – VIDEO FULLSCREEN SIN BARRAS NEGRAS
-        ------------------------------------------- */
+        /* HERO VIDEO FULLSCREEN */
         #hero-video-container {
             position: absolute;
             inset: 0;
@@ -53,13 +48,11 @@
             pointer-events: none;
         }
 
-        /* Botón hero activo */
         .hero-button-active {
             background-color: #8ac641;
             color: white;
         }
 
-        /* Botón parpadeante */
         .cta-landing {
             display: inline-block;
             padding: 0.9rem 1.8rem;
@@ -70,15 +63,16 @@
             font-size: 1rem;
             box-shadow: 0 10px 25px rgba(126, 211, 33, 0.4);
         }
+
         .blink-cta {
             animation: pulse-landing 1s infinite alternate;
         }
+
         @keyframes pulse-landing {
             0% { opacity: .6; transform: translateY(0); }
             100% { opacity: 1; transform: translateY(-3px); }
         }
 
-        /* Slider de marcas */
         .marca-button {
             opacity: 0.6;
             transition: all 0.3s ease;
@@ -92,9 +86,7 @@
 
 <body class="bg-gray-100">
 
-<!-- ==========================================================
-     NAVBAR
-=========================================================== -->
+<!-- NAVBAR -->
 <nav class="bg-white shadow-md fixed w-full z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
 
@@ -116,7 +108,7 @@
         <div class="hidden md:flex space-x-8 items-center font-semibold">
             <a href="index.html" class="text-lime-500">Inicio</a>
             <a href="soluciones.html" class="hover:text-lime-500">Soluciones</a>
-            <a href="paginasweb.html" class="hover:text-lime-500">Páginas Web de Ventas</a>
+            <a href="paginasweb.html" class="hover:text-lime-500">Impulso Digital</a>
             <a href="nosotros.html" class="hover:text-lime-500">Nosotros</a>
             <a href="contacto.html" class="hover:text-lime-500">Contacto</a>
             <a href="#" class="bg-lime-500 text-white px-6 py-2 rounded-full shadow hover:bg-lime-600">
@@ -129,17 +121,14 @@
     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
         <a href="index.html" class="block py-3 px-6 text-lime-500">Inicio</a>
         <a href="soluciones.html" class="block py-3 px-6">Soluciones</a>
-        <a href="paginasweb.html" class="block py-3 px-6">Páginas Web de Ventas</a>
+        <a href="paginasweb.html" class="block py-3 px-6">Impulso Digital</a>
         <a href="nosotros.html" class="block py-3 px-6">Nosotros</a>
         <a href="contacto.html" class="block py-3 px-6">Contacto</a>
         <a class="block py-3 px-6 bg-lime-500 text-white text-center font-semibold">Soporte</a>
     </div>
 </nav>
 
-
-<!-- ==========================================================
-     HERO CON VIDEO FULLSCREEN
-=========================================================== -->
+<!-- HERO -->
 <header class="relative min-h-[90vh] text-white flex flex-col justify-end">
 
     <!-- Video -->
@@ -156,34 +145,30 @@
             <h1 id="hero-title" class="text-5xl font-extrabold mb-4"></h1>
             <p id="hero-subtitle" class="text-lg text-gray-300 mb-6"></p>
 
-            <!-- Botón principal -->
             <a href="soluciones.html"
                class="bg-lime-500 text-white text-lg font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-lime-600">
                Conoce Más
             </a>
 
-            <!-- Botón de páginas web -->
             <div class="mt-4">
                 <a href="https://cltechsolutions.crisslombeida.com"
                    class="cta-landing blink-cta">
-                   👉 Ver funcionamiento y costos de las landing pages
+                   👉 Ver funcionamiento y costos de Impulso Digital
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Botones del slider de hero -->
+    <!-- Botones del slider -->
     <div id="hero-buttons" class="relative bg-black bg-opacity-30 p-4 text-center">
         <button data-index="0" class="hero-button px-4 py-2 rounded-lg">Copiermaster C&G</button>
         <button data-index="1" class="hero-button px-4 py-2 rounded-lg">Marcas</button>
-        <button data-index="2" class="hero-button px-4 py-2 rounded-lg">Páginas Web de Ventas</button>
+        <button data-index="2" class="hero-button px-4 py-2 rounded-lg">Impulso Digital</button>
     </div>
 </header>
 
 
-<!-- ==========================================================
-     SECCIÓN CORPORATIVA – VISIÓN, MISIÓN, QUIÉNES SOMOS, VALORES
-=========================================================== -->
+<!-- SECCIÓN EMPRESA -->
 <section class="py-24 bg-white" id="empresa">
     <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -204,7 +189,6 @@
 
             <div class="space-y-8">
 
-                <!-- Visión -->
                 <div>
                     <h3 class="text-2xl font-bold text-lime-600 mb-2">Visión</h3>
                     <p class="text-gray-700">
@@ -214,7 +198,6 @@
                     </p>
                 </div>
 
-                <!-- Misión -->
                 <div>
                     <h3 class="text-2xl font-bold text-lime-600 mb-2">Misión</h3>
                     <p class="text-gray-700">
@@ -224,8 +207,7 @@
                         y privadas en todo el Ecuador.
                     </p>
                 </div>
-            </div>
-        </div>
+                        </div>
 
         <!-- COLUMNA DERECHA – VALORES, SECTORES, INDICADORES -->
         <div class="bg-gray-50 p-10 rounded-3xl shadow-xl border border-gray-200">
@@ -251,7 +233,8 @@
                     Orientación al Cliente
                 </li>
             </ul>
-                        <!-- Sectores -->
+
+            <!-- Sectores -->
             <h3 class="text-3xl font-bold text-gray-800 mb-6">Sectores Atendidos</h3>
 
             <ul class="grid grid-cols-2 gap-4 text-gray-700 mb-10">
@@ -400,6 +383,8 @@
 
     </div>
 </section>
+
+
 <!-- ==========================================================
      RESULTADOS CORPORATIVOS
 =========================================================== -->
@@ -433,8 +418,6 @@
         </div>
     </div>
 </section>
-
-
 <!-- ==========================================================
      FOOTER CORPORATIVO
 =========================================================== -->
@@ -456,11 +439,11 @@
             </ul>
         </div>
 
-        <!-- Páginas Web -->
+        <!-- Servicios Digitales -->
         <div>
             <h4 class="text-lg font-bold mb-4">Servicios Digitales</h4>
             <ul class="space-y-2">
-                <li><a href="paginasweb.html" class="hover:text-lime-500">Páginas Web de Ventas</a></li>
+                <li><a href="paginasweb.html" class="hover:text-lime-500">Impulso Digital</a></li>
                 <li><a href="soluciones.html" class="hover:text-lime-500">Soluciones Empresariales</a></li>
             </ul>
         </div>
@@ -538,12 +521,10 @@
 
 
 <!-- ==========================================================
-     SCRIPTS (FUNCIONALIDAD GENERAL)
+     SCRIPTS — FUNCIONALIDAD GENERAL
 =========================================================== -->
 <script>
-    /* -----------------------------------------------
-       HERO – VIDEO FULLSCREEN
-    ------------------------------------------------ */
+    /* HERO — VIDEO FULLSCREEN */
     var player;
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('hero-video-player', {
@@ -560,15 +541,11 @@
         });
     }
 
-    /* -----------------------------------------------
-       MENÚ MOBILE
-    ------------------------------------------------ */
+    /* MENÚ MOBILE */
     document.getElementById('menu-button').onclick = () =>
         document.getElementById('mobile-menu').classList.toggle('hidden');
 
-    /* -----------------------------------------------
-       HERO – SLIDER DE TEXTOS
-    ------------------------------------------------ */
+    /* HERO – SLIDER */
     const heroTitle = document.getElementById('hero-title');
     const heroSubtitle = document.getElementById('hero-subtitle');
     const heroButtons = document.querySelectorAll('.hero-button');
@@ -576,7 +553,7 @@
     const heroContent = [
         { title: '16 años en el mercado', subtitle: 'Impulsando tecnología, conectando empresas.' },
         { title: 'Tecnología para Crecer', subtitle: 'Marcas líderes al servicio de tu empresa.' },
-        { title: 'Páginas Web de Ventas', subtitle: 'Automatiza clientes, ventas y atención digital.' }
+        { title: 'Impulso Digital', subtitle: 'Automatiza clientes, ventas y atención digital.' }
     ];
 
     let heroIndex = 0;
@@ -607,9 +584,7 @@
     });
 
 
-    /* -----------------------------------------------
-       SLIDER DE MARCAS
-    ------------------------------------------------ */
+    /* SLIDER DE MARCAS */
     const marcaImage = document.getElementById('marca-image');
     const marcaTitle = document.getElementById('marca-title');
     const marcaDesc  = document.getElementById('marca-description');
@@ -670,9 +645,7 @@
     });
 
 
-    /* -----------------------------------------------
-       CHAT FLOTANTE
-    ------------------------------------------------ */
+    /* CHAT FLOTANTE */
     const chatWidget = document.getElementById('chat-widget');
     const chatBubble = document.getElementById('chat-bubble');
     const chatWindow = document.getElementById('chat-window');
@@ -697,7 +670,6 @@
         chatWidget.classList.remove('opacity-0','translate-y-4');
     }, 3000);
 
-    /* Inicializar iconos */
     lucide.createIcons();
 </script>
 
