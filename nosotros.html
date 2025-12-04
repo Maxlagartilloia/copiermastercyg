@@ -1,269 +1,4 @@
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - Copiermaster C&G Soluciones Digitales S.A.</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239_n-removebg-preview.webp">
-
-    <!-- TailwindCSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .hero-bg {
-            background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
-</head>
-
-<body class="bg-gray-100">
-
-<!-- NAVBAR -->
-<nav class="bg-white shadow-md fixed w-full z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-
-        <a href="index.html">
-            <img src="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239_n-removebg-preview.webp"
-                 class="h-24 md:h-28" alt="Copiermaster Logo">
-        </a>
-
-        <button id="menu-button" class="md:hidden">
-            <i data-lucide="menu" class="h-8 w-8 text-gray-700"></i>
-        </button>
-
-        <div class="hidden md:flex space-x-8 items-center font-semibold">
-            <a href="index.html" class="hover:text-lime-600">Inicio</a>
-            <a href="soluciones.html" class="hover:text-lime-600">Soluciones</a>
-            <a href="nosotros.html" class="text-lime-600">Nosotros</a>
-            <a href="contacto.html" class="hover:text-lime-600">Contacto</a>
-            <a href="https://cltechsolutions.crisslombeida.com" class="hover:text-lime-600">Impulso Digital</a>
-            <a href="soporte.html" class="bg-lime-600 text-white px-6 py-2 rounded-full shadow hover:bg-lime-700">
-                Soporte
-            </a>
-        </div>
-    </div>
-
-    <div id="mobile-menu" class="hidden bg-white py-4 px-6 shadow-md md:hidden space-y-3">
-        <a href="index.html">Inicio</a>
-        <a href="soluciones.html">Soluciones</a>
-        <a href="nosotros.html" class="text-lime-600">Nosotros</a>
-        <a href="contacto.html">Contacto</a>
-        <a href="https://cltechsolutions.crisslombeida.com">Impulso Digital</a>
-        <a href="soporte.html" class="block bg-lime-600 text-white text-center py-2 rounded-lg">
-            Soporte
-        </a>
-    </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero-bg min-h-[75vh] flex items-center relative">
-    <div class="absolute inset-0 bg-black opacity-60"></div>
-
-    <div class="relative z-10 container mx-auto px-6 text-white max-w-3xl">
-        <h1 class="text-5xl font-extrabold mb-4">
-            Somos Tecnología. Somos Sostenibilidad.
-        </h1>
-        <p class="text-lg text-gray-200 mb-6">
-            13 años acompañando el crecimiento tecnológico de instituciones públicas 
-            y privadas en todo el Ecuador.
-        </p>
-    </div>
-</section>
-
-<!-- HISTORIA CORPORATIVA -->
-<section class="py-24 bg-white">
-    <div class="container mx-auto px-6 max-w-5xl">
-
-        <h2 class="text-4xl font-extrabold text-gray-800 text-center mb-14">
-            Nuestra Historia
-        </h2>
-
-        <div class="space-y-10 text-gray-700 leading-relaxed text-lg">
-
-            <p>
-                Copiermaster C&G inicia sus operaciones en el año <strong>2012</strong> 
-                con la razón social <strong>Cristian Lombeida</strong> y el nombre comercial 
-                <strong>COPIERMASTER C&G</strong>.
-            </p>
-
-            <p>
-                Gracias al crecimiento continuo, en el año <strong>2020</strong> se constituye 
-                formalmente como <strong>COPIERMASTER C&G SOLUCIONES DIGITALES S.A.</strong>, 
-                consolidándose como una empresa ecuatoriana sólida en el sector tecnológico.
-            </p>
-
-            <p>
-                Hoy somos un referente nacional en soluciones digitales, ecosistemas de impresión, 
-                gestión documental, digitalización, soporte técnico certificado y servicios 
-                complementarios orientados a la industria tecnológica 4.0.
-            </p>
-
-        </div>
-
-    </div>
-</section>
-
-<!-- MISIÓN Y VISIÓN -->
-<section class="py-24 bg-gray-50">
-    <div class="container mx-auto px-6 max-w-6xl">
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-
-            <!-- Misión -->
-            <div class="bg-white p-10 rounded-3xl shadow border-t-4 border-lime-600">
-                <i data-lucide="flag" class="h-10 w-10 text-lime-600 mb-4"></i>
-                <h3 class="text-3xl font-bold mb-4">Misión</h3>
-                <p class="text-gray-700 leading-relaxed">
-                    Nos comprometemos a ofrecer tecnología de vanguardia, servicio técnico 
-                    especializado y atención personalizada, garantizando eficiencia, 
-                    sostenibilidad y reducción de costos operativos para instituciones 
-                    públicas y privadas en todo el Ecuador.
-                </p>
-            </div>
-
-            <!-- Visión -->
-            <div class="bg-white p-10 rounded-3xl shadow border-t-4 border-lime-600">
-                <i data-lucide="compass" class="h-10 w-10 text-lime-600 mb-4"></i>
-                <h3 class="text-3xl font-bold mb-4">Visión</h3>
-                <p class="text-gray-700 leading-relaxed">
-                    Ser líderes nacionales en soluciones digitales e impresión sostenible, 
-                    brindando innovación, eficiencia y servicio confiable que impulse 
-                    la transformación tecnológica empresarial.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<!-- VALORES -->
-<section class="py-24 bg-white">
-    <div class="container mx-auto px-6 max-w-6xl text-center">
-
-        <h2 class="text-4xl font-extrabold text-gray-800 mb-12">
-            Valores Corporativos
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-gray-700 text-lg">
-
-            <div class="flex flex-col items-center">
-                <i data-lucide="heart-handshake" class="h-10 w-10 text-lime-600 mb-2"></i>
-                Compromiso Social
-            </div>
-
-            <div class="flex flex-col items-center">
-                <i data-lucide="sparkles" class="h-10 w-10 text-lime-600 mb-2"></i>
-                Innovación
-            </div>
-
-            <div class="flex flex-col items-center">
-                <i data-lucide="shield-check" class="h-10 w-10 text-lime-600 mb-2"></i>
-                Integridad
-            </div>
-
-            <div class="flex flex-col items-center">
-                <i data-lucide="users" class="h-10 w-10 text-lime-600 mb-2"></i>
-                Orientación al Cliente
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<!-- EXPERIENCIA EN SECTORES -->
-<section class="py-24 bg-gray-50">
-    <div class="container mx-auto px-6 max-w-6xl text-center">
-
-        <h2 class="text-4xl font-extrabold text-gray-800 mb-6">
-            Experiencia en Sectores Estratégicos
-        </h2>
-
-        <p class="max-w-2xl text-gray-600 mx-auto mb-16 text-lg">
-            Atendemos instituciones de alto impacto, garantizando continuidad operativa 
-            y eficiencia documental en los sectores más exigentes.
-        </p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
-
-            <div>
-                <i data-lucide="graduation-cap" class="h-12 w-12 text-lime-600 mb-4"></i>
-                <p class="font-bold text-xl">Educación</p>
-            </div>
-
-            <div>
-                <i data-lucide="activity" class="h-12 w-12 text-lime-600 mb-4"></i>
-                <p class="font-bold text-xl">Salud</p>
-            </div>
-
-            <div>
-                <i data-lucide="factory" class="h-12 w-12 text-lime-600 mb-4"></i>
-                <p class="font-bold text-xl">Industrial</p>
-            </div>
-
-            <div>
-                <i data-lucide="shield-check" class="h-12 w-12 text-lime-600 mb-4"></i>
-                <p class="font-bold text-xl">Gobierno</p>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<!-- MÉTRICAS -->
-<section class="py-24 bg-white">
-    <div class="container mx-auto px-6 max-w-5xl text-center">
-
-        <h2 class="text-4xl font-extrabold text-gray-800 mb-6">
-            Nuestros Indicadores Corporativos
-        </h2>
-
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mt-12 text-center">
-
-            <div>
-                <p class="text-4xl font-extrabold text-lime-600">13+</p>
-                <p class="text-sm text-gray-700 font-semibold">Años de experiencia</p>
-            </div>
-
-            <div>
-                <p class="text-4xl font-extrabold text-lime-600">20+</p>
-                <p class="text-sm text-gray-700 font-semibold">Colaboradores</p>
-            </div>
-
-            <div>
-                <p class="text-4xl font-extrabold text-lime-600">1000+</p>
-                <p class="text-sm text-gray-700 font-semibold">Equipos instalados</p>
-            </div>
-
-            <div>
-                <p class="text-4xl font-extrabold text-lime-600">5</p>
-                <p class="text-sm text-gray-700 font-semibold">Sucursales</p>
-            </div>
-
-            <div>
-                <p class="text-4xl font-extrabold text-lime-600">100%</p>
-                <p class="text-sm text-gray-700 font-semibold">Cobertura nacional</p>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-    
-<!-- MARCAS ALIADAS – CORREGIDO -->
+<!-- MARCAS ALIADAS – SOLO PARA NOSOTROS -->
 <section class="py-24 bg-gray-50">
     <div class="container mx-auto px-6 max-w-4xl text-center">
 
@@ -272,124 +7,46 @@
         </h2>
 
         <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-            Trabajamos junto a líderes tecnológicos internacionales, garantizando equipos robustos,
-            confiables y sostenibles.
+            Representamos y trabajamos con marcas líderes en soluciones tecnológicas,
+            garantizando equipos robustos, sostenibles y de alto rendimiento.
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
 
             <!-- Ricoh -->
-            <div class="p-6 bg-white rounded-2xl shadow hover:shadow-xl transition">
-                <img src="https://i.postimg.cc/Y0Vt0pGg/ricoh-logo.png"
+            <div class="p-8 bg-white rounded-2xl shadow hover:shadow-xl transition">
+                <img src="ricoh-logo.png"
                      alt="Ricoh Logo"
-                     class="h-16 mx-auto mb-4">
-                <p class="text-gray-600">Soluciones globales en impresión y digitalización.</p>
+                     class="h-24 mx-auto object-contain mb-4"
+                     onerror="this.src='https://placehold.co/200x120/cccccc/555555?text=Ricoh'">
+                <p class="text-gray-600 text-sm">
+                    Soluciones globales en impresión y digitalización.
+                </p>
             </div>
 
             <!-- Kyocera -->
-            <div class="p-6 bg-white rounded-2xl shadow hover:shadow-xl transition">
-                <img src="https://i.postimg.cc/W12FkM0K/kyocera-logo.png"
+            <div class="p-8 bg-white rounded-2xl shadow hover:shadow-xl transition">
+                <img src="kyocera-logo.png"
                      alt="Kyocera Logo"
-                     class="h-16 mx-auto mb-4">
-                <p class="text-gray-600">Equipos eficientes y sostenibles con larga vida útil.</p>
+                     class="h-24 mx-auto object-contain mb-4"
+                     onerror="this.src='https://placehold.co/200x120/cccccc/555555?text=Kyocera'">
+                <p class="text-gray-600 text-sm">
+                    Equipos eficientes, sostenibles y de larga vida útil.
+                </p>
             </div>
 
             <!-- Lexmark -->
-            <div class="p-6 bg-white rounded-2xl shadow hover:shadow-xl transition">
-                <img src="https://i.postimg.cc/tJ0M4pXb/lexmark-logo.png"
+            <div class="p-8 bg-white rounded-2xl shadow hover:shadow-xl transition">
+                <img src="lexmark-logo.png"
                      alt="Lexmark Logo"
-                     class="h-16 mx-auto mb-4">
-                <p class="text-gray-600">Tecnología inteligente para altos volúmenes.</p>
+                     class="h-24 mx-auto object-contain mb-4"
+                     onerror="this.src='https://placehold.co/200x120/cccccc/555555?text=Lexmark'">
+                <p class="text-gray-600 text-sm">
+                    Tecnología inteligente diseñada para altos volúmenes.
+                </p>
             </div>
 
         </div>
 
     </div>
 </section>
-<!-- CTA FINAL -->
-<section class="py-20 bg-gray-900">
-    <div class="container mx-auto px-6 text-center text-white">
-
-        <h2 class="text-4xl font-extrabold mb-4">
-            ¿Listo para transformar su infraestructura tecnológica?
-        </h2>
-
-        <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
-            Podemos acompañar su institución con soluciones digitales, impresión sostenible 
-            y soporte técnico altamente especializado.
-        </p>
-
-        <a href="contacto.html"
-           class="bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold text-lg px-10 py-4 rounded-full shadow-xl transition transform hover:scale-105">
-            Contactar al equipo
-        </a>
-
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-white py-16">
-    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
-
-        <!-- LOGO -->
-        <div>
-            <img src="https://i.postimg.cc/Fk96WkSm/468963711-3994290450845859-6671631898219414239_n-removebg-preview.webp"
-                 class="h-28 mb-4">
-
-            <p class="text-gray-400 text-sm leading-relaxed">
-                Copiermaster C&G Soluciones Digitales S.A.<br>
-                Soluciones innovadoras para la transformación tecnológica del Ecuador.
-            </p>
-        </div>
-
-        <!-- Soluciones -->
-        <div>
-            <h4 class="text-lg font-bold mb-4">Soluciones</h4>
-            <ul class="space-y-3 text-gray-400">
-                <li><a href="soluciones.html#outsourcing" class="hover:text-lime-500">Outsourcing de Impresión</a></li>
-                <li><a href="soluciones.html#gestion" class="hover:text-lime-500">Gestión Documental</a></li>
-                <li><a href="soluciones.html#escaners" class="hover:text-lime-500">Escáneres Profesionales</a></li>
-                <li><a href="soluciones.html#proveduria" class="hover:text-lime-500">Proveeduría Integral</a></li>
-                <li><a href="soluciones.html#servicio-tecnico" class="hover:text-lime-500">Servicio Técnico</a></li>
-                <li><a href="soluciones.html#software" class="hover:text-lime-500">Software Empresarial</a></li>
-            </ul>
-        </div>
-
-        <!-- Corporativo -->
-        <div>
-            <h4 class="text-lg font-bold mb-4">Corporativo</h4>
-            <ul class="space-y-3 text-gray-400">
-                <li><a href="#historia" class="hover:text-lime-500">Historia</a></li>
-                <li><a href="#mision" class="hover:text-lime-500">Misión</a></li>
-                <li><a href="#vision" class="hover:text-lime-500">Visión</a></li>
-                <li><a href="#valores" class="hover:text-lime-500">Valores</a></li>
-                <li><a href="contacto.html" class="hover:text-lime-500">Contacto</a></li>
-            </ul>
-        </div>
-
-        <!-- Extras -->
-        <div>
-            <h4 class="text-lg font-bold mb-4">Servicios Adicionales</h4>
-            <ul class="space-y-3 text-gray-400">
-                <li><a href="https://cltechsolutions.crisslombeida.com" target="_blank" class="hover:text-lime-500">Impulso Digital</a></li>
-                <li><a href="soporte.html" class="hover:text-lime-500">Help Desk</a></li>
-                <li><a href="#" class="hover:text-lime-500">Políticas</a></li>
-                <li><a href="#" class="hover:text-lime-500">Términos</a></li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div class="container mx-auto px-6 text-center border-t border-gray-700 mt-10 pt-8">
-        <p class="text-gray-500 text-sm">&copy; 2024 Copiermaster C&G — Todos los derechos reservados.</p>
-    </div>
-</footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    lucide.createIcons();
-});
-</script>
-
-</body>
-</html>
